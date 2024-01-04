@@ -1,0 +1,1 @@
+C:\Users\quart\source\repos\WordSkillz\WordSkillz\WordSkillz.csproj;x64
