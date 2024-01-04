@@ -22,11 +22,23 @@ build_metadata.AdditionalFiles.ManifestResourceName = WordSkillz.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/quart/source/repos/WordSkillz/WordSkillz/MainPage.xaml]
+[C:/Users/quart/source/repos/WordSkillz/WordSkillz/Pages/AddWordsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = WordSkillz.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WordSkillz.Pages.AddWordsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddWordsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddWordsPage.xaml
+
+[C:/Users/quart/source/repos/WordSkillz/WordSkillz/Pages/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WordSkillz.Pages.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
+
+[C:/Users/quart/source/repos/WordSkillz/WordSkillz/Pages/OptionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = WordSkillz.Pages.OptionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\OptionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\OptionPage.xaml
 
 [C:/Users/quart/source/repos/WordSkillz/WordSkillz/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

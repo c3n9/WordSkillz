@@ -4,11 +4,19 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:WordSkillz"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:pages="clr-namespace:WordSkillz.Pages"
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <FlyoutItem Title="Main"
+                Route="Main">
+        <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Words"
+                Route="AddWordsPage">
+        <ShellContent ContentTemplate="{DataTemplate pages:AddWordsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Option"
+                Route="OptionPage">
+        <ShellContent ContentTemplate="{DataTemplate pages:OptionPage}" />
+    </FlyoutItem>
 </Shell>

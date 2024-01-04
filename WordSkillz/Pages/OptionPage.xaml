@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordSkillz.Pages.OptionPage"
+             Title="Option">
+    <VerticalStackLayout Margin="10">
+        <HorizontalStackLayout>
+            <Label Text="Switch dark theme" 
+                   FontSize="20"
+                   VerticalTextAlignment="Center"
+                   Margin="10,0"/>
+            <Switch x:Name="SThemeDark"
+                    Toggled="SThemeDark_Toggled">
+                <Switch.Resources>
+                    <Style TargetType="Switch">
+                        <Setter Property="WidthRequest"
+                                Value="100" />
+                        <Setter Property="HeightRequest"
+                                Value="35" />
+                    </Style>
+                </Switch.Resources>
+            </Switch>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
