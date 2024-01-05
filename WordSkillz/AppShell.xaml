@@ -11,10 +11,6 @@
                 Route="Main">
         <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Words"
-                Route="AddWordsPage">
-        <ShellContent ContentTemplate="{DataTemplate pages:AddWordsPage}" />
-    </FlyoutItem>
     <FlyoutItem Title="Option"
                 Route="OptionPage">
         <ShellContent ContentTemplate="{DataTemplate pages:OptionPage}" />

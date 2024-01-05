@@ -3,9 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AddWordsPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Button Text="Back"
+                x:Name="BBack"
+                Clicked="BBack_Clicked"
+                CornerRadius="30"
+                WidthRequest="60"
+                HeightRequest="60"
+                HorizontalOptions="CenterAndExpand"
+                Margin="50"/>
+        <Frame CornerRadius="20"
+               BorderColor="#512BD4"
+               Margin="10">
+            <VerticalStackLayout>
+                <Entry WidthRequest="200"/>
+                <Entry WidthRequest="200"/>
+                <Button Text="Save"
+                        HorizontalOptions="EndAndExpand"
+                        WidthRequest="200"
+                        CornerRadius="10" />
+            </VerticalStackLayout>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>

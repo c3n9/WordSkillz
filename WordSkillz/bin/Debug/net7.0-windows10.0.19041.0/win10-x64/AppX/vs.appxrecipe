@@ -30,29 +30,29 @@
     <AppXManifest Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-05T14:27:29.443</Modified>
+      <Modified>2024-01-05T15:28:02.514</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-05T14:23:54.808</Modified>
+      <Modified>2024-01-05T15:16:30.254</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.runtimeconfig.json">
       <PackagePath>WordSkillz.runtimeconfig.json</PackagePath>
-      <Modified>2024-01-04T20:29:09.077</Modified>
+      <Modified>2024-01-05T15:14:59.716</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.dll">
       <PackagePath>WordSkillz.dll</PackagePath>
-      <Modified>2024-01-05T14:27:27.046</Modified>
+      <Modified>2024-01-05T15:27:59.595</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>WordSkillz.exe</PackagePath>
-      <Modified>2024-01-05T14:27:27.059</Modified>
+      <Modified>2024-01-05T15:27:59.622</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.deps.json">
       <PackagePath>WordSkillz.deps.json</PackagePath>
-      <Modified>2024-01-04T21:39:44.131</Modified>
+      <Modified>2024-01-05T15:14:59.365</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.11\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -913,6 +913,10 @@
     <AppxPackagedFile Include="C:\Users\quart\.nuget\packages\microsoft.windowsappsdk\1.2.221209.1\lib\net6.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
       <Modified>2022-11-08T19:31:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\quart\.nuget\packages\newtonsoft.json\13.0.3\lib\net6.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+      <Modified>2023-03-08T07:09:54.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\.nuget\packages\microsoft.graphics.win2d\1.0.5.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>

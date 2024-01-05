@@ -11,9 +11,9 @@ namespace WordSkillz.Pages
             InitializeComponent();
         }
 
-        private void BPlusCategory_Clicked(object sender, EventArgs e)
+        private async void BPlusCategory_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new AddWordsPage());
         }
     }
 }

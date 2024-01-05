@@ -6,4 +6,9 @@ public partial class AddWordsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void BBack_Clicked(object sender, EventArgs e)
+    {
+		await Navigation.PopModalAsync();
+    }
 }
