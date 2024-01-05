@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Whv/YF5M7nT51gtr4MJg7rIY0YxHYWIBVfb13FR+oieQZB9PcOtX1TqtZc0BzIZAD2jiEX+P9Ar0RmHaCMouVQ==",
+  "dgSpecHash": "huDUOIJiHyCOplA8zWViZk/2Neg0C7Fa+/c4DkijtyZOVvvGqqhrbh/9IqfIhW6fGBEU5e14jac0lKEstE0iEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\quart\\source\\repos\\WordSkillz\\WordSkillz\\WordSkillz.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\quart\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\7.0.92\\microsoft.maui.graphics.win2d.winui.desktop.7.0.92.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\quart\\.nuget\\packages\\microsoft.windowsappsdk\\1.2.221209.1\\microsoft.windowsappsdk.1.2.221209.1.nupkg.sha512",
+    "C:\\Users\\quart\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\quart\\.nuget\\packages\\xamarin.android.glide\\4.13.2.2\\xamarin.android.glide.4.13.2.2.nupkg.sha512",
     "C:\\Users\\quart\\.nuget\\packages\\xamarin.android.glide.annotations\\4.13.2.2\\xamarin.android.glide.annotations.4.13.2.2.nupkg.sha512",
     "C:\\Users\\quart\\.nuget\\packages\\xamarin.android.glide.disklrucache\\4.13.2.2\\xamarin.android.glide.disklrucache.4.13.2.2.nupkg.sha512",
