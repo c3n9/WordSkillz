@@ -14,7 +14,24 @@
             <Label Text="English" />
         </HorizontalStackLayout>
         <ScrollView Grid.Row="1">
-            
+            <CollectionView x:Name="CVCategories"
+                            Margin="20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="20"
+                               Margin="20"
+                               BorderColor="#512BD4">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}"
+                                       FontSize="32"
+                                       HorizontalOptions="Center" />
+                                <Button Text="Learn" 
+                                        CornerRadius="10"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </ScrollView>
         <Button Text="+"
                 x:Name="BPlusCategory"

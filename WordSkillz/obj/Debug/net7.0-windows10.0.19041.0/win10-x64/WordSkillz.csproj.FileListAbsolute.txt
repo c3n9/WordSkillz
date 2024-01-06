@@ -32,6 +32,7 @@ C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.1
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Projection.dll
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.Widgets.Projection.dll
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Graphics.Canvas.dll
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.dll
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.CSharp.dll
@@ -322,4 +323,3 @@ C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.1
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
-C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll

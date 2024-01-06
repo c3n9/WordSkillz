@@ -30,29 +30,29 @@
     <AppXManifest Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-05T15:28:02.514</Modified>
+      <Modified>2024-01-06T20:34:59.176</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-05T15:16:30.254</Modified>
+      <Modified>2024-01-06T20:21:37.653</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.runtimeconfig.json">
       <PackagePath>WordSkillz.runtimeconfig.json</PackagePath>
-      <Modified>2024-01-05T15:14:59.716</Modified>
+      <Modified>2024-01-06T19:42:34.088</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.dll">
       <PackagePath>WordSkillz.dll</PackagePath>
-      <Modified>2024-01-05T15:27:59.595</Modified>
+      <Modified>2024-01-06T20:34:56.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>WordSkillz.exe</PackagePath>
-      <Modified>2024-01-05T15:27:59.622</Modified>
+      <Modified>2024-01-06T20:34:56.899</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.deps.json">
       <PackagePath>WordSkillz.deps.json</PackagePath>
-      <Modified>2024-01-05T15:14:59.365</Modified>
+      <Modified>2024-01-06T19:42:33.751</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.11\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -942,237 +942,245 @@
       <PackagePath>AboutAssets.txt</PackagePath>
       <Modified>2024-01-04T20:11:56.432</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\Resources\Raw\category.json">
+      <PackagePath>category.json</PackagePath>
+      <Modified>2024-01-06T11:39:16.150</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\Resources\Raw\word.json">
+      <PackagePath>word.json</PackagePath>
+      <Modified>2024-01-06T11:50:28.933</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.083</Modified>
+      <Modified>2024-01-06T19:42:28.793</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.084</Modified>
+      <Modified>2024-01-06T19:42:28.825</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.084</Modified>
+      <Modified>2024-01-06T19:42:28.868</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.084</Modified>
+      <Modified>2024-01-06T19:42:28.931</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.087</Modified>
+      <Modified>2024-01-06T19:42:29.135</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2024-01-04T20:12:01.040</Modified>
+      <Modified>2024-01-04T20:11:56.428</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-      <Modified>2024-01-04T20:12:01.041</Modified>
+      <Modified>2024-01-04T20:11:56.432</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2024-01-04T21:32:07.282</Modified>
+      <Modified>2024-01-06T19:42:29.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2024-01-04T21:32:08.140</Modified>
+      <Modified>2024-01-06T19:42:29.862</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2024-01-04T21:32:08.185</Modified>
+      <Modified>2024-01-06T19:42:29.879</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2024-01-04T21:32:08.241</Modified>
+      <Modified>2024-01-06T19:42:29.924</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2024-01-04T21:32:08.320</Modified>
+      <Modified>2024-01-06T19:42:29.956</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2024-01-04T21:32:08.520</Modified>
+      <Modified>2024-01-06T19:42:30.067</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.506</Modified>
+      <Modified>2024-01-06T19:42:29.395</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.517</Modified>
+      <Modified>2024-01-06T19:42:29.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.569</Modified>
+      <Modified>2024-01-06T19:42:29.437</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.529</Modified>
+      <Modified>2024-01-06T19:42:29.409</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.541</Modified>
+      <Modified>2024-01-06T19:42:29.421</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.437</Modified>
+      <Modified>2024-01-06T19:42:29.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.447</Modified>
+      <Modified>2024-01-06T19:42:29.358</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.488</Modified>
+      <Modified>2024-01-06T19:42:29.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.455</Modified>
+      <Modified>2024-01-06T19:42:29.363</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.465</Modified>
+      <Modified>2024-01-06T19:42:29.372</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.319</Modified>
+      <Modified>2024-01-06T19:42:29.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.334</Modified>
+      <Modified>2024-01-06T19:42:29.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.343</Modified>
+      <Modified>2024-01-06T19:42:29.278</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.353</Modified>
+      <Modified>2024-01-06T19:42:29.279</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.367</Modified>
+      <Modified>2024-01-06T19:42:29.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.376</Modified>
+      <Modified>2024-01-06T19:42:29.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.385</Modified>
+      <Modified>2024-01-06T19:42:29.309</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.425</Modified>
+      <Modified>2024-01-06T19:42:29.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.394</Modified>
+      <Modified>2024-01-06T19:42:29.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.403</Modified>
+      <Modified>2024-01-06T19:42:29.325</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.740</Modified>
+      <Modified>2024-01-06T19:42:29.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.758</Modified>
+      <Modified>2024-01-06T19:42:29.562</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.779</Modified>
+      <Modified>2024-01-06T19:42:29.586</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.809</Modified>
+      <Modified>2024-01-06T19:42:29.609</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.884</Modified>
+      <Modified>2024-01-06T19:42:29.673</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.658</Modified>
+      <Modified>2024-01-06T19:42:29.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.671</Modified>
+      <Modified>2024-01-06T19:42:29.498</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.684</Modified>
+      <Modified>2024-01-06T19:42:29.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.699</Modified>
+      <Modified>2024-01-06T19:42:29.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.723</Modified>
+      <Modified>2024-01-06T19:42:29.543</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.582</Modified>
+      <Modified>2024-01-06T19:42:29.444</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.595</Modified>
+      <Modified>2024-01-06T19:42:29.451</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.610</Modified>
+      <Modified>2024-01-06T19:42:29.457</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.622</Modified>
+      <Modified>2024-01-06T19:42:29.468</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.644</Modified>
+      <Modified>2024-01-06T19:42:29.484</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.902</Modified>
+      <Modified>2024-01-06T19:42:29.693</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.924</Modified>
+      <Modified>2024-01-06T19:42:29.708</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.949</Modified>
+      <Modified>2024-01-06T19:42:29.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2024-01-04T21:32:07.985</Modified>
+      <Modified>2024-01-06T19:42:29.752</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2024-01-04T21:32:08.105</Modified>
+      <Modified>2024-01-06T19:42:29.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.077</Modified>
+      <Modified>2024-01-06T19:42:29.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.077</Modified>
+      <Modified>2024-01-06T19:42:29.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.079</Modified>
+      <Modified>2024-01-06T19:42:29.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.080</Modified>
+      <Modified>2024-01-06T19:42:29.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2024-01-04T20:12:01.082</Modified>
+      <Modified>2024-01-06T19:42:29.427</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

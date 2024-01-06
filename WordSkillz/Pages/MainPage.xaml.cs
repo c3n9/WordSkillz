@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.ApplicationModel;
+using WordSkillz.Tools;
 
 namespace WordSkillz.Pages
 {
@@ -9,6 +10,7 @@ namespace WordSkillz.Pages
         public MainPage()
         {
             InitializeComponent();
+            CVCategories.ItemsSource = DataManager.GetCategories();
         }
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
