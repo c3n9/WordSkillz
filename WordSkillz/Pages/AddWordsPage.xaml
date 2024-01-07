@@ -11,17 +11,11 @@
                 HeightRequest="60"
                 HorizontalOptions="CenterAndExpand"
                 Margin="50"/>
-        <Frame CornerRadius="20"
-               BorderColor="#512BD4"
-               Margin="10">
-            <VerticalStackLayout>
-                <Entry WidthRequest="200"/>
-                <Entry WidthRequest="200"/>
-                <Button Text="Save"
-                        HorizontalOptions="EndAndExpand"
-                        WidthRequest="200"
-                        CornerRadius="10" />
-            </VerticalStackLayout>
-        </Frame>
+        <Button x:Name="BAddWord"
+                Clicked="BAddWord_Clicked"
+                Text="Add" />
+        <ScrollView Orientation="Vertical">
+            <VerticalStackLayout x:Name="VSLWords" />
+        </ScrollView>
     </VerticalStackLayout>
 </ContentPage>
