@@ -7,17 +7,13 @@ namespace WordSkillz
         public App()
         {
             InitializeComponent();
-            MainPage = new AppShell();
-            try
-            {
-                var n = Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json");
-            }
-            catch (Exception ex)
-            {
-                var g = ex.Message;
-            }
+            
             DataManager.InitDataFile(DataManager.CategoryCachePath, DataManager.CategoryImportPath);
-            DataManager.InitDataFile(DataManager.WordCachePath, DataManager.WordsImportPath);
+
+            //DataManager.InitDataFile(DataManager.WordCachePath, DataManager.WordsImportPath);
+
+            MainPage = new AppShell();
+
         }
     }
 }

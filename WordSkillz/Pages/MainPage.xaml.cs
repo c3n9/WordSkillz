@@ -5,11 +5,14 @@ namespace WordSkillz.Pages
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+            Refresh();            
+        }
+
+        private void Refresh()
+        {
             CVCategories.ItemsSource = DataManager.GetCategories();
         }
 

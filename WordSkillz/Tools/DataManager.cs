@@ -31,12 +31,6 @@ namespace WordSkillz.Tools
                 SetData(WordCachePath, words);
             }
         }
-        public static List<Category> GetCategories()
-        {
-            var categories = GetData<List<Category>>(CategoryCachePath);
-            AllCategories = categories.ToList();
-            return categories;
-        }
         public static List<Category> AllCategories
         {
             get
@@ -50,6 +44,18 @@ namespace WordSkillz.Tools
                 categories = value;
                 SetData(CategoryCachePath, categories);
             }
+        }
+        public static List<Category> GetCategories()
+        {
+            var categories = GetData<List<Category>>(CategoryCachePath);
+            AllCategories = categories.ToList();
+            return categories;
+        }
+        public static List<Word> GetWords()
+        {
+            var words = GetData<List<Word>>(WordCachePath);
+            AllWords = words.ToList();
+            return words;
         }
         private static T GetData<T>(string fileName)
         {
@@ -106,7 +112,6 @@ namespace WordSkillz.Tools
                     return reader.ReadToEnd();
                 }
             }
-
         }
     }
 }

@@ -7,8 +7,11 @@
     xmlns:pages="clr-namespace:WordSkillz.Pages"
     Shell.FlyoutBehavior="Flyout">
 
+    <ShellContent Title="Loading"
+                  ContentTemplate="{DataTemplate pages:LoadingPage}"
+                  Route="LoadingPage" />
     <FlyoutItem Title="Main"
-                Route="Main">
+                Route="MainPage">
         <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
     </FlyoutItem>
     <FlyoutItem Title="Option"

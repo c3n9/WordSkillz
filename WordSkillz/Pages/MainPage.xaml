@@ -24,6 +24,7 @@
                             <VerticalStackLayout>
                                 <Label Text="{Binding Name}"
                                        FontSize="32"
+                                       TextColor="#512BD4"
                                        HorizontalOptions="Center" />
                                 <Button Text="Learn" 
                                         CornerRadius="10"/>
@@ -37,7 +38,7 @@
                 x:Name="BPlusCategory"
                 Clicked="BPlusCategory_Clicked"
                 CornerRadius="20"
-                WidthRequest="30"
+                MinimumWidthRequest="50"
                 HorizontalOptions="CenterAndExpand"
                 Margin="50"
                 Grid.Row="2"/>

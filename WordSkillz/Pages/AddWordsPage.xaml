@@ -2,20 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AddWordsPage">
-    <VerticalStackLayout>
-        <Button Text="Back"
-                x:Name="BBack"
-                Clicked="BBack_Clicked"
-                CornerRadius="30"
-                WidthRequest="60"
-                HeightRequest="60"
-                HorizontalOptions="CenterAndExpand"
-                Margin="50"/>
-        <Button x:Name="BAddWord"
-                Clicked="BAddWord_Clicked"
-                Text="Add" />
-        <ScrollView Orientation="Vertical">
-            <VerticalStackLayout x:Name="VSLWords" />
-        </ScrollView>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout x:Name="VSLWords">
+            <Button Text="Back"
+                    x:Name="BBack"
+                    Clicked="BBack_Clicked"
+                    CornerRadius="30"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="50"/>
+            <Button x:Name="BAddWord"
+                    Clicked="BAddWord_Clicked"
+                    Text="Add" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
