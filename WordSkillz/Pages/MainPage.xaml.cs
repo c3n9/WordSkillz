@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.ApplicationModel;
+using WordSkillz.Models;
 using WordSkillz.Tools;
 
 namespace WordSkillz.Pages
@@ -13,15 +14,23 @@ namespace WordSkillz.Pages
 
         private void Refresh()
         {
-            CVCategories.ItemsSource = DataManager.GetCategories();
+            LVCategories.ItemsSource = DataManager.GetCategories();
         }
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
         {
             var nameCategory = await DisplayPromptAsync("New category", "Enter name of category", "Ok", "Cancel", "Name", 50);
-            if (!string.IsNullOrWhiteSpace(nameCategory))
+            //if (!string.IsNullOrWhiteSpace(nameCategory))
+            //{
+            //    await Navigation.PushModalAsync(new AllWordsInCategoryPage());
+            //}
+        }
+
+        private async void LVCategories_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (LVCategories.SelectedItem is Category category)
             {
-                await Navigation.PushModalAsync(new AddWordsPage(nameCategory));
+                await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
         }
     }

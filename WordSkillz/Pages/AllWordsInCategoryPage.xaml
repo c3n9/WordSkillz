@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordSkillz.Pages.AllWordsInCategoryPage"
+             Title="AllWordsInCategoryPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <SearchBar Placeholder="Search word" />
+        <Button x:Name="BAddWords" 
+                Text="Add"
+                Clicked="BAddWords_Clicked"
+                HorizontalOptions="End"/>
+        <ScrollView Grid.Row="1">
+            <CollectionView x:Name="CVWords"
+                            Margin="20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="20"
+                               Margin="20"
+                               BorderColor="#512BD4">
+                            <Grid>
+                                <Label Text="{Binding OriginalWord}" 
+                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding TranslateWord}" 
+                                       HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </Grid>
+</ContentPage>

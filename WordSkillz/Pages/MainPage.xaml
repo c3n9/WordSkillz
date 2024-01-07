@@ -8,28 +8,32 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <ScrollView>
-            <CollectionView x:Name="CVCategories"
-                            Margin="20">
-                <CollectionView.ItemTemplate>
+            <ListView x:Name="LVCategories"
+                      Margin="20"
+                      ItemTapped="LVCategories_ItemTapped">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Frame CornerRadius="20"
-                               Margin="20"
-                               BorderColor="#512BD4">
-                            <Grid>
-                                <Label Text="{Binding Name}"
-                                       FontSize="32"
-                                       TextColor="#512BD4"
-                                       HorizontalOptions="StartAndExpand" />
-                                <Button Text="Learn"
-                                        TextColor="White"
-                                        HorizontalOptions="EndAndExpand"
-                                        Background="#512BD4"
-                                        CornerRadius="10"/>
-                            </Grid>
-                        </Frame>
+                        <ViewCell>
+                            <Frame CornerRadius="20"
+                                   Margin="20"
+                                   BorderColor="#512BD4"
+                                   HeightRequest="200">
+                                <Grid>
+                                    <Label Text="{Binding Name}"
+                                           FontSize="32"
+                                           TextColor="#512BD4"
+                                           HorizontalOptions="StartAndExpand" />
+                                    <Button Text="Learn"
+                                            TextColor="White"
+                                            BackgroundColor="#512BD4"
+                                            CornerRadius="10"
+                                            HorizontalOptions="EndAndExpand" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                </ListView.ItemTemplate>
+            </ListView>
         </ScrollView>
         <Button Text="+"
                 x:Name="BPlusCategory"

@@ -10,7 +10,7 @@ namespace WordSkillz
             
             DataManager.InitDataFile(DataManager.CategoryCachePath, DataManager.CategoryImportPath);
 
-            //DataManager.InitDataFile(DataManager.WordCachePath, DataManager.WordsImportPath);
+            DataManager.InitDataFile(DataManager.WordCachePath, DataManager.WordsImportPath);
 
             MainPage = new AppShell();
 

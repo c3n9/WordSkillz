@@ -1,14 +1,16 @@
+using WordSkillz.Models;
+
 namespace WordSkillz.Pages;
 
 public partial class AddWordsPage : ContentPage
 {
-    public AddWordsPage(string nameCategory)
+    Category contextCategory; 
+    public AddWordsPage(Category category)
     {
         InitializeComponent();
-        Title = nameCategory;
         NewWord();
+        contextCategory = category;
     }
-
 
     private void NewWord()
     {

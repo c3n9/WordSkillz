@@ -15,9 +15,9 @@ public partial class LoadingPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        List<Category> n;
-        n = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
-        while (n == null)
+        List<Category> categories;
+        categories = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
+        while (categories == null)
         {
             if (File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")))
             {
@@ -25,10 +25,21 @@ public partial class LoadingPage : ContentPage
             }
             DataManager.InitDataFile(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"), DataManager.CategoryImportPath);
             await Task.Delay(200);
-            n = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
+            categories = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
+        }
+        List<Word> words;
+        words = JsonConvert.DeserializeObject<List<Word>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")));
+        while (words == null)
+        {
+            if (File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")))
+            {
+                File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"));
+            }
+            DataManager.InitDataFile(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")), DataManager.WordsImportPath);
+            await Task.Delay(200);
+            words = JsonConvert.DeserializeObject<List<Word>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")));
         }
         await Task.Delay(1050);
-        //await Navigation.PushAsync(new MainPage());
         await Shell.Current.GoToAsync($"////{nameof(MainPage)}");
     }
 }
