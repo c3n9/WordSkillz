@@ -8,7 +8,7 @@ namespace WordSkillz.Pages
         public MainPage()
         {
             InitializeComponent();
-            Refresh();            
+            Refresh();
         }
 
         private void Refresh()
@@ -18,7 +18,11 @@ namespace WordSkillz.Pages
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new AddWordsPage());
+            var nameCategory = await DisplayPromptAsync("New category", "Enter name of category", "Ok", "Cancel", "Name", 50);
+            if (!string.IsNullOrWhiteSpace(nameCategory))
+            {
+                await Navigation.PushModalAsync(new AddWordsPage(nameCategory));
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ public partial class LoadingPage : ContentPage
 		InitializeComponent();
         OnAppearing();
     }
-    protected async void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
         List<Category> n;

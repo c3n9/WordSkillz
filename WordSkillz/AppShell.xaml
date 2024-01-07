@@ -5,11 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:WordSkillz"
     xmlns:pages="clr-namespace:WordSkillz.Pages"
-    Shell.FlyoutBehavior="Flyout">
+    FlyoutHeaderBehavior="CollapseOnScroll">
 
     <ShellContent Title="Loading"
                   ContentTemplate="{DataTemplate pages:LoadingPage}"
-                  Route="LoadingPage" />
+                  Route="LoadingPage"
+                  FlyoutItemIsVisible="False" />
     <FlyoutItem Title="Main"
                 Route="MainPage">
         <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />

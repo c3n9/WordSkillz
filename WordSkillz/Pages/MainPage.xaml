@@ -4,16 +4,10 @@
              x:Class="WordSkillz.Pages.MainPage">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
             <RowDefinition />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-            <SearchBar />
-            <Label Text="Русский" />
-            <Label Text="English" />
-        </HorizontalStackLayout>
-        <ScrollView Grid.Row="1">
+        <ScrollView>
             <CollectionView x:Name="CVCategories"
                             Margin="20">
                 <CollectionView.ItemTemplate>
@@ -21,14 +15,17 @@
                         <Frame CornerRadius="20"
                                Margin="20"
                                BorderColor="#512BD4">
-                            <VerticalStackLayout>
+                            <Grid>
                                 <Label Text="{Binding Name}"
                                        FontSize="32"
                                        TextColor="#512BD4"
-                                       HorizontalOptions="Center" />
-                                <Button Text="Learn" 
+                                       HorizontalOptions="StartAndExpand" />
+                                <Button Text="Learn"
+                                        TextColor="White"
+                                        HorizontalOptions="EndAndExpand"
+                                        Background="#512BD4"
                                         CornerRadius="10"/>
-                            </VerticalStackLayout>
+                            </Grid>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -38,10 +35,10 @@
                 x:Name="BPlusCategory"
                 Clicked="BPlusCategory_Clicked"
                 CornerRadius="20"
-                MinimumWidthRequest="50"
+                FontSize="20"
                 HorizontalOptions="CenterAndExpand"
                 Margin="50"
-                Grid.Row="2"/>
+                Grid.Row="1"/>
 
     </Grid>
 
