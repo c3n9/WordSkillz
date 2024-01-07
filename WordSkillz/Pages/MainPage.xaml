@@ -10,24 +10,27 @@
         <ScrollView>
             <ListView x:Name="LVCategories"
                       Margin="20"
-                      ItemTapped="LVCategories_ItemTapped">
+                      ItemTapped="LVCategories_ItemTapped"
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame CornerRadius="20"
                                    Margin="20"
-                                   BorderColor="#512BD4"
-                                   HeightRequest="200">
+                                   BorderColor="#512BD4">
                                 <Grid>
                                     <Label Text="{Binding Name}"
                                            FontSize="32"
                                            TextColor="#512BD4"
-                                           HorizontalOptions="StartAndExpand" />
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="CenterAndExpand" />
+
                                     <Button Text="Learn"
                                             TextColor="White"
                                             BackgroundColor="#512BD4"
                                             CornerRadius="10"
-                                            HorizontalOptions="EndAndExpand" />
+                                            HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="CenterAndExpand" />
                                 </Grid>
                             </Frame>
                         </ViewCell>

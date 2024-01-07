@@ -23,9 +23,11 @@
                                BorderColor="#512BD4">
                             <Grid>
                                 <Label Text="{Binding OriginalWord}" 
-                                       HorizontalOptions="Start"/>
-                                <Label Text="{Binding TranslateWord}" 
-                                       HorizontalOptions="End"/>
+                                       HorizontalOptions="Start"
+                                       TextColor="#512BD4"/>
+                                <Label Text="{Binding TranslatedWord}" 
+                                       HorizontalOptions="End"
+                                       TextColor="#512BD4"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
