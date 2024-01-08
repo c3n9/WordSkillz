@@ -11,7 +11,8 @@
             <ListView x:Name="LVCategories"
                       Margin="20"
                       ItemTapped="LVCategories_ItemTapped"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      ItemsSource="{Binding Categories}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

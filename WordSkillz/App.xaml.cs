@@ -7,7 +7,12 @@ namespace WordSkillz
         public App()
         {
             InitializeComponent();
-            
+
+            //File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"));
+
+            //File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"));
+
+
             DataManager.InitDataFile(DataManager.CategoryCachePath, DataManager.CategoryImportPath);
 
             DataManager.InitDataFile(DataManager.WordCachePath, DataManager.WordsImportPath);

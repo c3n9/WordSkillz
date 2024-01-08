@@ -15,7 +15,7 @@ public partial class AllWordsInCategoryPage : ContentPage
 
     private void Refresh()
     {
-        var words = DataManager.GetWords().ToList();
+        var words = DataManager.AllWords;
         CVWords.ItemsSource = words.Where(x => x.CategoryId == contextCategory.Id);
     }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.ApplicationModel;
+using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Tools;
 
@@ -6,15 +7,17 @@ namespace WordSkillz.Pages
 {
     public partial class MainPage : ContentPage
     {
+        public ObservableCollection<Category> Categories { get; set; }
         public MainPage()
         {
             InitializeComponent();
-            Refresh();
+            Categories = DataManager.AllCategories;
+            BindingContext = this;
         }
 
         private void Refresh()
         {
-            LVCategories.ItemsSource = DataManager.GetCategories();
+            
         }
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
@@ -24,6 +27,7 @@ namespace WordSkillz.Pages
             {
                 var category = new Category() { Id = DataManager.GetCategories().LastOrDefault().Id + 1, Name = nameCategory };
                 DataManager.SetCategory(category);
+                Categories.Add(category);
                 await Navigation.PushModalAsync(new AllWordsInCategoryPage(category));
             }
         }

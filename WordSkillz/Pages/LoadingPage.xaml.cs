@@ -16,30 +16,39 @@ public partial class LoadingPage : ContentPage
     {
         base.OnAppearing();
         List<Category> categories;
-        categories = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
-        while (categories == null)
-        {
-            if (File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")))
-            {
-                File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"));
-            }
-            DataManager.InitDataFile(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"), DataManager.CategoryImportPath);
-            await Task.Delay(200);
-            categories = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
-        }
         List<Word> words;
+        categories = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
         words = JsonConvert.DeserializeObject<List<Word>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")));
-        while (words == null)
+        if(categories != null && words != null)
         {
-            if (File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")))
-            {
-                File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"));
-            }
-            DataManager.InitDataFile(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")), DataManager.WordsImportPath);
-            await Task.Delay(200);
-            words = JsonConvert.DeserializeObject<List<Word>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")));
+            await Shell.Current.GoToAsync($"////{nameof(MainPage)}");
         }
-        await Task.Delay(1050);
-        await Shell.Current.GoToAsync($"////{nameof(MainPage)}");
+        else
+        {
+            while (categories == null)
+            {
+                if (File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")))
+                {
+                    File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"));
+                }
+                DataManager.InitDataFile(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"), DataManager.CategoryImportPath);
+                await Task.Delay(200);
+                categories = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
+            }
+            DataManager.GetCategories();
+            while (words == null)
+            {
+                if (File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")))
+                {
+                    File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"));
+                }
+                DataManager.InitDataFile(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")), DataManager.WordsImportPath);
+                await Task.Delay(200);
+                words = JsonConvert.DeserializeObject<List<Word>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")));
+            }
+            await Task.Delay(1050);
+            await Shell.Current.GoToAsync($"////{nameof(MainPage)}");
+        }
+
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,14 @@ namespace WordSkillz.Tools
         public static readonly string CategoryImportPath = "category.json";
         public static string WordCachePath { get => Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"); }
         public static string CategoryCachePath { get => Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"); }
-        private static List<Word> words;
-        private static List<Category> categories;
-        public static List<Word> AllWords
+        private static ObservableCollection<Word> words;
+        private static ObservableCollection<Category> categories;
+        public static ObservableCollection<Word> AllWords
         {
             get
             {
                 if (words == null)
-                    words = GetData<List<Word>>(WordCachePath);
+                    words = GetData<ObservableCollection<Word>>(WordCachePath);
                 return words;
             }
             private set
@@ -31,12 +32,12 @@ namespace WordSkillz.Tools
                 SetData(WordCachePath, words);
             }
         }
-        public static List<Category> AllCategories
+        public static ObservableCollection<Category> AllCategories
         {
             get
             {
                 if (categories == null)
-                    categories = GetData<List<Category>>(CategoryCachePath);
+                    categories = GetData<ObservableCollection<Category>>(CategoryCachePath);
                 return categories;
             }
             private set
@@ -45,16 +46,16 @@ namespace WordSkillz.Tools
                 SetData(CategoryCachePath, categories);
             }
         }
-        public static List<Category> GetCategories()
+        public static ObservableCollection<Category> GetCategories()
         {
-            var categories = GetData<List<Category>>(CategoryCachePath);
-            AllCategories = categories.ToList();
+            var categories = GetData<ObservableCollection<Category>>(CategoryCachePath);
+            AllCategories = categories;
             return categories;
         }
-        public static List<Word> GetWords()
+        public static ObservableCollection<Word> GetWords()
         {
-            var words = GetData<List<Word>>(WordCachePath);
-            AllWords = words.ToList();
+            var words = GetData<ObservableCollection<Word>>(WordCachePath);
+            AllWords = words;
             return words;
         }
         private static T GetData<T>(string fileName)
@@ -63,9 +64,9 @@ namespace WordSkillz.Tools
             return data;
         }
 
-        public static void SetWord(List<Word> words)
+        public static void SetWord(ObservableCollection<Word> words)
         {
-            AllWords = words.ToList();
+            AllWords = words;
             SetData(WordCachePath, words);
         }
 
@@ -74,9 +75,9 @@ namespace WordSkillz.Tools
             AllWords.Add(word);
             SetData(WordCachePath, AllWords);
         }
-        public static void SetCategory(List<Category> categories)
+        public static void SetCategory(ObservableCollection<Category> categories)
         {
-            AllCategories = categories.ToList();
+            AllCategories = categories;
             SetData(CategoryCachePath, categories);
         }
 
