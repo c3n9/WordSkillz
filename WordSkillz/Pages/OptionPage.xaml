@@ -3,12 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.OptionPage"
              Title="Option">
-    <VerticalStackLayout Margin="10">
-        <HorizontalStackLayout>
-            <Label Text="Switch dark theme" 
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <VerticalStackLayout>
+            <Label Text="Switch dark theme"
                    FontSize="20"
                    VerticalTextAlignment="Center"
-                   Margin="10,0"/>
+                   Margin="10,0" />
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Column="1">
             <Switch x:Name="SThemeDark"
                     Toggled="SThemeDark_Toggled">
                 <Switch.Resources>
@@ -20,6 +26,6 @@
                     </Style>
                 </Switch.Resources>
             </Switch>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

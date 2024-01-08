@@ -18,7 +18,7 @@ public partial class AddWordsPage : ContentPage
         {
             CornerRadius = 20,
             BorderColor = Color.FromArgb("#512BD4"),
-            Margin = new Thickness(10),
+            Margin = new Thickness(30),
             Content = new VerticalStackLayout
             {
                 Children =
@@ -28,7 +28,7 @@ public partial class AddWordsPage : ContentPage
                     new Button
                     {
                         Text = "Save",
-                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                        HorizontalOptions = LayoutOptions.End,
                         BackgroundColor = Color.FromArgb("#512BD4"),
                         TextColor= Color.FromArgb("#fff"),
                         WidthRequest = 200,
@@ -38,6 +38,15 @@ public partial class AddWordsPage : ContentPage
             }
         };
         VSLWords.Children.Add(frame);
+        var button = new Button
+        {
+            Text = "+",
+            HorizontalOptions = LayoutOptions.Center,
+            Margin = new Thickness(10),
+            CornerRadius = 20
+        };
+        button.Clicked += BAddWord_Clicked;
+        VSLWords.Children.Add(button);
     }
 
     private async void BBack_Clicked(object sender, EventArgs e)
@@ -47,6 +56,11 @@ public partial class AddWordsPage : ContentPage
 
     private void BAddWord_Clicked(object sender, EventArgs e)
     {
+        var buttonToRemove = VSLWords.Children.OfType<Button>().FirstOrDefault(b => b.Text == "+");
+        if (buttonToRemove != null)
+        {
+            VSLWords.Children.Remove(buttonToRemove);
+        }
         NewWord();
     }
 }

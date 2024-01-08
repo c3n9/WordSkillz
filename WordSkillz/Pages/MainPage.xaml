@@ -24,7 +24,6 @@
                                            TextColor="#512BD4"
                                            HorizontalOptions="StartAndExpand"
                                            VerticalOptions="CenterAndExpand" />
-
                                     <Button Text="Learn"
                                             TextColor="White"
                                             BackgroundColor="#512BD4"
