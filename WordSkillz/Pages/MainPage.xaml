@@ -25,10 +25,12 @@
                                            TextColor="#512BD4"
                                            HorizontalOptions="StartAndExpand"
                                            VerticalOptions="CenterAndExpand" />
-                                    <Button Text="Learn"
+                                    <Button Text="Remove"
+                                            x:Name="BRemove"
                                             TextColor="White"
                                             BackgroundColor="#512BD4"
                                             CornerRadius="10"
+                                            Clicked="BRemove_Clicked"
                                             HorizontalOptions="EndAndExpand"
                                             VerticalOptions="CenterAndExpand" />
                                 </Grid>

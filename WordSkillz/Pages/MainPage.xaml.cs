@@ -40,5 +40,12 @@ namespace WordSkillz.Pages
                 await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
         }
+
+        private void BRemove_Clicked(object sender, EventArgs e)
+        {
+            var category = (sender as Button).BindingContext as Category;
+            DataManager.RemoveCategory(category);
+            Categories.Remove(category);
+        }
     }
 }

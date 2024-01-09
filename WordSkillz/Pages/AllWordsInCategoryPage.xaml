@@ -8,30 +8,34 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <SearchBar Placeholder="Search word" />
-        <Button x:Name="BAddWords" 
+        <Button x:Name="BAddWords"
                 Text="Add"
                 Clicked="BAddWords_Clicked"
-                HorizontalOptions="End"/>
+                HorizontalOptions="End" />
         <ScrollView Grid.Row="1">
-            <CollectionView x:Name="CVWords"
-                            Margin="20">
-                <CollectionView.ItemTemplate>
+            <ListView x:Name="LVWords"
+                      Margin="20"
+                      HasUnevenRows="True"
+                      ItemsSource="{Binding Words}">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Frame CornerRadius="20"
-                               Margin="20"
-                               BorderColor="#512BD4">
-                            <Grid>
-                                <Label Text="{Binding OriginalWord}" 
-                                       HorizontalOptions="Start"
-                                       TextColor="#512BD4"/>
-                                <Label Text="{Binding TranslatedWord}" 
-                                       HorizontalOptions="End"
-                                       TextColor="#512BD4"/>
-                            </Grid>
-                        </Frame>
+                        <ViewCell>
+                            <Frame CornerRadius="20"
+                                   Margin="20"
+                                   BorderColor="#512BD4">
+                                <Grid>
+                                    <Label Text="{Binding OriginalWord}"
+                                           HorizontalOptions="Start"
+                                           TextColor="#512BD4" />
+                                    <Label Text="{Binding TranslatedWord}"
+                                           HorizontalOptions="End"
+                                           TextColor="#512BD4" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                </ListView.ItemTemplate>
+            </ListView>
         </ScrollView>
     </Grid>
 </ContentPage>

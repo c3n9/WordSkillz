@@ -69,7 +69,6 @@ namespace WordSkillz.Tools
             AllWords = words;
             SetData(WordCachePath, words);
         }
-
         public static void SetWord(Word word)
         {
             AllWords.Add(word);
@@ -80,20 +79,21 @@ namespace WordSkillz.Tools
             AllCategories = categories;
             SetData(CategoryCachePath, categories);
         }
-
         public static void SetCategory(Category category)
         {
             AllCategories.Add(category);
             SetData(CategoryCachePath, AllCategories);
         }
-
+        public static void RemoveCategory(Category category)
+        {
+            AllCategories.Remove(category);
+            SetData(CategoryCachePath, AllCategories);
+        }
         private static void SetData<T>(string fileName, T data) where T : IEnumerable
         {
             var jsonData = JsonConvert.SerializeObject(data);
             File.WriteAllText(fileName, jsonData);
-
         }
-
         public static async void InitDataFile(string outputFileName, string sourceFileName)
         {
             if (!File.Exists(outputFileName))

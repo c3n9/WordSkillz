@@ -4,12 +4,14 @@ namespace WordSkillz.Pages;
 
 public partial class AddWordsPage : ContentPage
 {
-    Category contextCategory; 
+    Category contextCategory;
+    Dictionary<string, string> words; 
     public AddWordsPage(Category category)
     {
         InitializeComponent();
         NewWord();
         contextCategory = category;
+        words = new Dictionary<string, string>();
     }
 
     private void NewWord()

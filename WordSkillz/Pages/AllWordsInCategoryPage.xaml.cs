@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Tools;
 
@@ -6,17 +7,17 @@ namespace WordSkillz.Pages;
 public partial class AllWordsInCategoryPage : ContentPage
 {
     Category contextCategory;
+    public ObservableCollection<Word> Words { get; set; }
 	public AllWordsInCategoryPage(Category category)
 	{
 		InitializeComponent();
-        contextCategory = category; 
-        Refresh();
-	}
+        contextCategory = category;
+        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+        BindingContext = this;
+    }
 
     private void Refresh()
     {
-        var words = DataManager.AllWords;
-        CVWords.ItemsSource = words.Where(x => x.CategoryId == contextCategory.Id);
     }
 
     private async void BAddWords_Clicked(object sender, EventArgs e)
