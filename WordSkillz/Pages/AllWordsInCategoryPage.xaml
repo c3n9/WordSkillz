@@ -26,10 +26,16 @@
                                 <Grid>
                                     <Label Text="{Binding OriginalWord}"
                                            HorizontalOptions="Start"
+                                           VerticalOptions="Center"
                                            TextColor="#512BD4" />
                                     <Label Text="{Binding TranslatedWord}"
-                                           HorizontalOptions="End"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
                                            TextColor="#512BD4" />
+                                    <Button Text="Delete"
+                                            HorizontalOptions="End"
+                                            VerticalOptions="Center"
+                                            Clicked="Button_Clicked" />
                                 </Grid>
                             </Frame>
                         </ViewCell>

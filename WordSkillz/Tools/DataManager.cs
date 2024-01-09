@@ -74,6 +74,11 @@ namespace WordSkillz.Tools
             AllWords.Add(word);
             SetData(WordCachePath, AllWords);
         }
+        public static void RemoveWord(Word word)
+        {
+            AllWords.Remove(word);
+            SetData(WordCachePath, AllWords);
+        }
         public static void SetCategory(ObservableCollection<Category> categories)
         {
             AllCategories = categories;

@@ -1,11 +1,13 @@
+using System.Collections.ObjectModel;
 using WordSkillz.Models;
+using WordSkillz.Tools;
 
 namespace WordSkillz.Pages;
 
 public partial class AddWordsPage : ContentPage
 {
     Category contextCategory;
-    Dictionary<string, string> words; 
+    Dictionary<string, string> words;
     public AddWordsPage(Category category)
     {
         InitializeComponent();
@@ -26,16 +28,7 @@ public partial class AddWordsPage : ContentPage
                 Children =
                 {
                     new Entry { WidthRequest = 200, Placeholder="Original", TextColor=Color.FromArgb("#512BD4")},
-                    new Entry { WidthRequest = 200, Placeholder="Translate", TextColor=Color.FromArgb("#512BD4")},
-                    new Button
-                    {
-                        Text = "Save",
-                        HorizontalOptions = LayoutOptions.End,
-                        BackgroundColor = Color.FromArgb("#512BD4"),
-                        TextColor= Color.FromArgb("#fff"),
-                        WidthRequest = 200,
-                        CornerRadius = 10
-                    }
+                    new Entry { WidthRequest = 200, Placeholder="Translate", TextColor=Color.FromArgb("#512BD4")}
                 }
             }
         };
@@ -51,11 +44,6 @@ public partial class AddWordsPage : ContentPage
         VSLWords.Children.Add(button);
     }
 
-    private async void BBack_Clicked(object sender, EventArgs e)
-    {
-        await Navigation.PopModalAsync();
-    }
-
     private void BAddWord_Clicked(object sender, EventArgs e)
     {
         var buttonToRemove = VSLWords.Children.OfType<Button>().FirstOrDefault(b => b.Text == "+");
@@ -64,5 +52,45 @@ public partial class AddWordsPage : ContentPage
             VSLWords.Children.Remove(buttonToRemove);
         }
         NewWord();
+    }
+
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+        Entry previousEntry = null;
+
+        foreach (var childInVSL in VSLWords.Children)
+        {
+            if (childInVSL is Frame frame)
+            {
+                foreach (var childInFrame in frame.Children)
+                {
+                    if (childInFrame is VerticalStackLayout VSLInFrame)
+                    {
+                        foreach (var childInVSLInFrame in VSLInFrame.Children)
+                        {
+                            if (childInVSLInFrame is Entry entry)
+                            {
+                                if (previousEntry != null)
+                                {
+                                    words[previousEntry.Text] = entry.Text;
+                                    previousEntry = null;
+                                }
+                                else
+                                {
+                                    previousEntry = entry;
+                                    words.Add(previousEntry.Text, null);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        foreach (var word in words)
+        {
+            var newWord = new Word() { Id = DataManager.AllWords.LastOrDefault().Id + 1, OriginalWord = word.Key, TranslatedWord = word.Value, CategoryId = contextCategory.Id };
+            GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
+            DataManager.SetWord(newWord);
+        }
     }
 }

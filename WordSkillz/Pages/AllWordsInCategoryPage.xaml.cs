@@ -1,10 +1,11 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using WordSkillz.Models;
 using WordSkillz.Tools;
 
 namespace WordSkillz.Pages;
 
-public partial class AllWordsInCategoryPage : ContentPage
+public partial class AllWordsInCategoryPage : ContentPage, INotifyPropertyChanged
 {
     Category contextCategory;
     public ObservableCollection<Word> Words { get; set; }
@@ -14,6 +15,7 @@ public partial class AllWordsInCategoryPage : ContentPage
         contextCategory = category;
         Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
         BindingContext = this;
+        GlobalSettings.allWordsInCategoryPage = this;
     }
 
     private void Refresh()
@@ -23,5 +25,12 @@ public partial class AllWordsInCategoryPage : ContentPage
     private async void BAddWords_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new AddWordsPage(contextCategory));
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        var word = (sender as Button).BindingContext as Word;
+        DataManager.RemoveWord(word);
+        Words.Remove(word);
     }
 }
