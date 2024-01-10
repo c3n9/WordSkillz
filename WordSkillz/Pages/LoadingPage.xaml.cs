@@ -42,7 +42,7 @@ public partial class LoadingPage : ContentPage
                 {
                     File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"));
                 }
-                DataManager.InitDataFile(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")), DataManager.WordsImportPath);
+                DataManager.InitDataFile(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"), DataManager.WordsImportPath);
                 await Task.Delay(200);
                 words = JsonConvert.DeserializeObject<List<Word>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")));
             }

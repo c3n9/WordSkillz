@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-07T13:27:07.822</Modified>
+      <Modified>2024-01-10T13:59:15.215</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-07T13:25:58.567</Modified>
+      <Modified>2024-01-10T13:49:48.777</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.runtimeconfig.json">
       <PackagePath>WordSkillz.runtimeconfig.json</PackagePath>
@@ -44,15 +44,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.dll">
       <PackagePath>WordSkillz.dll</PackagePath>
-      <Modified>2024-01-07T13:27:06.581</Modified>
+      <Modified>2024-01-10T13:59:12.872</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>WordSkillz.exe</PackagePath>
-      <Modified>2024-01-07T13:27:06.592</Modified>
+      <Modified>2024-01-10T13:59:12.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\source\repos\WordSkillz\WordSkillz\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\WordSkillz.deps.json">
       <PackagePath>WordSkillz.deps.json</PackagePath>
-      <Modified>2024-01-07T13:18:36.603</Modified>
+      <Modified>2024-01-10T13:49:48.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\quart\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.11\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
