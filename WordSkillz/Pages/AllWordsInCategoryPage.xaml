@@ -8,7 +8,10 @@
             <RowDefinition Height="auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <SearchBar Placeholder="Search word" />
+        <SearchBar Placeholder="Search word" 
+                   Keyboard="Text"
+                   x:Name="SBWords"
+                   TextChanged="SearchBar_TextChanged"/>
         <Button x:Name="BAddWords"
                 Text="Add"
                 Clicked="BAddWords_Clicked"
