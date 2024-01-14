@@ -11,7 +11,7 @@
         <SearchBar Placeholder="Search word" 
                    Keyboard="Text"
                    x:Name="SBWords"
-                   TextChanged="SearchBar_TextChanged"/>
+                   Text="{Binding SearchString, Mode=TwoWay}"/>
         <Button x:Name="BAddWords"
                 Text="Add"
                 Clicked="BAddWords_Clicked"
@@ -39,7 +39,8 @@
                                     <Button Text="Delete"
                                             HorizontalOptions="End"
                                             VerticalOptions="Center"
-                                            Clicked="Button_Clicked" />
+                                            Command="{Binding ButtonCommand}"
+                                            CommandParameter="{Binding }"/>
                                 </Grid>
                             </Frame>
                         </ViewCell>

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\WordSkillz\\WordSkillz\\WordSkillz.csproj": {}
+    "D:\\Scripts\\c3n9\\WordSkillz\\WordSkillz\\WordSkillz.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\WordSkillz\\WordSkillz\\WordSkillz.csproj": {
+    "D:\\Scripts\\c3n9\\WordSkillz\\WordSkillz\\WordSkillz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\WordSkillz\\WordSkillz\\WordSkillz.csproj",
+        "projectUniqueName": "D:\\Scripts\\c3n9\\WordSkillz\\WordSkillz\\WordSkillz.csproj",
         "projectName": "WordSkillz",
-        "projectPath": "D:\\Projects\\WordSkillz\\WordSkillz\\WordSkillz.csproj",
-        "packagesPath": "C:\\Users\\C3n9\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\WordSkillz\\WordSkillz\\obj\\",
+        "projectPath": "D:\\Scripts\\c3n9\\WordSkillz\\WordSkillz\\WordSkillz.csproj",
+        "packagesPath": "C:\\Users\\abdra\\.nuget\\packages\\",
+        "outputPath": "D:\\Scripts\\c3n9\\WordSkillz\\WordSkillz\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\C3n9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\abdra\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -87,7 +87,7 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.92, )",
+              "version": "[7.0.86, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -178,7 +178,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         },
         "net7.0-ios16.1": {
           "targetAlias": "net7.0-ios",
@@ -209,7 +209,7 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.92, )",
+              "version": "[7.0.86, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -245,7 +245,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         },
         "net7.0-maccatalyst16.1": {
           "targetAlias": "net7.0-maccatalyst",
@@ -276,7 +276,7 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.92, )",
+              "version": "[7.0.86, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {
@@ -313,7 +313,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         },
         "net7.0-windows10.0.19041": {
           "targetAlias": "net7.0-windows10.0.19041.0",
@@ -344,12 +344,18 @@
             },
             "Microsoft.Maui.Graphics": {
               "target": "Package",
-              "version": "[7.0.92, )",
+              "version": "[7.0.86, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": {
               "target": "Package",
-              "version": "[7.0.92, )",
+              "version": "[7.0.86, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Windows.SDK.BuildTools": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.22621.755, )",
               "autoReferenced": true
             },
             "Microsoft.WindowsAppSDK": {
@@ -376,19 +382,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[7.0.10, 7.0.10]"
+              "version": "[7.0.7, 7.0.7]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[7.0.10, 7.0.10]"
+              "version": "[7.0.7, 7.0.7]"
             },
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.29, 10.0.19041.29]"
+              "version": "[10.0.19041.28, 10.0.19041.28]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[7.0.10, 7.0.10]"
+              "version": "[7.0.7, 7.0.7]"
             }
           ],
           "frameworkReferences": {
@@ -408,7 +414,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
