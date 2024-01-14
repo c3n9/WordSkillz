@@ -1,1 +1,0 @@
-D:\Scripts\c3n9\WordSkillz\WordSkillz\WordSkillz.csproj;x64
