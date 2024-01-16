@@ -54,7 +54,7 @@ public partial class AddWordsPage : ContentPage
         NewWord();
     }
 
-    private void ContentPage_Disappearing(object sender, EventArgs e)
+    private void ToolbarItem_Clicked(object sender, EventArgs e)
     {
         Entry previousEntry = null;
 
@@ -86,11 +86,19 @@ public partial class AddWordsPage : ContentPage
                 }
             }
         }
+
         foreach (var word in words)
         {
-            var newWord = new Word() { Id = DataManager.AllWords.LastOrDefault().Id + 1, OriginalWord = word.Key, TranslatedWord = word.Value, CategoryId = contextCategory.Id };
-            GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
+            var newWord = new Word()
+            {
+                Id = DataManager.AllWords.Any() ? DataManager.AllWords.Last().Id + 1 : 1,
+                OriginalWord = word.Key,
+                TranslatedWord = word.Value,
+                CategoryId = contextCategory.Id
+            };
+
             DataManager.SetWord(newWord);
+            GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
         }
     }
 }

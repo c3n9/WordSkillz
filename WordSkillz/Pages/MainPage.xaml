@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.MainPage"
              Title="WordSkillz">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Clicked="BPlusCategory_Clicked" />
+    </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -41,14 +45,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollView>
-        <Button Text="+"
-                x:Name="BPlusCategory"
-                Clicked="BPlusCategory_Clicked"
-                CornerRadius="20"
-                FontSize="20"
-                HorizontalOptions="CenterAndExpand"
-                Margin="50"
-                Grid.Row="1"/>
 
     </Grid>
 

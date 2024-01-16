@@ -3,17 +3,19 @@ using System.ComponentModel;
 using System.Linq;
 using WordSkillz.Models;
 using WordSkillz.Tools;
-using WordSkillz.ViewModels;
 
 namespace WordSkillz.Pages;
 
 public partial class AllWordsInCategoryPage : ContentPage, INotifyPropertyChanged
 {
-    private AllWordsInCategoryPageViewModel dc => (BindingContext as AllWordsInCategoryPageViewModel);
-
-    public AllWordsInCategoryPage()
+    Category contextCategory;
+    public ObservableCollection<Word> Words { get; set; }
+    public AllWordsInCategoryPage(Category category)
     {
         InitializeComponent();
+        contextCategory = category;
+        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+        BindingContext = this;
         GlobalSettings.allWordsInCategoryPage = this;
     }
 
@@ -23,6 +25,13 @@ public partial class AllWordsInCategoryPage : ContentPage, INotifyPropertyChange
 
     private async void BAddWords_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new AddWordsPage(dc.ContextCategory));
+        await Navigation.PushAsync(new AddWordsPage(contextCategory));
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        var word = (sender as Button).BindingContext as Word;
+        DataManager.RemoveWord(word);
+        Words.Remove(word);
     }
 }

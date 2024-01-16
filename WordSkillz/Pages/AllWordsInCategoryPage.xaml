@@ -3,20 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AllWordsInCategoryPage"
              Title="WordSkillz">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New word"
+                     Clicked="BAddWords_Clicked" />
+    </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
             <RowDefinition />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <SearchBar Placeholder="Search word" 
-                   Keyboard="Text"
-                   x:Name="SBWords"
-                   Text="{Binding SearchString, Mode=TwoWay}"/>
-        <Button x:Name="BAddWords"
-                Text="Add"
-                Clicked="BAddWords_Clicked"
-                HorizontalOptions="End" />
-        <ScrollView Grid.Row="1">
+
+        <ScrollView Grid.Row="0">
             <ListView x:Name="LVWords"
                       Margin="20"
                       HasUnevenRows="True"
@@ -39,8 +36,7 @@
                                     <Button Text="Delete"
                                             HorizontalOptions="End"
                                             VerticalOptions="Center"
-                                            Command="{Binding ButtonCommand}"
-                                            CommandParameter="{Binding }"/>
+                                            Clicked="Button_Clicked" />
                                 </Grid>
                             </Frame>
                         </ViewCell>

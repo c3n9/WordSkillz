@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Tools;
-using WordSkillz.ViewModels;
 
 namespace WordSkillz.Pages
 {
@@ -18,7 +17,7 @@ namespace WordSkillz.Pages
 
         private void Refresh()
         {
-            
+
         }
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
@@ -29,7 +28,7 @@ namespace WordSkillz.Pages
                 var category = new Category() { Id = DataManager.GetCategories().LastOrDefault().Id + 1, Name = nameCategory };
                 DataManager.SetCategory(category);
                 Categories.Add(category);
-                await Navigation.PushModalAsync(new AllWordsInCategoryPage() { BindingContext = new AllWordsInCategoryPageViewModel(category) });
+                await Navigation.PushModalAsync(new AllWordsInCategoryPage(category));
             }
         }
 
@@ -38,7 +37,7 @@ namespace WordSkillz.Pages
             if (LVCategories.SelectedItem is Category category)
             {
                 LVCategories.SelectedItem = null;
-                await Navigation.PushAsync(new AllWordsInCategoryPage() { BindingContext = new AllWordsInCategoryPageViewModel(category) });
+                await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
         }
 
