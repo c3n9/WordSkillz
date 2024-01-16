@@ -48,9 +48,20 @@ namespace WordSkillz.Pages
             Categories.Remove(category);
         }
 
-        private void BLearn_Clicked(object sender, EventArgs e)
+        private async void BLearn_Clicked(object sender, EventArgs e)
         {
+            if (sender is Button button)
+            {
+                // Получаем BindingContext из родительского элемента кнопки
+                Category selectedCategory = button.BindingContext as Category;
 
+                if (selectedCategory != null)
+                {
+                    // Выполняйте необходимые действия с выбранной категорией
+                    LVCategories.SelectedItem = null;
+                    await Navigation.PushAsync(new WordCardsPage(selectedCategory));
+                }
+            }
         }
 
         private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)

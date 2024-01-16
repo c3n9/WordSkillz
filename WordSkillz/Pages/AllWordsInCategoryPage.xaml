@@ -24,26 +24,25 @@
                             <SwipeView SwipeEnded="OnSwipeEnded"
                                        SwipeChanging="OnSwipeChanging">
                                 <SwipeView.RightItems>
-                                    <SwipeView.RightItems>
-                                        <SwipeItems>
-                                            <SwipeItemView>
-                                                <SwipeItemView.Content>
-                                                    <Grid BackgroundColor="Transparent">
-                                                        <Grid.Background>
-                                                            <LinearGradientBrush StartPoint="0,0"
-                                                                                 EndPoint="1,0">
-                                                                <GradientStop Color="#FF0000"
-                                                                              Offset="0" />
-                                                                <GradientStop Color="#e60000"
-                                                                              Offset="1" />
-                                                            </LinearGradientBrush>
-                                                        </Grid.Background>
-                                                    </Grid>
-                                                </SwipeItemView.Content>
-                                            </SwipeItemView>
-                                        </SwipeItems>
-                                    </SwipeView.RightItems>
-                                    <Frame CornerRadius="20"
+                                    <SwipeItems>
+                                        <SwipeItemView>
+                                            <SwipeItemView.Content>
+                                                <Grid BackgroundColor="Transparent">
+                                                    <Grid.Background>
+                                                        <LinearGradientBrush StartPoint="0,0"
+                                                                             EndPoint="1,0">
+                                                            <GradientStop Color="#FF0000"
+                                                                          Offset="0" />
+                                                            <GradientStop Color="#e60000"
+                                                                          Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Grid.Background>
+                                                </Grid>
+                                            </SwipeItemView.Content>
+                                        </SwipeItemView>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <Frame CornerRadius="20"
                                        Margin="20"
                                        BorderColor="#512BD4">
                                     <Grid>

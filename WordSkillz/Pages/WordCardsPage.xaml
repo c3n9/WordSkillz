@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordSkillz.Pages.WordCardsPage"
+             Title="WordCardsPage">
+    <VerticalStackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center">
+        <ListView x:Name="LVWordСards"
+                  Margin="20"
+                  HasUnevenRows="True"
+                  ItemsSource="{Binding Words}"
+                  SeparatorVisibility="None"
+                  VerticalScrollBarVisibility="Never">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <SwipeView SwipeEnded="SwipeView_SwipeEnded"
+                                   SwipeChanging="SwipeView_SwipeChanging">
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItemView>
+                                        <SwipeItemView.Content>
+                                            <Grid BackgroundColor="Transparent">
+                                            </Grid>
+                                        </SwipeItemView.Content>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Frame x:Name="MainFrame"
+                                       CornerRadius="20"
+                                       Margin="20"
+                                       BorderColor="#512BD4">
+                                    <Grid>
+                                        <Label Text="{Binding OriginalWord}"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               TextColor="#512BD4"
+                                               FontSize="45"
+                                               Margin="0,60" />
+                                    </Grid>
+                                </Frame>
+                                <Frame CornerRadius="20"
+                                       Margin="20"
+                                       Grid.Row="1"
+                                       BorderColor="#512BD4">
+                                    <Grid>
+                                        <Label Text="{Binding TranslatedWord}"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               TextColor="#512BD4"
+                                               FontSize="45"
+                                               Margin="0,60" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </SwipeView>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </VerticalStackLayout>
+</ContentPage>
