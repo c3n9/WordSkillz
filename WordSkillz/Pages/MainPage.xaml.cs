@@ -28,7 +28,7 @@ namespace WordSkillz.Pages
                 var category = new Category() { Id = DataManager.GetCategories().LastOrDefault().Id + 1, Name = nameCategory };
                 DataManager.SetCategory(category);
                 Categories.Add(category);
-                await Navigation.PushModalAsync(new AllWordsInCategoryPage(category));
+                await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
         }
 
@@ -46,6 +46,30 @@ namespace WordSkillz.Pages
             var category = (sender as Button).BindingContext as Category;
             DataManager.RemoveCategory(category);
             Categories.Remove(category);
+        }
+
+        private void BLearn_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
+        {
+            if (e.IsOpen)
+            {
+                // Пользователь смахнул до конца, удаляем элемент
+                var item = (Category)((SwipeView)sender).BindingContext;
+                (LVCategories.ItemsSource as ObservableCollection<Category>).Remove(item);
+                DataManager.RemoveCategory(item);
+            }
+        }
+
+        private void SwipeView_SwipeChanging(object sender, SwipeChangingEventArgs e)
+        {
+            if (e.Offset > 0) // Пользователь смахивает вправо
+            {
+                e.Offset = 0; // Запретить открытие действий при смахивании вправо
+            }
         }
     }
 }

@@ -27,11 +27,21 @@ public partial class AllWordsInCategoryPage : ContentPage, INotifyPropertyChange
     {
         await Navigation.PushAsync(new AddWordsPage(contextCategory));
     }
-
-    private void Button_Clicked(object sender, EventArgs e)
+    private void OnSwipeEnded(object sender, SwipeEndedEventArgs e)
     {
-        var word = (sender as Button).BindingContext as Word;
-        DataManager.RemoveWord(word);
-        Words.Remove(word);
+        if (e.IsOpen)
+        {
+            // Пользователь смахнул до конца, удаляем элемент
+            var item = (Word)((SwipeView)sender).BindingContext;
+            (LVWords.ItemsSource as ObservableCollection<Word>).Remove(item);
+            DataManager.RemoveWord(item);
+        }
+    }
+    private void OnSwipeChanging(object sender, SwipeChangingEventArgs e)
+    {
+        if (e.Offset > 0) // Пользователь смахивает вправо
+        {
+            e.Offset = 0; // Запретить открытие действий при смахивании вправо
+        }
     }
 }

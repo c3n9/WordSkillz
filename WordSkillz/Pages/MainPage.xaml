@@ -5,7 +5,7 @@
              Title="WordSkillz">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+"
-                     Clicked="BPlusCategory_Clicked" />
+                     Clicked="BPlusCategory_Clicked"/>
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
@@ -21,25 +21,33 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame CornerRadius="20"
-                                   Margin="20"
-                                   BorderColor="#512BD4">
-                                <Grid>
-                                    <Label Text="{Binding Name}"
-                                           FontSize="32"
-                                           TextColor="#512BD4"
-                                           HorizontalOptions="StartAndExpand"
-                                           VerticalOptions="CenterAndExpand" />
-                                    <Button Text="Remove"
-                                            x:Name="BRemove"
-                                            TextColor="White"
-                                            BackgroundColor="#512BD4"
-                                            CornerRadius="10"
-                                            Clicked="BRemove_Clicked"
-                                            HorizontalOptions="EndAndExpand"
-                                            VerticalOptions="CenterAndExpand" />
-                                </Grid>
-                            </Frame>
+                            <SwipeView SwipeEnded="SwipeView_SwipeEnded"
+                                       SwipeChanging="SwipeView_SwipeChanging">
+                                <SwipeView.RightItems>
+                                    <SwipeItem Text="Delete"
+                                               BackgroundColor="Red" />
+                                </SwipeView.RightItems>
+                                <Frame CornerRadius="20"
+                                       Margin="20"
+                                       BorderColor="#512BD4">
+                                    <Grid>
+                                        <Label Text="{Binding Name}"
+                                               FontSize="32"
+                                               TextColor="#512BD4"
+                                               HorizontalOptions="StartAndExpand"
+                                               VerticalOptions="CenterAndExpand" />
+                                        <Button Text="Learn"
+                                                x:Name="BLearn"
+                                                TextColor="White"
+                                                BackgroundColor="#512BD4"
+                                                CornerRadius="10"
+                                                Clicked="BLearn_Clicked"
+                                                HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="CenterAndExpand" />
+                                    </Grid>
+                                </Frame>
+                            </SwipeView>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

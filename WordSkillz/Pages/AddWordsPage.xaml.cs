@@ -7,13 +7,14 @@ namespace WordSkillz.Pages;
 public partial class AddWordsPage : ContentPage
 {
     Category contextCategory;
-    Dictionary<string, string> words;
+    List<Tuple<string, string>> words; // Use a list to store original and translated word pairs
+
     public AddWordsPage(Category category)
     {
         InitializeComponent();
         NewWord();
         contextCategory = category;
-        words = new Dictionary<string, string>();
+        words = new List<Tuple<string, string>>();
     }
 
     private void NewWord()
@@ -26,24 +27,39 @@ public partial class AddWordsPage : ContentPage
             Content = new VerticalStackLayout
             {
                 Children =
-                {
-                    new Entry { WidthRequest = 200, Placeholder="Original", TextColor=Color.FromArgb("#512BD4")},
-                    new Entry { WidthRequest = 200, Placeholder="Translate", TextColor=Color.FromArgb("#512BD4")}
-                }
+            {
+                new Entry { WidthRequest = 200, Placeholder="Original", TextColor=Color.FromArgb("#512BD4"), ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
+                new Entry { WidthRequest = 200, Placeholder="Translate", TextColor=Color.FromArgb("#512BD4"), ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
+            }
             }
         };
         VSLWords.Children.Add(frame);
-        var button = new Button
-        {
-            Text = "+",
-            HorizontalOptions = LayoutOptions.Center,
-            Margin = new Thickness(10),
-            CornerRadius = 20
-        };
-        button.Clicked += BAddWord_Clicked;
-        VSLWords.Children.Add(button);
+        var originalEntry = ((VerticalStackLayout)frame.Content).Children.OfType<Entry>().FirstOrDefault();
+        originalEntry?.Focus();
     }
 
+    private void FocusTranslateEntry()
+    {
+        var currentFrameIndex = VSLWords.Children.IndexOf(VSLWords.Children.LastOrDefault());
+        var nextFrame = VSLWords.Children.ElementAtOrDefault(currentFrameIndex + 1) as Frame;
+
+        if (nextFrame != null)
+        {
+            var translateEntry = ((VerticalStackLayout)nextFrame.Content).Children.OfType<Entry>().FirstOrDefault();
+            translateEntry?.Focus();
+        }
+    }
+    private void FocusOriginalEntryOfNextWordPair()
+    {
+        var currentFrameIndex = VSLWords.Children.IndexOf(VSLWords.Children.LastOrDefault());
+        var nextFrame = VSLWords.Children.ElementAtOrDefault(currentFrameIndex + 1) as Frame;
+
+        if (nextFrame != null)
+        {
+            var originalEntry = ((VerticalStackLayout)nextFrame.Content).Children.OfType<Entry>().FirstOrDefault();
+            originalEntry?.Focus();
+        }
+    }
     private void BAddWord_Clicked(object sender, EventArgs e)
     {
         var buttonToRemove = VSLWords.Children.OfType<Button>().FirstOrDefault(b => b.Text == "+");
@@ -56,6 +72,7 @@ public partial class AddWordsPage : ContentPage
 
     private void ToolbarItem_Clicked(object sender, EventArgs e)
     {
+        words.Clear();
         Entry previousEntry = null;
 
         foreach (var childInVSL in VSLWords.Children)
@@ -72,13 +89,12 @@ public partial class AddWordsPage : ContentPage
                             {
                                 if (previousEntry != null)
                                 {
-                                    words[previousEntry.Text] = entry.Text;
+                                    words.Add(new Tuple<string, string>(previousEntry.Text, entry.Text));
                                     previousEntry = null;
                                 }
                                 else
                                 {
                                     previousEntry = entry;
-                                    words.Add(previousEntry.Text, null);
                                 }
                             }
                         }
@@ -87,18 +103,21 @@ public partial class AddWordsPage : ContentPage
             }
         }
 
-        foreach (var word in words)
+        foreach (var wordPair in words)
         {
             var newWord = new Word()
             {
-                Id = DataManager.AllWords.Any() ? DataManager.AllWords.Last().Id + 1 : 1,
-                OriginalWord = word.Key,
-                TranslatedWord = word.Value,
+                Id = DataManager.AllWords.Any() ? DataManager.AllWords.Max(w => w.Id) + 1 : 1,
+                OriginalWord = wordPair.Item1,
+                TranslatedWord = wordPair.Item2,
                 CategoryId = contextCategory.Id
             };
 
             DataManager.SetWord(newWord);
             GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
         }
+
+        VSLWords.Children.Clear();
+        NewWord();
     }
 }
