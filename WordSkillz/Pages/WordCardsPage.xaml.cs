@@ -19,15 +19,27 @@ public partial class WordCardsPage : ContentPage
 
         // ”ÒÚ‡Ì‡‚ÎË‚‡ÂÏ Ì‡˜‡Î¸Ì˚È ËÒÚÓ˜ÌËÍ ‰‡ÌÌ˚ı, ‚ÍÎ˛˜‡ˇ ÚÓÎ¸ÍÓ Ó‰ËÌ ˝ÎÂÏÂÌÚ
         LVWord—ards.ItemsSource = Words.Take(1);
+        Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+        {
+            SwipeToNextCard();
+            return true;
+        });
     }
     private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
     {
+        SwipeToNextCard();
+    }
+    private async void SwipeToNextCard()
+    {
+        await LVWord—ards.FadeTo(0, 250);
+
         currentIndex++;
         if (currentIndex >= Words.Count)
         {
             currentIndex = 0;
         }
         LVWord—ards.ItemsSource = Words.Skip(currentIndex).Take(1);
+        await LVWord—ards.FadeTo(1, 250);
     }
 
     private void SwipeView_SwipeChanging(object sender, SwipeChangingEventArgs e)
