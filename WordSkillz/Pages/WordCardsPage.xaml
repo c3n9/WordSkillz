@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.WordCardsPage"
-             Title="WordCardsPage"
+             Title="WordSkillz"
              Appearing="ContentPage_Appearing"
              Disappearing="ContentPage_Disappearing">
     <VerticalStackLayout VerticalOptions="Center"
@@ -23,6 +23,15 @@
                                     <SwipeItemView>
                                         <SwipeItemView.Content>
                                             <Grid BackgroundColor="Transparent">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="trash.png"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="End"
+                                                       Margin="10,0,10,0"
+                                                       HeightRequest="30"
+                                                       WidthRequest="30" />
                                             </Grid>
                                         </SwipeItemView.Content>
                                     </SwipeItemView>

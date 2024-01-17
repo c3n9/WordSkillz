@@ -1,5 +1,6 @@
 using Microsoft.Maui.Controls.Compatibility;
 using Plugin.TextToSpeech;
+using Plugin.TextToSpeech.Abstractions;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WordSkillz.Models;
@@ -19,7 +20,8 @@ public partial class WordCardsPage : ContentPage
         BindingContext = this;
         // Устанавливаем начальный источник данных, включая только один элемент
         LVWordСards.ItemsSource = Words.Take(1);
-        TextToSpeech();
+        if (Words.Count != 0)
+            TextToSpeech();
     }
     private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
     {
@@ -34,7 +36,7 @@ public partial class WordCardsPage : ContentPage
         {
             currentIndex = 0;
         }
-       
+
         LVWordСards.ItemsSource = Words.Skip(currentIndex).Take(1);
         await LVWordСards.FadeTo(1, 250);
         TextToSpeech();

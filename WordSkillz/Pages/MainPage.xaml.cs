@@ -41,13 +41,6 @@ namespace WordSkillz.Pages
             }
         }
 
-        private void BRemove_Clicked(object sender, EventArgs e)
-        {
-            var category = (sender as Button).BindingContext as Category;
-            DataManager.RemoveCategory(category);
-            Categories.Remove(category);
-        }
-
         private async void BLearn_Clicked(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -71,6 +64,7 @@ namespace WordSkillz.Pages
                 // Пользователь смахнул до конца, удаляем элемент
                 var item = (Category)((SwipeView)sender).BindingContext;
                 (LVCategories.ItemsSource as ObservableCollection<Category>).Remove(item);
+                DataManager.RemoveWords(DataManager.AllWords.Where(x => x.CategoryId == item.Id).ToList());
                 DataManager.RemoveCategory(item);
             }
         }

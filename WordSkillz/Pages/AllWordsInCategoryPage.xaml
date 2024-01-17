@@ -28,15 +28,17 @@
                                         <SwipeItemView>
                                             <SwipeItemView.Content>
                                                 <Grid BackgroundColor="Transparent">
-                                                    <Grid.Background>
-                                                        <LinearGradientBrush StartPoint="0,0"
-                                                                             EndPoint="1,0">
-                                                            <GradientStop Color="#FF0000"
-                                                                          Offset="0" />
-                                                            <GradientStop Color="#e60000"
-                                                                          Offset="1" />
-                                                        </LinearGradientBrush>
-                                                    </Grid.Background>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid BackgroundColor="Transparent" />
+                                                    <Image Source="trash-svgrepo-com.png"
+                                                           VerticalOptions="Center"
+                                                           HorizontalOptions="End"
+                                                           Margin="10,0,10,0"
+                                                           HeightRequest="30"
+                                                           WidthRequest="30" />
                                                 </Grid>
                                             </SwipeItemView.Content>
                                         </SwipeItemView>
