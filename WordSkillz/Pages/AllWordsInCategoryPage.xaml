@@ -29,11 +29,9 @@
                                             <SwipeItemView.Content>
                                                 <Grid BackgroundColor="Transparent">
                                                     <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="*" />
                                                         <ColumnDefinition Width="Auto" />
                                                     </Grid.ColumnDefinitions>
-                                                    <Grid BackgroundColor="Transparent" />
-                                                    <Image Source="trash-svgrepo-com.png"
+                                                    <Image Source="trash.png"
                                                            VerticalOptions="Center"
                                                            HorizontalOptions="End"
                                                            Margin="10,0,10,0"
