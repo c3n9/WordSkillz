@@ -11,8 +11,10 @@ namespace WordSkillz.Pages;
 public partial class WordCardsPage : ContentPage
 {
     private int currentIndex = 0;
-    public ObservableCollection<Word> Words { get; set; }
     private bool isTimerRunning = false;
+    public ObservableCollection<Word> Words { get; set; }
+    private CancellationTokenSource cancellationTokenSource;
+
     public WordCardsPage(Category category)
     {
         InitializeComponent();
@@ -20,9 +22,17 @@ public partial class WordCardsPage : ContentPage
         BindingContext = this;
         // Устанавливаем начальный источник данных, включая только один элемент
         LVWordСards.ItemsSource = Words.Take(1);
-        if (Words.Count != 0)
-            TextToSpeech();
+        Refresh();
     }
+    private async void Refresh()
+    {
+        if (cancellationTokenSource != null)
+            cancellationTokenSource.Cancel();
+        cancellationTokenSource = new CancellationTokenSource();
+        await TextToSpeech(cancellationTokenSource.Token);
+    }
+
+    [Obsolete]
     private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
     {
         SwipeToNextCard();
@@ -39,14 +49,23 @@ public partial class WordCardsPage : ContentPage
 
         LVWordСards.ItemsSource = Words.Skip(currentIndex).Take(1);
         await LVWordСards.FadeTo(1, 250);
-        TextToSpeech();
+        Refresh();
     }
-    private async void TextToSpeech()
+    private async Task TextToSpeech(CancellationToken cancellationToken)
     {
         var currentWord = Words[currentIndex];
-        // Воспроизведение текста в виде речи
-        await CrossTextToSpeech.Current.Speak(currentWord.OriginalWord);
-        await CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord);
+        try
+        {
+            // Воспроизведение текста в виде речи
+            var speakOriginal = CrossTextToSpeech.Current.Speak(currentWord.OriginalWord, null, null, 1.0f, null, cancellationToken);
+            var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
+            // Возврат задачи озвучивания
+            await Task.WhenAll(speakOriginal, speakTranslated);
+        }
+        catch (OperationCanceledException)
+        {
+            
+        }
     }
     [Obsolete]
     private void ContentPage_Appearing(object sender, EventArgs e)
