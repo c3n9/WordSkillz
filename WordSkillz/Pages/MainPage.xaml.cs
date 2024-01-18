@@ -57,15 +57,23 @@ namespace WordSkillz.Pages
             }
         }
 
-        private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
+        private async void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
         {
             if (e.IsOpen)
             {
-                // Пользователь смахнул до конца, удаляем элемент
-                var item = (Category)((SwipeView)sender).BindingContext;
-                (LVCategories.ItemsSource as ObservableCollection<Category>).Remove(item);
-                DataManager.RemoveWords(DataManager.AllWords.Where(x => x.CategoryId == item.Id).ToList());
-                DataManager.RemoveCategory(item);
+                var answer = await DisplayAlert("Warning", "Delete this category?", "Yes", "No");
+                if (answer)
+                {
+                    // Пользователь смахнул до конца, удаляем элемент
+                    var item = (Category)((SwipeView)sender).BindingContext;
+                    (LVCategories.ItemsSource as ObservableCollection<Category>).Remove(item);
+                    DataManager.RemoveWords(DataManager.AllWords.Where(x => x.CategoryId == item.Id).ToList());
+                    DataManager.RemoveCategory(item);
+                }
+                else
+                {
+                    ((SwipeView)sender).Close();
+                }
             }
         }
 
