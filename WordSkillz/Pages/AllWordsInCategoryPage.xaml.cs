@@ -14,13 +14,14 @@ public partial class AllWordsInCategoryPage : ContentPage, INotifyPropertyChange
     {
         InitializeComponent();
         contextCategory = category;
-        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
-        BindingContext = this;
-        GlobalSettings.allWordsInCategoryPage = this;
+        Refresh();
     }
 
     private void Refresh()
     {
+        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+        BindingContext = this;
+        GlobalSettings.allWordsInCategoryPage = this;
     }
 
     private async void BAddWords_Clicked(object sender, EventArgs e)

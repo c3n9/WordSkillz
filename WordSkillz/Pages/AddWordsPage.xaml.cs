@@ -105,16 +105,18 @@ public partial class AddWordsPage : ContentPage
 
         foreach (var wordPair in words)
         {
-            var newWord = new Word()
+            if (!string.IsNullOrWhiteSpace(wordPair.Item1) || !string.IsNullOrWhiteSpace(wordPair.Item2))
             {
-                Id = DataManager.AllWords.Any() ? DataManager.AllWords.Max(w => w.Id) + 1 : 1,
-                OriginalWord = wordPair.Item1,
-                TranslatedWord = wordPair.Item2,
-                CategoryId = contextCategory.Id
-            };
-
-            DataManager.SetWord(newWord);
-            GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
+                var newWord = new Word()
+                {
+                    Id = DataManager.AllWords.Any() ? DataManager.AllWords.Max(w => w.Id) + 1 : 1,
+                    OriginalWord = wordPair.Item1,
+                    TranslatedWord = wordPair.Item2,
+                    CategoryId = contextCategory.Id
+                };
+                DataManager.SetWord(newWord);
+                GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
+            }
         }
 
         VSLWords.Children.Clear();
