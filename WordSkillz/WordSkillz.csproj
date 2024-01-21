@@ -73,7 +73,7 @@
 	  <MauiXaml Update="Pages\OptionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\WordCardsPage.xaml">
+	  <MauiXaml Update="Pages\MiniGamePages\WordCardsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

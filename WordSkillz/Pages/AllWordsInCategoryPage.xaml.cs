@@ -6,7 +6,7 @@ using WordSkillz.Tools;
 
 namespace WordSkillz.Pages;
 
-public partial class AllWordsInCategoryPage : ContentPage, INotifyPropertyChanged
+public partial class AllWordsInCategoryPage : ContentPage
 {
     Category contextCategory;
     public ObservableCollection<Word> Words { get; set; }

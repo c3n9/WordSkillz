@@ -1,6 +1,7 @@
 ﻿using Microsoft.Maui.ApplicationModel;
 using System.Collections.ObjectModel;
 using WordSkillz.Models;
+using WordSkillz.Pages.MiniGamePages;
 using WordSkillz.Tools;
 
 namespace WordSkillz.Pages

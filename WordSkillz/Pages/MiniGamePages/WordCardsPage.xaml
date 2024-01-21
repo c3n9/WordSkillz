@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WordSkillz.Pages.WordCardsPage"
+             x:Class="WordSkillz.Pages.MiniGamePages.WordCardsPage"
              Title="WordSkillz"
              Appearing="ContentPage_Appearing"
              Disappearing="ContentPage_Disappearing">

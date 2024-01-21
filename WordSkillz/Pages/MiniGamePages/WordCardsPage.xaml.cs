@@ -6,7 +6,7 @@ using System.Windows.Input;
 using WordSkillz.Models;
 using WordSkillz.Tools;
 
-namespace WordSkillz.Pages;
+namespace WordSkillz.Pages.MiniGamePages;
 
 public partial class WordCardsPage : ContentPage
 {
@@ -45,6 +45,7 @@ public partial class WordCardsPage : ContentPage
         if (currentIndex >= Words.Count)
         {
             currentIndex = 0;
+            StopTimer();
         }
 
         LVWord—ards.ItemsSource = Words.Skip(currentIndex).Take(1);
