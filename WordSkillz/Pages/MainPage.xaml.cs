@@ -23,7 +23,7 @@ namespace WordSkillz.Pages
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
         {
-            var nameCategory = await DisplayPromptAsync("New category", "Enter name of category", "Ok", "Cancel", "Name", 50);
+            //var nameCategory = await DisplayPromptAsync("New category", "Enter name of category", "Ok", "Cancel", "Name", 50);
             if (!string.IsNullOrWhiteSpace(nameCategory))
             {
                 var category = new Category() { Id = DataManager.GetCategories().LastOrDefault().Id + 1, Name = nameCategory };
@@ -44,7 +44,6 @@ namespace WordSkillz.Pages
 
         private async void BLearn_Clicked(object sender, EventArgs e)
         {
-            LVCategories.ItemTapped -= LVCategories_ItemTapped;
             await DisplayActionSheet("MiniGames", null, null, "firstGame");
             if (sender is Button button)
             {
@@ -58,8 +57,6 @@ namespace WordSkillz.Pages
                     await Navigation.PushAsync(new WordCardsPage(selectedCategory));
                 }
             }
-            LVCategories.ItemTapped += LVCategories_ItemTapped;
-
         }
 
         private async void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
