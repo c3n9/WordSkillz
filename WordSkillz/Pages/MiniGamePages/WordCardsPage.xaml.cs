@@ -12,12 +12,14 @@ public partial class WordCardsPage : ContentPage
 {
     private int currentIndex = 0;
     private bool isTimerRunning = false;
+    private Category contextCategory;
     public ObservableCollection<Word> Words { get; set; }
     private CancellationTokenSource cancellationTokenSource;
 
     public WordCardsPage(Category category)
     {
         InitializeComponent();
+        contextCategory = category;
         Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == category.Id));
         BindingContext = this;
         // Устанавливаем начальный источник данных, включая только один элемент
@@ -33,25 +35,38 @@ public partial class WordCardsPage : ContentPage
     }
 
     [Obsolete]
-    private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
-    {
-        SwipeToNextCard();
-    }
-    private async void SwipeToNextCard()
+    private async void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
     {
         await LVWordСards.FadeTo(0, 250);
 
-        currentIndex++;
-        if (currentIndex >= Words.Count)
+        if (e.SwipeDirection == SwipeDirection.Left)
         {
-            currentIndex = 0;
-            StopTimer();
+            Words.RemoveAt(currentIndex);
+            if (currentIndex >= Words.Count)
+            {
+                // Если текущий индекс выходит за пределы обновленной коллекции, уменьшите его
+                currentIndex = Words.Count > 0 ? 0 : -1;
+                if (currentIndex == -1)
+                {
+                    // Все слова были свайпнуты вправо, отображаем сообщение
+                    await DisplayAlert("Поздравляем", "Вы просмотрели все слова!", "OK");
+                    // Сброс коллекции Words к исходному набору
+                    Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+                }
+            }
         }
-
+        else if (e.SwipeDirection == SwipeDirection.Right)
+        {
+            currentIndex++;
+            if (currentIndex >= Words.Count)
+            {
+                currentIndex = 0;
+            }
+        }
         LVWordСards.ItemsSource = Words.Skip(currentIndex).Take(1);
         await LVWordСards.FadeTo(1, 250);
-        Refresh();
     }
+
     private async Task TextToSpeech(CancellationToken cancellationToken)
     {
         var currentWord = Words[currentIndex];
@@ -67,35 +82,6 @@ public partial class WordCardsPage : ContentPage
         {
             
         }
-    }
-    [Obsolete]
-    private void ContentPage_Appearing(object sender, EventArgs e)
-    {
-        StartTimer();
-    }
-
-    private void ContentPage_Disappearing(object sender, EventArgs e)
-    {
-        StopTimer();
-    }
-
-    [Obsolete]
-    private void StartTimer()
-    {
-        isTimerRunning = true;
-        Device.StartTimer(TimeSpan.FromSeconds(5), () =>
-        {
-            if (isTimerRunning)
-            {
-                SwipeToNextCard();
-                return true;
-            }
-            return false; // Таймер остановлен
-        });
-    }
-    private void StopTimer()
-    {
-        isTimerRunning = false;
     }
     private void SwipeView_SwipeChanging(object sender, SwipeChangingEventArgs e)
     {

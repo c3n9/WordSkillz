@@ -2,9 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.MiniGamePages.WordCardsPage"
-             Title="WordSkillz"
-             Appearing="ContentPage_Appearing"
-             Disappearing="ContentPage_Disappearing">
+             Title="WordSkillz">
     <VerticalStackLayout VerticalOptions="Center"
                          HorizontalOptions="Center">
         <ListView x:Name="LVWordСards"
@@ -16,18 +14,40 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <SwipeView SwipeEnded="SwipeView_SwipeEnded"
-                                   SwipeChanging="SwipeView_SwipeChanging">
+                        <SwipeView SwipeEnded="SwipeView_SwipeEnded">
                             <SwipeView.RightItems>
                                 <SwipeItems>
                                     <SwipeItemView>
                                         <SwipeItemView.Content>
                                             <Grid BackgroundColor="Transparent">
+                                                <Image Source="checkmark.png"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="End"
+                                                       Margin="10,0,10,0"
+                                                       HeightRequest="50"
+                                                       WidthRequest="50" />
+
                                             </Grid>
                                         </SwipeItemView.Content>
                                     </SwipeItemView>
                                 </SwipeItems>
                             </SwipeView.RightItems>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItemView>
+                                        <SwipeItemView.Content>
+                                            <Grid BackgroundColor="Transparent">
+                                                <Image Source="crossmark.png"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="End"
+                                                       Margin="10,0,10,0"
+                                                       HeightRequest="50"
+                                                       WidthRequest="50" />
+                                            </Grid>
+                                        </SwipeItemView.Content>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition />

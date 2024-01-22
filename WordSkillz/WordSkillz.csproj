@@ -49,6 +49,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\checkmark.svg" />
+	  <None Remove="Resources\Images\crossmark.svg" />
 	  <None Remove="Resources\Images\trash.svg" />
 	  <None Remove="Resources\Raw\category.json" />
 	  <None Remove="Resources\Raw\word.json" />
