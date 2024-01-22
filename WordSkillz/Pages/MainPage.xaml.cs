@@ -44,6 +44,8 @@ namespace WordSkillz.Pages
 
         private async void BLearn_Clicked(object sender, EventArgs e)
         {
+            LVCategories.ItemTapped -= LVCategories_ItemTapped;
+            await DisplayActionSheet("MiniGames", null, null, "firstGame");
             if (sender is Button button)
             {
                 // Получаем BindingContext из родительского элемента кнопки
@@ -56,6 +58,8 @@ namespace WordSkillz.Pages
                     await Navigation.PushAsync(new WordCardsPage(selectedCategory));
                 }
             }
+            LVCategories.ItemTapped += LVCategories_ItemTapped;
+
         }
 
         private async void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)

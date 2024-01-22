@@ -1,6 +1,5 @@
 using Microsoft.Maui.Controls.Compatibility;
 using Plugin.TextToSpeech;
-using Plugin.TextToSpeech.Abstractions;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WordSkillz.Models;
@@ -65,6 +64,7 @@ public partial class WordCardsPage : ContentPage
         }
         LVWord—ards.ItemsSource = Words.Skip(currentIndex).Take(1);
         await LVWord—ards.FadeTo(1, 250);
+        Refresh();
     }
 
     private async Task TextToSpeech(CancellationToken cancellationToken)
@@ -83,8 +83,17 @@ public partial class WordCardsPage : ContentPage
             
         }
     }
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+        if (cancellationTokenSource != null)
+        {
+            cancellationTokenSource.Cancel();
+        }
+    }
     private void SwipeView_SwipeChanging(object sender, SwipeChangingEventArgs e)
     {
 
     }
+
+    
 }
