@@ -23,7 +23,7 @@ namespace WordSkillz.Pages
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
         {
-            //var nameCategory = await DisplayPromptAsync("New category", "Enter name of category", "Ok", "Cancel", "Name", 50);
+            var nameCategory = await DisplayPromptAsync("New category", "Enter name of category", "Ok", "Cancel", "Name", 50);
             if (!string.IsNullOrWhiteSpace(nameCategory))
             {
                 var category = new Category() { Id = DataManager.GetCategories().LastOrDefault().Id + 1, Name = nameCategory };

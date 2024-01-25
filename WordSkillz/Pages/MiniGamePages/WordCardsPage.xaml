@@ -77,6 +77,7 @@
                                                VerticalOptions="Center"
                                                TextColor="#512BD4"
                                                FontSize="45"
+                                               Opacity="0.1"
                                                Margin="0,60" />
                                     </Grid>
                                 </Frame>
