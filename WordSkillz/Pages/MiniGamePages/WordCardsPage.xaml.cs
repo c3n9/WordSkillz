@@ -36,35 +36,46 @@ public partial class WordCardsPage : ContentPage
     [Obsolete]
     private async void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
     {
-        await LVWordСards.FadeTo(0, 250);
-
-        if (e.SwipeDirection == SwipeDirection.Left)
+        try
         {
-            Words.RemoveAt(currentIndex);
-            if (currentIndex >= Words.Count)
+            await LVWordСards.FadeTo(0, 250);
+
+            if (e.SwipeDirection == SwipeDirection.Left)
             {
-                // Если текущий индекс выходит за пределы обновленной коллекции, уменьшите его
-                currentIndex = Words.Count > 0 ? 0 : -1;
-                if (currentIndex == -1)
+                Words.RemoveAt(currentIndex);
+                if (currentIndex >= Words.Count)
                 {
-                    // Все слова были свайпнуты вправо, отображаем сообщение
-                    await DisplayAlert("Поздравляем", "Вы просмотрели все слова!", "OK");
-                    // Сброс коллекции Words к исходному набору
-                    Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+                    // Если текущий индекс выходит за пределы обновленной коллекции, уменьшите его
+                    currentIndex = Words.Count > 0 ? 0 : -1;
+                    if (currentIndex == -1)
+                    {
+                        // Все слова были свайпнуты вправо, отображаем сообщение
+                        await DisplayAlert("Congratulate", "You've looked at all the words!", "OK");
+                        // Сброс коллекции Words к исходному набору
+                        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+                        // Обновите LVWordСards.ItemsSource
+                        LVWordСards.ItemsSource = Words;
+
+                        currentIndex = 0;
+                    }
                 }
             }
-        }
-        else if (e.SwipeDirection == SwipeDirection.Right)
-        {
-            currentIndex++;
-            if (currentIndex >= Words.Count)
+            else if (e.SwipeDirection == SwipeDirection.Right)
             {
-                currentIndex = 0;
+                currentIndex++;
+                if (currentIndex >= Words.Count)
+                {
+                    currentIndex = 0;
+                }
             }
+            LVWordСards.ItemsSource = Words.Skip(currentIndex).Take(1);
+            await LVWordСards.FadeTo(1, 250);
+            Refresh();
         }
-        LVWordСards.ItemsSource = Words.Skip(currentIndex).Take(1);
-        await LVWordСards.FadeTo(1, 250);
-        Refresh();
+        catch(Exception ex)
+        {
+
+        }
     }
 
     private async Task TextToSpeech(CancellationToken cancellationToken)
@@ -85,9 +96,16 @@ public partial class WordCardsPage : ContentPage
     }
     private void ContentPage_Disappearing(object sender, EventArgs e)
     {
-        if (cancellationTokenSource != null)
+        try
         {
-            cancellationTokenSource.Cancel();
+            if (cancellationTokenSource != null)
+            {
+                cancellationTokenSource.Cancel();
+            }
+        }
+        catch(Exception ex)
+        {
+
         }
     }
     private void SwipeView_SwipeChanging(object sender, SwipeChangingEventArgs e)

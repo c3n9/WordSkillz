@@ -44,17 +44,20 @@ namespace WordSkillz.Pages
 
         private async void BLearn_Clicked(object sender, EventArgs e)
         {
-            await DisplayActionSheet("MiniGames", null, null, "firstGame");
-            if (sender is Button button)
+            var miniGame = await DisplayActionSheet("MiniGames", null, null, "Viewing words");
+            if(miniGame == "Viewing words")
             {
-                // Получаем BindingContext из родительского элемента кнопки
-                Category selectedCategory = button.BindingContext as Category;
-
-                if (selectedCategory != null)
+                if (sender is Button button)
                 {
-                    // Выполняйте необходимые действия с выбранной категорией
-                    LVCategories.SelectedItem = null;
-                    await Navigation.PushAsync(new WordCardsPage(selectedCategory));
+                    // Получаем BindingContext из родительского элемента кнопки
+                    Category selectedCategory = button.BindingContext as Category;
+
+                    if (selectedCategory != null)
+                    {
+                        // Выполняйте необходимые действия с выбранной категорией
+                        LVCategories.SelectedItem = null;
+                        await Navigation.PushAsync(new WordCardsPage(selectedCategory));
+                    }
                 }
             }
         }
