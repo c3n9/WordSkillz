@@ -51,7 +51,6 @@ namespace WordSkillz.Pages
                 {
                     // Получаем BindingContext из родительского элемента кнопки
                     Category selectedCategory = button.BindingContext as Category;
-
                     if (selectedCategory != null)
                     {
                         // Выполняйте необходимые действия с выбранной категорией
