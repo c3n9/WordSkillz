@@ -1,5 +1,7 @@
 using Microsoft.Maui.Controls.Compatibility;
 using Plugin.TextToSpeech;
+using SkiaSharp;
+using SkiaSharp.Views.Maui;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WordSkillz.Models;
@@ -138,6 +140,38 @@ public partial class WordCardsPage : ContentPage
     {
 
     }
+    private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs e)
+        {
+            SKSurface surface = e.Surface;
+            SKCanvas canvas = surface.Canvas;
+
+            canvas.Clear();
+
+            using (SKPaint paint = new SKPaint())
+            {
+                // Устанавливаем цвет фона и текста
+                paint.Color = SKColors.Transparent;
+
+                // Рисуем прямоугольник в размере холста
+                canvas.DrawRect(new SKRect(0, 0, e.Info.Width, e.Info.Height), paint);
+
+                // Устанавливаем цвет текста
+                paint.Color = SKColors.White;
+
+                // Устанавливаем размер и стиль шрифта
+                paint.TextSize = 100;
+                paint.IsAntialias = true;
+
+                // Создаем фильтр размытия
+                var blurFilter = SKImageFilter.CreateBlur(15, 15);
+
+                // Применяем фильтр к тексту
+                paint.ImageFilter = blurFilter;
+
+                // Рисуем текст
+                canvas.DrawText("Blurred", 170, 270, paint);
+            }
+        }
 
     
 }

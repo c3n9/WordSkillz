@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace WordSkillz
 {
@@ -21,6 +22,7 @@ namespace WordSkillz
 #endif
 
             builder.UseMauiCommunityToolkit();
+            builder.UseSkiaSharp();
 
             return builder.Build();
         }

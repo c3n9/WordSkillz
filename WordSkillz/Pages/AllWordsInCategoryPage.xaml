@@ -43,7 +43,7 @@
                                 <Grid>
                                     <Label Text="{Binding OriginalWord}"
                                            HorizontalOptions="Start"
-                                           VerticalOptions="Center"/>
+                                           VerticalOptions="Center" />
                                     <Label Text="{Binding TranslatedWord}"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"/>
