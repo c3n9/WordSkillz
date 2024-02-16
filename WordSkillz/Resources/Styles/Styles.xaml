@@ -31,9 +31,9 @@
 
     <Style TargetType="Button">
         <Setter Property="TextColor"
-                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Primary}}" />
+                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
         <Setter Property="BackgroundColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="FontFamily"
                 Value="OpenSansRegular" />
         <Setter Property="FontSize"
@@ -175,13 +175,13 @@
 
     <Style TargetType="Frame">
         <Setter Property="HasShadow"
-                Value="False" />
+                Value="True" />
         <Setter Property="BorderColor"
                 Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="CornerRadius"
                 Value="8" />
         <Setter Property="Background"
-                Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" />
     </Style>
 
     <Style TargetType="ImageButton">
@@ -214,7 +214,7 @@
 
     <Style TargetType="Label">
         <Setter Property="TextColor"
-                Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
         <Setter Property="BackgroundColor"
                 Value="Transparent" />
         <Setter Property="FontFamily"
@@ -499,7 +499,7 @@
         <Setter Property="Padding"
                 Value="0" />
         <Setter Property="BackgroundColor"
-                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+                Value="{AppThemeBinding Light={StaticResource WhiteBackground}, Dark={StaticResource Black}}" />
     </Style>
 
     <Style TargetType="Shell"

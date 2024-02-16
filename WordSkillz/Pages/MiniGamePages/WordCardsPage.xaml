@@ -56,26 +56,22 @@
                                 </Grid.RowDefinitions>
                                 <Frame x:Name="MainFrame"
                                        CornerRadius="20"
-                                       Margin="20"
-                                       BorderColor="#512BD4">
+                                       Margin="20">
                                     <Grid>
                                         <Label Text="{Binding OriginalWord}"
                                                HorizontalOptions="Center"
                                                VerticalOptions="Center"
-                                               TextColor="#512BD4"
                                                FontSize="45"
                                                Margin="0,60" />
                                     </Grid>
                                 </Frame>
                                 <Frame CornerRadius="20"
                                        Margin="20"
-                                       Grid.Row="1"
-                                       BorderColor="#512BD4">
+                                       Grid.Row="1">
                                     <Grid>
                                         <Label Text="{Binding TranslatedWord}"
                                                HorizontalOptions="Center"
                                                VerticalOptions="Center"
-                                               TextColor="#512BD4"
                                                FontSize="45"
                                                Opacity="0.1"
                                                Margin="0,60" />

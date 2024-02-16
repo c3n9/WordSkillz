@@ -45,18 +45,15 @@
                                     </SwipeItems>
                                 </SwipeView.RightItems>
                                 <Frame CornerRadius="20"
-                                       Margin="20"
-                                       BorderColor="#512BD4">
+                                       Margin="20">
                                     <Grid>
                                         <Label Text="{Binding Name}"
                                                FontSize="32"
-                                               TextColor="#512BD4"
                                                HorizontalOptions="StartAndExpand"
                                                VerticalOptions="CenterAndExpand" />
                                         <Button Text="Learn"
                                                 x:Name="BLearn"
                                                 TextColor="White"
-                                                BackgroundColor="#512BD4"
                                                 CornerRadius="10"
                                                 WidthRequest="100"
                                                 Clicked="BLearn_Clicked"

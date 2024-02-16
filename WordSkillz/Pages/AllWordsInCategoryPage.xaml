@@ -38,17 +38,14 @@
                                 </SwipeItems>
                             </SwipeView.RightItems>
                             <Frame CornerRadius="20"
-                                   Margin="20"
-                                   BorderColor="#512BD4">
+                                   Margin="20">
                                 <Grid>
                                     <Label Text="{Binding OriginalWord}"
                                            HorizontalOptions="Start"
-                                           VerticalOptions="Center"
-                                           TextColor="#512BD4" />
+                                           VerticalOptions="Center"/>
                                     <Label Text="{Binding TranslatedWord}"
                                            HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           TextColor="#512BD4" />
+                                           VerticalOptions="Center"/>
                                 </Grid>
                             </Frame>
                         </SwipeView>
