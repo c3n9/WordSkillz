@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Pages.MiniGamePages;
 using WordSkillz.Tools;
+using static Android.Provider.UserDictionary;
 
 namespace WordSkillz.Pages
 {
@@ -45,14 +46,21 @@ namespace WordSkillz.Pages
         private async void BLearn_Clicked(object sender, EventArgs e)
         {
             var miniGame = await DisplayActionSheet("MiniGames", null, null, "Viewing words");
-            if(miniGame == "Viewing words")
+            if (miniGame == "Viewing words")
             {
                 if (sender is Button button)
                 {
                     // Получаем BindingContext из родительского элемента кнопки
                     Category selectedCategory = button.BindingContext as Category;
+
                     if (selectedCategory != null)
                     {
+                        var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == selectedCategory.Id));
+                        if (words.Count == 0)
+                        {
+                            await DisplayAlert("Error", "There are no words in this category", "Ok");
+                            return;
+                        }
                         // Выполняйте необходимые действия с выбранной категорией
                         LVCategories.SelectedItem = null;
                         await Navigation.PushAsync(new WordCardsPage(selectedCategory));

@@ -15,7 +15,8 @@
         <ListView x:Name="LVWords"
                   Margin="20"
                   HasUnevenRows="True"
-                  ItemsSource="{Binding Words}">
+                  ItemsSource="{Binding Words}"
+                  CachingStrategy="RecycleElementAndDataTemplate">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

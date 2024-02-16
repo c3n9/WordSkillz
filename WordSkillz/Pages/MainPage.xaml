@@ -51,11 +51,12 @@
                                                FontSize="32"
                                                HorizontalOptions="StartAndExpand"
                                                VerticalOptions="CenterAndExpand" />
-                                        <Button Text="Learn"
+                                        <Button Text="▶"
                                                 x:Name="BLearn"
                                                 TextColor="White"
-                                                CornerRadius="10"
-                                                WidthRequest="100"
+                                                CornerRadius="30"
+                                                WidthRequest="80"
+                                                FontSize="20"
                                                 Clicked="BLearn_Clicked"
                                                 HorizontalOptions="EndAndExpand"
                                                 VerticalOptions="CenterAndExpand" />

@@ -10,20 +10,27 @@ namespace WordSkillz.Pages.MiniGamePages;
 public partial class WordCardsPage : ContentPage
 {
     private int currentIndex = 0;
+    private int allCountWords;
+    private int currentWordCount;
     private bool isTimerRunning = false;
     private Category contextCategory;
     public ObservableCollection<Word> Words { get; set; }
     private CancellationTokenSource cancellationTokenSource;
+
 
     public WordCardsPage(Category category)
     {
         InitializeComponent();
         contextCategory = category;
         Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == category.Id));
+        allCountWords = Words.Count;
+        currentWordCount = 0;
         BindingContext = this;
         // Устанавливаем начальный источник данных, включая только один элемент
         LVWordСards.ItemsSource = Words.Take(1);
         Refresh();
+        // Обновление прогресса
+        UpdateProgress();
     }
     private async void Refresh()
     {
@@ -68,16 +75,35 @@ public partial class WordCardsPage : ContentPage
                     currentIndex = 0;
                 }
             }
+            currentWordCount = allCountWords - Words.Count;
             LVWordСards.ItemsSource = Words.Skip(currentIndex).Take(1);
             await LVWordСards.FadeTo(1, 250);
+            UpdateProgress();
             Refresh();
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
 
         }
     }
+    private async void UpdateProgress()
+    {
+        // Обновление прогресса
+        int wordsLeft = currentWordCount;
+        WordsLeftLabel.Text = wordsLeft.ToString();
+        TotalWordsLabel.Text = allCountWords.ToString();
+        double progress = (double)currentWordCount / allCountWords;
 
+        // Создание анимации для заполнения прогресс-бара
+        uint animationLength = 1000;
+        uint steps = 100;
+        double startProgress = ProgressBar.Progress;
+        double endProgress = progress;
+
+        await ProgressBar.ProgressTo(endProgress, animationLength, Easing.Linear);
+
+        // Здесь можно добавить дополнительные действия после завершения анимации, если необходимо
+    }
     private async Task TextToSpeech(CancellationToken cancellationToken)
     {
         var currentWord = Words[currentIndex];

@@ -4,10 +4,39 @@
              x:Class="WordSkillz.Pages.MiniGamePages.WordCardsPage"
              Title="WordSkillz"
              Disappearing="ContentPage_Disappearing">
-    <VerticalStackLayout VerticalOptions="Center"
+    <Grid VerticalOptions="Center"
+           HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <ProgressBar x:Name="ProgressBar"
+                         VerticalOptions="Start"
+                         Progress="0"
+                         Margin="20,10,20,10" />
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Start"
                          HorizontalOptions="Center">
+                <Label Text="Words: "
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Label x:Name="WordsLeftLabel"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Label Text=" / "
+                       FontSize="20"
+                       VerticalOptions="Center" />
+                <Label x:Name="TotalWordsLabel"
+                       FontSize="20"
+                       VerticalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+        
         <ListView x:Name="LVWordСards"
                   Margin="20"
+                  Grid.Row="1"
+                  VerticalOptions="Center"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Words}"
                   SeparatorVisibility="None"
@@ -73,7 +102,6 @@
                                                HorizontalOptions="Center"
                                                VerticalOptions="Center"
                                                FontSize="45"
-                                               Opacity="0.1"
                                                Margin="0,60" />
                                     </Grid>
                                 </Frame>
@@ -85,5 +113,5 @@
             </ListView.ItemTemplate>
         </ListView>
         
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>
