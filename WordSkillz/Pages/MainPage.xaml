@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.MainPage"
              Title="WordSkillz">
+    
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="?"
+                     Clicked="ToolbarItem_Clicked" />
         <ToolbarItem Text="+"
                      Clicked="BPlusCategory_Clicked"/>
     </ContentPage.ToolbarItems>
@@ -47,15 +50,23 @@
                                 <Frame CornerRadius="20"
                                        Margin="20">
                                     <Grid>
-                                        <Label Text="{Binding Name}"
-                                               FontSize="32"
-                                               HorizontalOptions="StartAndExpand"
-                                               VerticalOptions="CenterAndExpand" />
+                                        <VerticalStackLayout>
+                                            <Label Text="{Binding Name}"
+                                                   FontSize="32"
+                                                   HorizontalOptions="StartAndExpand"
+                                                   VerticalOptions="CenterAndExpand" />
+                                            <Label Text="{Binding WordCount, StringFormat='{0} words'}"
+                                                   FontSize="18"
+                                                   HorizontalOptions="StartAndExpand"
+                                                   VerticalOptions="CenterAndExpand" />
+                                        </VerticalStackLayout>
+                                        
                                         <Button Text="▶"
                                                 x:Name="BLearn"
                                                 TextColor="White"
                                                 CornerRadius="30"
-                                                WidthRequest="80"
+                                                WidthRequest="65"
+                                                HeightRequest="60"
                                                 FontSize="20"
                                                 Clicked="BLearn_Clicked"
                                                 HorizontalOptions="EndAndExpand"

@@ -1,9 +1,10 @@
-﻿using Microsoft.Maui.ApplicationModel;
+﻿using CommunityToolkit.Maui.Views;
+using Microsoft.Maui.ApplicationModel;
 using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Pages.MiniGamePages;
+using WordSkillz.Popup;
 using WordSkillz.Tools;
-using static Android.Provider.UserDictionary;
 
 namespace WordSkillz.Pages
 {
@@ -15,11 +16,13 @@ namespace WordSkillz.Pages
             InitializeComponent();
             Categories = DataManager.AllCategories;
             BindingContext = this;
+            Refresh();
         }
 
-        private void Refresh()
+        private async void Refresh()
         {
 
+            
         }
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
@@ -32,6 +35,7 @@ namespace WordSkillz.Pages
                 Categories.Add(category);
                 await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
+
         }
 
         private async void LVCategories_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -95,6 +99,18 @@ namespace WordSkillz.Pages
             {
                 e.Offset = 0; // Запретить открытие действий при смахивании вправо
             }
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            var tutorialPopup = new TutorialPopup();
+            // Создать экземпляр CommunityToolkit.Maui.Views.Popup и установить его содержимое
+            var popup = new CommunityToolkit.Maui.Views.Popup();
+            popup.Content = tutorialPopup;
+            popup.Color = Color.FromRgba(0, 0, 0, 0);
+
+            // Отобразить попап
+            App.Current.MainPage.ShowPopup(popup);
         }
     }
 }

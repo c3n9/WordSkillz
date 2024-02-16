@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 
 namespace WordSkillz
 {
@@ -16,8 +17,10 @@ namespace WordSkillz
                 });
 
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
+
+            builder.UseMauiCommunityToolkit();
 
             return builder.Build();
         }
