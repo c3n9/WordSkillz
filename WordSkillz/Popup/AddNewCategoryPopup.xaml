@@ -3,35 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Popup.AddNewCategoryPopup"
              Background="Transparent">
-    <ContentView.Resources>
-        <Style TargetType="Frame">
-            <Setter Property="CornerRadius"
-                    Value="20" />
-        </Style>
-    </ContentView.Resources>
-    <Frame CornerRadius="10"
+    <Frame CornerRadius="20"
            WidthRequest="350"
            HeightRequest="200"
-           BorderColor="Transparent">
+           BorderColor="#ebecf0">
         <VerticalStackLayout>
             <Label Text="new category"
                    FontAttributes="Bold"
-                   FontSize="20"/>
+                   FontSize="22"/>
             <Label Text="enter name of category"
-                   FontSize="16" />
+                   FontSize="18" />
             <Entry Placeholder="name"
                    x:Name="nameCategory"
-                   TextColor="{StaticResource Primary}"
-                   FontSize="16"/>
+                   FontSize="18"/>
             <HorizontalStackLayout HorizontalOptions="End"
                                    VerticalOptions="End">
                 <Button x:Name="BCancel"
                         Clicked="BCancel_Clicked"
                         Text="Cancel"
-                        Margin="10,0"/>
+                        Margin="10,0"
+                        TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
+                        Background="Transparent"
+                        FontSize="22"/>
                 <Button x:Name="BOk"
                         Clicked="BOk_Clicked"
-                        Text="ok" />
+                        Text="ok"
+                        TextColor="{StaticResource Secondary}"
+                        CornerRadius="20"
+                        WidthRequest="80"
+                        FontSize="22"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
         

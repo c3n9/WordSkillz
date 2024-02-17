@@ -31,7 +31,8 @@ namespace WordSkillz.Pages
             // Создать экземпляр CommunityToolkit.Maui.Views.Popup и установить его содержимое
             var popup = new CommunityToolkit.Maui.Views.Popup();
             popup.Content = addNewCategoryPopup;
-            popup.Color = Color.FromArgb("#ebecf0");
+            //popup.Color = Color.FromArgb("#ebecf0");
+            popup.Color = Color.FromRgba(0, 0, 0, 0); 
             // Отобразить попап
             popup.Closed += async (s, args) =>
             {
@@ -116,6 +117,11 @@ namespace WordSkillz.Pages
 
             // Отобразить попап
             App.Current.MainPage.ShowPopup(popup);
+        }
+
+        private void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            Refresh();
         }
     }
 }
