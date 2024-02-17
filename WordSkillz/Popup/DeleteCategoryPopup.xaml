@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WordSkillz.Popup.AddNewCategoryPopup"
-             Background="Transparent">
+             x:Class="WordSkillz.Popup.DeleteCategoryPopup">
     <Frame CornerRadius="20"
            WidthRequest="350"
-           HeightRequest="210"
+           HeightRequest="160"
            BorderColor="#ebecf0">
         <VerticalStackLayout>
-            <Label Text="new category"
+            <Label Text="warning"
                    FontAttributes="Bold"
-                   FontSize="22"/>
-            <Label Text="enter name of category"
-                   FontSize="18" />
-            <Entry Placeholder="name"
-                   x:Name="nameCategory"
+                   FontSize="22" />
+            <Label Text="delete this category?"
                    FontSize="18"
-                   MaxLength="10"
-                   Margin="0,10,0,5"/>
+                   Margin="0,10,0,5" />
             <HorizontalStackLayout HorizontalOptions="End"
                                    VerticalOptions="End">
-                <Button x:Name="BCancel"
-                        Clicked="BCancel_Clicked"
-                        Text="cancel"
+                <Button x:Name="BNo"
+                        Clicked="BNo_Clicked"
+                        Text="no"
                         Margin="15,0"
-                        Style="{StaticResource HyperlinkButton}"/>
-                <Button x:Name="BOk"
-                        Clicked="BOk_Clicked"
-                        Text="ok"
+                        Style="{StaticResource HyperlinkButton}" />
+                <Button x:Name="BYes"
+                        Clicked="BYes_Clicked"
+                        Text="yes"
                         FontAttributes="Bold"
                         TextColor="{StaticResource Secondary}"
                         CornerRadius="20"
                         WidthRequest="80"
                         HeightRequest="45"
-                        FontSize="22"/>
+                        FontSize="22" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
-        
+
     </Frame>
 </ContentView>

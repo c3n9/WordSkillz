@@ -7,7 +7,7 @@ namespace WordSkillz.Pages;
 public partial class AddWordsPage : ContentPage
 {
     Category contextCategory;
-    List<Tuple<string, string>> words; // Use a list to store original and translated word pairs
+    List<Tuple<string, string>> words;
 
     public AddWordsPage(Category category)
     {
@@ -22,15 +22,15 @@ public partial class AddWordsPage : ContentPage
         var frame = new Frame
         {
             CornerRadius = 20,
-            BorderColor = Color.FromArgb("#512BD4"),
+            //BorderColor = Color.FromArgb("#512BD4"),
             Margin = new Thickness(30),
             Content = new VerticalStackLayout
             {
                 Children =
-            {
-                new Entry { WidthRequest = 200, Placeholder="Original", TextColor=Color.FromArgb("#512BD4"), ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
-                new Entry { WidthRequest = 200, Placeholder="Translate", TextColor=Color.FromArgb("#512BD4"), ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
-            }
+                {
+                    new Entry { WidthRequest = 200, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
+                    new Entry { WidthRequest = 200, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
+                }
             }
         };
         VSLWords.Children.Add(frame);

@@ -86,6 +86,9 @@
 		<MauiXaml Update="Popup\AddNewCategoryPopup.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Popup\DeleteCategoryPopup.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Popup\TutorialPopup.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

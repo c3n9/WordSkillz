@@ -16,23 +16,23 @@ namespace WordSkillz.Pages
             InitializeComponent();
             Categories = DataManager.AllCategories;
             BindingContext = this;
-
+            // Подписываемся на сообщение о закрытии страницы
             Refresh();
         }
 
-        private async void Refresh()
+        private void Refresh()
         {
             LVCategories.ItemsSource = DataManager.AllCategories;
         }
 
-        private async void BPlusCategory_Clicked(object sender, EventArgs e)
+        private void BPlusCategory_Clicked(object sender, EventArgs e)
         {
             var addNewCategoryPopup = new AddNewCategoryPopup();
             // Создать экземпляр CommunityToolkit.Maui.Views.Popup и установить его содержимое
             var popup = new CommunityToolkit.Maui.Views.Popup();
             popup.Content = addNewCategoryPopup;
             //popup.Color = Color.FromArgb("#ebecf0");
-            popup.Color = Color.FromRgba(0, 0, 0, 0); 
+            popup.Color = Color.FromRgba(0, 0, 0, 0);
             // Отобразить попап
             popup.Closed += async (s, args) =>
             {
@@ -41,9 +41,9 @@ namespace WordSkillz.Pages
             };
 
             App.Current.MainPage.ShowPopup(popup);
-            App.Current.MainPage.ShowPopup(popup);
         }
 
+        [Obsolete]
         private async void LVCategories_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (LVCategories.SelectedItem is Category category)
@@ -83,19 +83,23 @@ namespace WordSkillz.Pages
         {
             if (e.IsOpen)
             {
-                var answer = await DisplayAlert("Warning", "Delete this category?", "Yes", "No");
-                if (answer)
+                var deleteCategoryPopup = new DeleteCategoryPopup();
+                // Создать экземпляр CommunityToolkit.Maui.Views.Popup и установить его содержимое
+                var popup = new CommunityToolkit.Maui.Views.Popup();
+                popup.Content = deleteCategoryPopup;
+                popup.Color = Color.FromRgba(0, 0, 0, 0);
+                var item = (Category)((SwipeView)sender).BindingContext;
+                deleteCategoryPopup.Category = item; 
+                // Отобразить попап
+                popup.Closed += async (s, args) =>
                 {
-                    // Пользователь смахнул до конца, удаляем элемент
-                    var item = (Category)((SwipeView)sender).BindingContext;
-                    (LVCategories.ItemsSource as ObservableCollection<Category>).Remove(item);
-                    DataManager.RemoveWords(DataManager.AllWords.Where(x => x.CategoryId == item.Id).ToList());
-                    DataManager.RemoveCategory(item);
-                }
-                else
-                {
-                    ((SwipeView)sender).Close();
-                }
+                    // Выполняем обновление данных после закрытия Popup
+                    Refresh();
+                };
+
+                App.Current.MainPage.ShowPopup(popup);
+                ((SwipeView)sender).Close();
+
             }
         }
 
