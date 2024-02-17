@@ -119,7 +119,7 @@ public partial class WordCardsPage : ContentPage
         }
         catch (OperationCanceledException)
         {
-            
+
         }
     }
     private void ContentPage_Disappearing(object sender, EventArgs e)
@@ -131,7 +131,7 @@ public partial class WordCardsPage : ContentPage
                 cancellationTokenSource.Cancel();
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
 
         }
@@ -141,37 +141,49 @@ public partial class WordCardsPage : ContentPage
 
     }
     private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs e)
+    {
+        SKSurface surface = e.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+
+        using (SKPaint paint = new SKPaint())
         {
-            SKSurface surface = e.Surface;
-            SKCanvas canvas = surface.Canvas;
+            // Устанавливаем цвет фона и текста
+            paint.Color = SKColors.Transparent;
 
-            canvas.Clear();
+            // Рисуем прямоугольник в размере холста
+            canvas.DrawRect(new SKRect(0, 0, e.Info.Width, e.Info.Height), paint);
 
-            using (SKPaint paint = new SKPaint())
-            {
-                // Устанавливаем цвет фона и текста
-                paint.Color = SKColors.Transparent;
+            // Устанавливаем цвет текста
+            // Cтрока цвета в формате HEX
+            string hexColor = string.Empty;
+            if (Application.Current.UserAppTheme == AppTheme.Light)
+                hexColor = "#0875BA";
+            else
+                hexColor = "#203E5F";
 
-                // Рисуем прямоугольник в размере холста
-                canvas.DrawRect(new SKRect(0, 0, e.Info.Width, e.Info.Height), paint);
+            // Преобразование HEX строки в .NET Color
+            System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml(hexColor);
 
-                // Устанавливаем цвет текста
-                paint.Color = SKColors.White;
+            // Создание SKColor из .NET Color
+            SKColor skColor = new SKColor(color.R, color.G, color.B, color.A);
+            
+            paint.Color = skColor;
+            // Устанавливаем размер и стиль шрифта
+            paint.TextSize = 100;
+            paint.IsAntialias = true;
 
-                // Устанавливаем размер и стиль шрифта
-                paint.TextSize = 100;
-                paint.IsAntialias = true;
+            // Создаем фильтр размытия
+            var blurFilter = SKImageFilter.CreateBlur(15, 15);
 
-                // Создаем фильтр размытия
-                var blurFilter = SKImageFilter.CreateBlur(15, 15);
+            // Применяем фильтр к тексту
+            paint.ImageFilter = blurFilter;
 
-                // Применяем фильтр к тексту
-                paint.ImageFilter = blurFilter;
-
-                // Рисуем текст
-                canvas.DrawText("Blurred", 170, 270, paint);
-            }
+            // Рисуем текст
+            canvas.DrawText("Blurred", 170, 270, paint);
         }
+    }
 
-    
+
 }

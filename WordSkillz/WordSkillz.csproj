@@ -32,10 +32,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#b85c00" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#0875BA" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#b85c00" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#0875BA" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -49,9 +49,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
+		<None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
 		<None Remove="Resources\Images\checkmark.svg" />
 		<None Remove="Resources\Images\crossmark.svg" />
 		<None Remove="Resources\Images\trash.svg" />
+		<None Remove="Resources\Images\wattpad.svg" />
 		<None Remove="Resources\Raw\category.json" />
 		<None Remove="Resources\Raw\word.json" />
 	</ItemGroup>
@@ -79,6 +82,9 @@
 		</MauiXaml>
 		<MauiXaml Update="Pages\MiniGamePages\WordCardsPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Popup\AddNewCategoryPopup.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Popup\TutorialPopup.xaml">
 		  <Generator>MSBuild:Compile</Generator>

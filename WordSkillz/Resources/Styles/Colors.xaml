@@ -3,59 +3,32 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!-- Primary Colors -->
-    <Color x:Key="Primary">#b85c00</Color>
-    <Color x:Key="PrimaryNight">#854200</Color>
-    <!-- Light Brown -->
-    <Color x:Key="Secondary">#D8B088</Color>
-    <!-- Light Brown -->
-    <Color x:Key="Tertiary">#C89A68</Color>
-    <!-- Light Brown -->
-
-    <!-- Neutral Colors -->
-    <Color x:Key="White">#F5E6D4</Color>
-    <Color x:Key="WhiteBackground">#ebd0ae</Color>
-    <!-- Light Brownish White -->
-    <Color x:Key="Black">#4D3C32</Color>
-    <!-- Dark Brown -->
-    <Color x:Key="Gray100">#E3D3C0</Color>
-    <!-- Light Brownish Gray -->
+    <Color x:Key="Primary">#0875BA</Color>
+    <Color x:Key="Secondary">#E8E9EE</Color>
+    <Color x:Key="Tertiary">#F5F5F5</Color>
+    <Color x:Key="PrimaryNight">#203E5F</Color>
+    <Color x:Key="White">#ebecf0</Color>
+    <Color x:Key="WhiteBackground">#ebecf0</Color>
+    <Color x:Key="Black">#b1b5c4</Color>
+    <Color x:Key="Gray100">#5c9acc</Color>
     <Color x:Key="Gray200">#CCC0B0</Color>
-    <!-- Light Brownish Gray -->
     <Color x:Key="Gray300">#B3A894</Color>
-    <!-- Light Brownish Gray -->
     <Color x:Key="Gray400">#9B8A7A</Color>
-    <!-- Light Brownish Gray -->
     <Color x:Key="Gray500">#82725E</Color>
-    <!-- Medium Brown -->
     <Color x:Key="Gray600">#6A5C4A</Color>
-    <!-- Medium Brown -->
     <Color x:Key="Gray900">#1E1712</Color>
-    <!-- Dark Brownish Gray -->
     <Color x:Key="Gray950">#0D0A08</Color>
-    <!-- Dark Brownish Gray -->
 
-    <!-- Accent Colors -->
     <Color x:Key="Yellow100Accent">#FFD8A8</Color>
-    <!-- Light Brown -->
     <Color x:Key="Yellow200Accent">#FFC078</Color>
-    <!-- Light Brown -->
     <Color x:Key="Yellow300Accent">#FFA848</Color>
-    <!-- Light Brown -->
     <Color x:Key="Cyan100Accent">#A8E6E6</Color>
-    <!-- Light Cyan -->
     <Color x:Key="Cyan200Accent">#78D8D8</Color>
-    <!-- Light Cyan -->
     <Color x:Key="Cyan300Accent">#48CACA</Color>
-    <!-- Light Cyan -->
     <Color x:Key="Blue100Accent">#A8D6FF</Color>
-    <!-- Light Blue -->
     <Color x:Key="Blue200Accent">#78C6FF</Color>
-    <!-- Light Blue -->
     <Color x:Key="Blue300Accent">#48B6FF</Color>
-    <!-- Light Blue -->
 
-    <!-- Brushes -->
     <SolidColorBrush x:Key="PrimaryBrush"
                      Color="{StaticResource Primary}" />
     <SolidColorBrush x:Key="SecondaryBrush"

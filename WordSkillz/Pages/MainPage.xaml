@@ -19,8 +19,7 @@
             <ListView x:Name="LVCategories"
                       Margin="20"
                       ItemTapped="LVCategories_ItemTapped"
-                      HasUnevenRows="True"
-                      ItemsSource="{Binding Categories}">
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -50,9 +49,16 @@
                                 <Frame CornerRadius="20"
                                        Margin="20">
                                     <Grid>
-                                        <VerticalStackLayout>
+                                        
+                                        <!--<Image Source="wattpad.png" 
+                                              HorizontalOptions="StartAndExpand"
+                                               VerticalOptions="Center"
+                                               WidthRequest="70"/>-->
+                                        <VerticalStackLayout HorizontalOptions="StartAndExpand"
+                                                             VerticalOptions="Center">
                                             <Label Text="{Binding Name}"
-                                                   FontSize="32"
+                                                   FontSize="25"
+                                                   FontAttributes="Bold"
                                                    HorizontalOptions="StartAndExpand"
                                                    VerticalOptions="CenterAndExpand" />
                                             <Label Text="{Binding WordCount, StringFormat='{0} words'}"
@@ -60,12 +66,11 @@
                                                    HorizontalOptions="StartAndExpand"
                                                    VerticalOptions="CenterAndExpand" />
                                         </VerticalStackLayout>
-                                        
                                         <Button Text="▶"
                                                 x:Name="BLearn"
                                                 TextColor="White"
                                                 CornerRadius="30"
-                                                WidthRequest="65"
+                                                WidthRequest="60"
                                                 HeightRequest="60"
                                                 FontSize="20"
                                                 Clicked="BLearn_Clicked"

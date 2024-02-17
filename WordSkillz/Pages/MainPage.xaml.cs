@@ -16,26 +16,31 @@ namespace WordSkillz.Pages
             InitializeComponent();
             Categories = DataManager.AllCategories;
             BindingContext = this;
+
             Refresh();
         }
 
         private async void Refresh()
         {
-
-            
+            LVCategories.ItemsSource = DataManager.AllCategories;
         }
 
         private async void BPlusCategory_Clicked(object sender, EventArgs e)
         {
-            var nameCategory = await DisplayPromptAsync("New category", "Enter name of category", "Ok", "Cancel", "Name", 50);
-            if (!string.IsNullOrWhiteSpace(nameCategory))
+            var addNewCategoryPopup = new AddNewCategoryPopup();
+            // Создать экземпляр CommunityToolkit.Maui.Views.Popup и установить его содержимое
+            var popup = new CommunityToolkit.Maui.Views.Popup();
+            popup.Content = addNewCategoryPopup;
+            popup.Color = Color.FromArgb("#ebecf0");
+            // Отобразить попап
+            popup.Closed += async (s, args) =>
             {
-                var category = new Category() { Id = DataManager.GetCategories().LastOrDefault().Id + 1, Name = nameCategory };
-                DataManager.SetCategory(category);
-                Categories.Add(category);
-                await Navigation.PushAsync(new AllWordsInCategoryPage(category));
-            }
+                // Выполняем обновление данных после закрытия Popup
+                Refresh();
+            };
 
+            App.Current.MainPage.ShowPopup(popup);
+            App.Current.MainPage.ShowPopup(popup);
         }
 
         private async void LVCategories_ItemTapped(object sender, ItemTappedEventArgs e)

@@ -6,6 +6,7 @@
     <ContentView.Content>
         <Label Text="Hello, this application for learn words"
                HorizontalOptions="Center"
-               VerticalOptions="Center" />
+               VerticalOptions="Center"
+               TextColor="White"/>
     </ContentView.Content>
 </ContentView>

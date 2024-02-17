@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="colorPrimary">#E6C9A8</color>
-	<!-- Light Brown -->
-	<color name="colorPrimaryDark">#C89A68</color>
-	<!-- Light Brown -->
-	<color name="colorAccent">#C89A68</color>
-	<!-- Light Brown -->
+	<color name="colorPrimary">#0875BA</color>
+	<color name="colorPrimaryDark">#203E5F</color>
+	<color name="colorAccent">#E8E9EE</color>
+
 </resources>

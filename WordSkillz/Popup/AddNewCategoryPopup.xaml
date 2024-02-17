@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordSkillz.Popup.AddNewCategoryPopup"
+             Background="Transparent">
+    <ContentView.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="CornerRadius"
+                    Value="20" />
+        </Style>
+    </ContentView.Resources>
+    <Frame CornerRadius="10"
+           WidthRequest="350"
+           HeightRequest="200"
+           BorderColor="Transparent">
+        <VerticalStackLayout>
+            <Label Text="new category"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+            <Label Text="enter name of category"
+                   FontSize="16" />
+            <Entry Placeholder="name"
+                   x:Name="nameCategory"
+                   TextColor="{StaticResource Primary}"
+                   FontSize="16"/>
+            <HorizontalStackLayout HorizontalOptions="End"
+                                   VerticalOptions="End">
+                <Button x:Name="BCancel"
+                        Clicked="BCancel_Clicked"
+                        Text="Cancel"
+                        Margin="10,0"/>
+                <Button x:Name="BOk"
+                        Clicked="BOk_Clicked"
+                        Text="ok" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        
+    </Frame>
+</ContentView>

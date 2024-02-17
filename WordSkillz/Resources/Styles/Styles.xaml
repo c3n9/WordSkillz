@@ -177,12 +177,28 @@
         <Setter Property="HasShadow"
                 Value="True" />
         <Setter Property="BorderColor"
-                Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
+                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
         <Setter Property="CornerRadius"
                 Value="8" />
         <Setter Property="Background"
                 Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" />
+        <Setter Property="Shadow">
+            <Setter.Value>
+                <Shadow Opacity="0.4"
+                        Offset="3,3"
+                        Radius="4"
+                        Brush="{DynamicResource MyGradientShadow}" />
+            </Setter.Value>
+        </Setter>
     </Style>
+    <LinearGradientBrush x:Key="MyGradientShadow"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <GradientStop Color="#FFFFFF"
+                      Offset="0" />
+        <GradientStop Color="#000000"
+                      Offset="1" />
+    </LinearGradientBrush>
 
     <Style TargetType="ImageButton">
         <Setter Property="Opacity"
@@ -214,7 +230,7 @@
 
     <Style TargetType="Label">
         <Setter Property="TextColor"
-                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="BackgroundColor"
                 Value="Transparent" />
         <Setter Property="FontFamily"
