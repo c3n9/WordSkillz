@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordSkillz.Popup.MiniGamesPopup">
+    <Frame CornerRadius="20"
+           WidthRequest="350"
+           HeightRequest="280"
+           BorderColor="#ebecf0">
+        <VerticalStackLayout>
+            <Label Text="mini-games"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   FontSize="22" />
+            <Frame CornerRadius="20"
+                   Margin="5,10">
+                <Grid>
+                    <Label Text="view words"
+                           HorizontalOptions="Start"
+                           FontSize="16"
+                           VerticalOptions="Center"/>
+                    <Button Text="▶"
+                            x:Name="BPlayViewWords"
+                            TextColor="White"
+                            CornerRadius="25"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            FontSize="20"
+                            Clicked="BPlayViewWords_Clicked"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="CenterAndExpand" />
+                </Grid>
+            </Frame>
+            <Frame CornerRadius="20"
+                   Margin="5,10">
+                <Grid>
+                    <Label Text="match the words"
+                           HorizontalOptions="Start"
+                           FontSize="16"
+                           VerticalOptions="Center" />
+                    <Button Text="▶"
+                            x:Name="BPlayMatchWords"
+                            TextColor="White"
+                            CornerRadius="25"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            FontSize="20"
+                            Clicked="BPlayMatchWords_Clicked"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="CenterAndExpand" />
+                </Grid>
+            </Frame>
+        </VerticalStackLayout>
+    </Frame>
+</ContentView>

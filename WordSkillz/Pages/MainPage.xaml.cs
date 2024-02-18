@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Maui.Views;
-using Microsoft.Maui.ApplicationModel;
 using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Pages.MiniGamePages;
@@ -39,7 +38,6 @@ namespace WordSkillz.Pages
                 // Выполняем обновление данных после закрытия Popup
                 Refresh();
             };
-
             App.Current.MainPage.ShowPopup(popup);
         }
 
@@ -55,27 +53,30 @@ namespace WordSkillz.Pages
 
         private async void BLearn_Clicked(object sender, EventArgs e)
         {
-            var miniGame = await DisplayActionSheet("MiniGames", null, null, "Viewing words");
-            if (miniGame == "Viewing words")
+            if (sender is Button button)
             {
-                if (sender is Button button)
-                {
-                    // Получаем BindingContext из родительского элемента кнопки
-                    Category selectedCategory = button.BindingContext as Category;
+                Category selectedCategory = button.BindingContext as Category;
 
-                    if (selectedCategory != null)
+                var miniGamesPopup = new MiniGamesPopup();
+                var popupGames = new CommunityToolkit.Maui.Views.Popup();
+                popupGames.Content = miniGamesPopup;
+                popupGames.Color = Color.FromRgba(0, 0, 0, 0);
+                miniGamesPopup.Category = selectedCategory;
+                App.Current.MainPage.ShowPopup(popupGames);
+                popupGames.Closed += async (s, args) =>
+                {
+                    var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == selectedCategory.Id));
+                    if (words.Count == 0)
                     {
-                        var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == selectedCategory.Id));
-                        if (words.Count == 0)
-                        {
-                            await DisplayAlert("Error", "There are no words in this category", "Ok");
-                            return;
-                        }
-                        // Выполняйте необходимые действия с выбранной категорией
-                        LVCategories.SelectedItem = null;
-                        await Navigation.PushAsync(new WordCardsPage(selectedCategory));
+                        var errorPopup = new ErrorPopup();
+                        var popup = new CommunityToolkit.Maui.Views.Popup();
+                        popup.Content = errorPopup;
+                        popup.Color = Color.FromRgba(0, 0, 0, 0);
+                        App.Current.MainPage.ShowPopup(popup);
+                        return;
                     }
-                }
+                    LVCategories.SelectedItem = null;
+                };
             }
         }
 
@@ -89,17 +90,15 @@ namespace WordSkillz.Pages
                 popup.Content = deleteCategoryPopup;
                 popup.Color = Color.FromRgba(0, 0, 0, 0);
                 var item = (Category)((SwipeView)sender).BindingContext;
-                deleteCategoryPopup.Category = item; 
+                deleteCategoryPopup.Category = item;
                 // Отобразить попап
                 popup.Closed += async (s, args) =>
                 {
                     // Выполняем обновление данных после закрытия Popup
                     Refresh();
                 };
-
                 App.Current.MainPage.ShowPopup(popup);
                 ((SwipeView)sender).Close();
-
             }
         }
 

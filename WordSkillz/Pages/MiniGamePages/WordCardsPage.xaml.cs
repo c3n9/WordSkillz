@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Views;
 using Microsoft.Maui.Controls.Compatibility;
 using Plugin.TextToSpeech;
 using SkiaSharp;
@@ -5,6 +6,7 @@ using SkiaSharp.Views.Maui;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using WordSkillz.Models;
+using WordSkillz.Popup;
 using WordSkillz.Tools;
 
 namespace WordSkillz.Pages.MiniGamePages;
@@ -59,12 +61,29 @@ public partial class WordCardsPage : ContentPage
                     if (currentIndex == -1)
                     {
                         // Все слова были свайпнуты вправо, отображаем сообщение
-                        await DisplayAlert("Congratulate", "You've looked at all the words!", "OK");
+                        //await DisplayAlert("Congratulate", "You've looked at all the words!", "OK");
+                        var congratulatePopup = new CongratulatePopup();
+                        var popup = new CommunityToolkit.Maui.Views.Popup();
+                        popup.Content = congratulatePopup;
+                        popup.Color = Color.FromRgba(0, 0, 0, 0);
+                        // Создание и ожидание TaskCompletionSource
+                        var popupClosedTask = new TaskCompletionSource<object>();
+
+                        // Обработчик события Closed для завершения TaskCompletionSource
+                        popup.Closed += (sender, args) =>
+                        {
+                            popupClosedTask.SetResult(null);
+                        };
+
+                        App.Current.MainPage.ShowPopup(popup);
+
+                        // Ожидание завершения всплывающего окна
+                        await popupClosedTask.Task;
+
                         // Сброс коллекции Words к исходному набору
                         Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
                         // Обновите LVWordСards.ItemsSource
                         LVWordСards.ItemsSource = Words;
-
                         currentIndex = 0;
                     }
                 }
@@ -113,9 +132,10 @@ public partial class WordCardsPage : ContentPage
         {
             // Воспроизведение текста в виде речи
             var speakOriginal = CrossTextToSpeech.Current.Speak(currentWord.OriginalWord, null, null, 1.0f, null, cancellationToken);
-            var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
+            //var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
             // Возврат задачи озвучивания
-            await Task.WhenAll(speakOriginal, speakTranslated);
+            //await Task.WhenAll(speakOriginal, speakTranslated);
+            await Task.WhenAll(speakOriginal);
         }
         catch (OperationCanceledException)
         {

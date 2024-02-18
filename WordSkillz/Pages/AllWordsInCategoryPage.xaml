@@ -5,7 +5,7 @@
              Title="WordSkillz">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="New word"
-                     Clicked="BAddWords_Clicked" />
+                     Clicked="BAddWords_Clicked"/>
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
@@ -16,12 +16,14 @@
                   Margin="20"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Words}"
+                  BackgroundColor="Transparent"
                   CachingStrategy="RecycleElementAndDataTemplate">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <SwipeView SwipeEnded="OnSwipeEnded"
-                                   SwipeChanging="OnSwipeChanging">
+                                   SwipeChanging="OnSwipeChanging"
+                                   Background="Transparent">
                             <SwipeView.RightItems>
                                 <SwipeItems>
                                     <SwipeItemView>
