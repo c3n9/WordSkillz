@@ -4,7 +4,7 @@
              x:Class="WordSkillz.Popup.MiniGamesPopup">
     <Frame CornerRadius="20"
            WidthRequest="350"
-           HeightRequest="280"
+           HeightRequest="290"
            BorderColor="#ebecf0">
         <VerticalStackLayout>
             <Label Text="mini-games"
