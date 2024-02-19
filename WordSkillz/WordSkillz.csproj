@@ -53,7 +53,10 @@
 		<None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
 		<None Remove="Resources\Images\checkmark.svg" />
 		<None Remove="Resources\Images\crossmark.svg" />
+		<None Remove="Resources\Images\home.svg" />
+		<None Remove="Resources\Images\settings.svg" />
 		<None Remove="Resources\Images\trash.svg" />
+		<None Remove="Resources\Images\user.svg" />
 		<None Remove="Resources\Images\wattpad.svg" />
 		<None Remove="Resources\Raw\category.json" />
 		<None Remove="Resources\Raw\word.json" />
@@ -68,6 +71,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="Pages\AccountPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Pages\AddWordsPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

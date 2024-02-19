@@ -555,23 +555,23 @@
         <Setter Property="Shell.BackgroundColor"
                 Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="Shell.ForegroundColor"
-                Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource White}}" />
+                Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource PrimaryNight}}" />
         <Setter Property="Shell.TitleColor"
                 Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
         <Setter Property="Shell.DisabledColor"
-                Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
+                Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray950}}" />
         <Setter Property="Shell.UnselectedColor"
                 Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
         <Setter Property="Shell.NavBarHasShadow"
-                Value="False" />
+                Value="True" />
         <Setter Property="Shell.TabBarBackgroundColor"
                 Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
         <Setter Property="Shell.TabBarForegroundColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="Shell.TabBarTitleColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="Shell.TabBarUnselectedColor"
-                Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
+                Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray900}}" />
     </Style>
 
     <Style TargetType="NavigationPage">

@@ -102,8 +102,7 @@
                                     <Grid HorizontalOptions="Center"
                                           VerticalOptions="Center">
                                         <skia:SKCanvasView x:Name="canvasView"
-                                                           PaintSurface="OnCanvasViewPaintSurface"
-                                                           />
+                                                           PaintSurface="OnCanvasViewPaintSurface"/>
                                         <Label Text=""
                                                HorizontalOptions="Center"
                                                VerticalOptions="Center"
