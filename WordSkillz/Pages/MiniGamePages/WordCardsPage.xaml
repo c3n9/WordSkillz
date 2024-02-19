@@ -5,8 +5,10 @@
              xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              Title="WordSkillz"
              Disappearing="ContentPage_Disappearing">
+    
     <Grid VerticalOptions="Center"
-           HorizontalOptions="Center">
+           HorizontalOptions="Center"
+          Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition />
@@ -45,7 +47,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <SwipeView SwipeEnded="SwipeView_SwipeEnded">
+                        <SwipeView SwipeEnded="SwipeView_SwipeEnded"
+                                   IsClippedToBounds="False">
                             <SwipeView.RightItems>
                                 <SwipeItems>
                                     <SwipeItemView>
@@ -79,7 +82,7 @@
                                     </SwipeItemView>
                                 </SwipeItems>
                             </SwipeView.LeftItems>
-                            <Grid>
+                            <Grid BackgroundColor="Transparent">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                     <RowDefinition />

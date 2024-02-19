@@ -131,11 +131,15 @@ public partial class WordCardsPage : ContentPage
         try
         {
             // Воспроизведение текста в виде речи
-            var speakOriginal = CrossTextToSpeech.Current.Speak(currentWord.OriginalWord, null, null, 1.0f, null, cancellationToken);
-            //var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
-            // Возврат задачи озвучивания
-            //await Task.WhenAll(speakOriginal, speakTranslated);
-            await Task.WhenAll(speakOriginal);
+            if(Device.RuntimePlatform == Device.Android) 
+            {
+                var speakOriginal = CrossTextToSpeech.Current.Speak(currentWord.OriginalWord, null, null, 1.0f, null, cancellationToken);
+                //var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
+                // Возврат задачи озвучивания
+                //await Task.WhenAll(speakOriginal, speakTranslated);
+                await Task.WhenAll(speakOriginal);
+            }
+            
         }
         catch (OperationCanceledException)
         {
