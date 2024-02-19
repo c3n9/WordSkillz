@@ -21,7 +21,7 @@ public partial class MiniGamesPopup : ContentView
         }
         var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == Category.Id));
         if (words.Count != 0)
-            await App.Current.MainPage.Navigation.PushAsync(new WordCardsPage(Category));
+            await App.Current.MainPage.Navigation.PushAsync(new BluredWordsCardsPage(Category));
     }
 
     private void BPlayMatchWords_Clicked(object sender, EventArgs e)
