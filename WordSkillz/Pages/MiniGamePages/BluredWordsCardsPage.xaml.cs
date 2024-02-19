@@ -212,7 +212,8 @@ public partial class BluredWordsCardsPage : ContentPage
             paint.ImageFilter = blurFilter;
 
             // Рисуем текст
-            canvas.DrawText(Words[currentIndex].TranslatedWord, 170, 270, paint);
+            //canvas.DrawText(Words[currentIndex].TranslatedWord, 170, 270, paint);
+            canvas.DrawText(Words[currentIndex].OriginalWord, 170, 270, paint);
         }
     }
 }

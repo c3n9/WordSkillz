@@ -88,14 +88,6 @@ public partial class WordCardsPage : ContentPage
                     }
                 }
             }
-            else if (e.SwipeDirection == SwipeDirection.Right)
-            {
-                currentIndex++;
-                if (currentIndex >= Words.Count)
-                {
-                    currentIndex = 0;
-                }
-            }
             currentWordCount = allCountWords - Words.Count;
             LVWordСards.ItemsSource = Words.Skip(currentIndex).Take(1);
             await LVWordСards.FadeTo(1, 250);
@@ -117,7 +109,6 @@ public partial class WordCardsPage : ContentPage
 
         // Создание анимации для заполнения прогресс-бара
         uint animationLength = 1000;
-        uint steps = 100;
         double startProgress = ProgressBar.Progress;
         double endProgress = progress;
 
@@ -125,21 +116,22 @@ public partial class WordCardsPage : ContentPage
 
         // Здесь можно добавить дополнительные действия после завершения анимации, если необходимо
     }
+
+    [Obsolete]
     private async Task TextToSpeech(CancellationToken cancellationToken)
     {
         var currentWord = Words[currentIndex];
         try
         {
             // Воспроизведение текста в виде речи
-            if(Device.RuntimePlatform == Device.Android) 
+            if (Device.RuntimePlatform == Device.Android)
             {
                 var speakOriginal = CrossTextToSpeech.Current.Speak(currentWord.OriginalWord, null, null, 1.0f, null, cancellationToken);
-                //var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
+                var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
                 // Возврат задачи озвучивания
-                //await Task.WhenAll(speakOriginal, speakTranslated);
-                await Task.WhenAll(speakOriginal);
+                await Task.WhenAll(speakOriginal, speakTranslated);
             }
-            
+
         }
         catch (OperationCanceledException)
         {
@@ -163,50 +155,6 @@ public partial class WordCardsPage : ContentPage
     private void SwipeView_SwipeChanging(object sender, SwipeChangingEventArgs e)
     {
 
-    }
-    private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs e)
-    {
-        SKSurface surface = e.Surface;
-        SKCanvas canvas = surface.Canvas;
-
-        canvas.Clear();
-
-        using (SKPaint paint = new SKPaint())
-        {
-            // Устанавливаем цвет фона и текста
-            paint.Color = SKColors.Transparent;
-
-            // Рисуем прямоугольник в размере холста
-            canvas.DrawRect(new SKRect(0, 0, e.Info.Width, e.Info.Height), paint);
-
-            // Устанавливаем цвет текста
-            // Cтрока цвета в формате HEX
-            string hexColor = string.Empty;
-            if (Application.Current.UserAppTheme == AppTheme.Light)
-                hexColor = "#0875BA";
-            else
-                hexColor = "#203E5F";
-
-            // Преобразование HEX строки в .NET Color
-            System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml(hexColor);
-
-            // Создание SKColor из .NET Color
-            SKColor skColor = new SKColor(color.R, color.G, color.B, color.A);
-            
-            paint.Color = skColor;
-            // Устанавливаем размер и стиль шрифта
-            paint.TextSize = 100;
-            paint.IsAntialias = true;
-
-            // Создаем фильтр размытия
-            var blurFilter = SKImageFilter.CreateBlur(15, 15);
-
-            // Применяем фильтр к тексту
-            paint.ImageFilter = blurFilter;
-
-            // Рисуем текст
-            canvas.DrawText("Blurred", 170, 270, paint);
-        }
     }
 
 

@@ -55,8 +55,7 @@
                                     <SwipeItemView>
                                         <SwipeItemView.Content>
                                             <Grid BackgroundColor="Transparent">
-                                                <Image Source="checkmark.png"
-                                                       VerticalOptions="Center"
+                                                <Image VerticalOptions="Center"
                                                        HorizontalOptions="End"
                                                        Margin="10,0,10,0"
                                                        HeightRequest="50"
@@ -67,22 +66,6 @@
                                     </SwipeItemView>
                                 </SwipeItems>
                             </SwipeView.RightItems>
-                            <SwipeView.LeftItems>
-                                <SwipeItems>
-                                    <SwipeItemView>
-                                        <SwipeItemView.Content>
-                                            <Grid BackgroundColor="Transparent">
-                                                <Image Source="crossmark.png"
-                                                       VerticalOptions="Center"
-                                                       HorizontalOptions="End"
-                                                       Margin="10,0,10,0"
-                                                       HeightRequest="50"
-                                                       WidthRequest="50" />
-                                            </Grid>
-                                        </SwipeItemView.Content>
-                                    </SwipeItemView>
-                                </SwipeItems>
-                            </SwipeView.LeftItems>
                             <Grid BackgroundColor="Transparent">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
@@ -104,9 +87,7 @@
                                        Grid.Row="1">
                                     <Grid HorizontalOptions="Center"
                                           VerticalOptions="Center">
-                                        <skia:SKCanvasView x:Name="canvasView"
-                                                           PaintSurface="OnCanvasViewPaintSurface" />
-                                        <Label Text=""
+                                        <Label Text="{Binding TranslatedWord}"
                                                HorizontalOptions="Center"
                                                VerticalOptions="Center"
                                                FontSize="45"
