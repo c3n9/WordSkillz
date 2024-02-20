@@ -19,11 +19,16 @@ namespace WordSkillz.Pages
             Refresh();
         }
 
-        private void Refresh()
+        public void Refresh()
         {
+            LVCategories.ItemsSource = null;
             LVCategories.ItemsSource = DataManager.AllCategories;
         }
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Refresh();
+        }
         private void BPlusCategory_Clicked(object sender, EventArgs e)
         {
             var addNewCategoryPopup = new AddNewCategoryPopup();
@@ -47,7 +52,7 @@ namespace WordSkillz.Pages
             if (LVCategories.SelectedItem is Category category)
             {
                 LVCategories.SelectedItem = null;
-                await Navigation.PushAsync(new AllWordsInCategoryPage(category, this));
+                await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
         }
 
@@ -122,9 +127,9 @@ namespace WordSkillz.Pages
             App.Current.MainPage.ShowPopup(popup);
         }
 
-        private void ContentPage_Appearing(object sender, EventArgs e)
-        {
-            Refresh();
-        }
+        //private void ContentPage_Appearing(object sender, EventArgs e)
+        //{
+        //    Refresh();
+        //}
     }
 }
