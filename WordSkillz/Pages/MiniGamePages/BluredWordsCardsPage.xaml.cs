@@ -216,4 +216,9 @@ public partial class BluredWordsCardsPage : ContentPage
             canvas.DrawText(Words[currentIndex].OriginalWord, 170, 270, paint);
         }
     }
+
+    private void LVWord—ards_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        LVWord—ards.SelectedItem = null;
+    }
 }

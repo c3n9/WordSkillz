@@ -555,7 +555,7 @@
         <Setter Property="Shell.BackgroundColor"
                 Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="Shell.ForegroundColor"
-                Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource PrimaryNight}}" />
+                Value="{OnPlatform WinUI={StaticResource White}, Default={StaticResource White}}" />
         <Setter Property="Shell.TitleColor"
                 Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
         <Setter Property="Shell.DisabledColor"
@@ -570,6 +570,7 @@
                 Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="Shell.TabBarTitleColor"
                 Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+        <!--Цвет нижней панели-->
         <Setter Property="Shell.TabBarUnselectedColor"
                 Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray900}}" />
     </Style>

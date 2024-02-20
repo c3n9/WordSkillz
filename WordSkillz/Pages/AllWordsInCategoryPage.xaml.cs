@@ -10,10 +10,12 @@ public partial class AllWordsInCategoryPage : ContentPage
 {
     Category contextCategory;
     public ObservableCollection<Word> Words { get; set; }
-    public AllWordsInCategoryPage(Category category)
+    public MainPage MainPage;
+    public AllWordsInCategoryPage(Category category, MainPage mainPage)
     {
         InitializeComponent();
         contextCategory = category;
+        MainPage = mainPage;
         Refresh();
     }
 
@@ -44,5 +46,15 @@ public partial class AllWordsInCategoryPage : ContentPage
         {
             e.Offset = 0; // Запретить открытие действий при смахивании вправо
         }
+    }
+
+    private void LVWords_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        LVWords.SelectedItem = null;
+    }
+
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+        //MainPage.Refresh();
     }
 }

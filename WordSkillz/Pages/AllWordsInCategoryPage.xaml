@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AllWordsInCategoryPage"
-             Title="WordSkillz">
+             Title="WordSkillz"
+             Disappearing="ContentPage_Disappearing">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="New word"
                      Clicked="BAddWords_Clicked"/>
@@ -14,6 +15,7 @@
         </Grid.RowDefinitions>
         <ListView x:Name="LVWords"
                   Margin="20"
+                  ItemSelected="LVWords_ItemSelected"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Words}"
                   BackgroundColor="Transparent"

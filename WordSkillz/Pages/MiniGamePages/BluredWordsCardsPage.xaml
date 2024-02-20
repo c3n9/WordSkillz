@@ -39,6 +39,7 @@
                   Grid.Row="1"
                   VerticalOptions="Center"
                   HasUnevenRows="True"
+                  ItemSelected="LVWordСards_ItemSelected"
                   ItemsSource="{Binding Words}"
                   SeparatorVisibility="None"
                   VerticalScrollBarVisibility="Never">

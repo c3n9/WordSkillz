@@ -157,5 +157,8 @@ public partial class WordCardsPage : ContentPage
 
     }
 
-
+    private void LVWord—ards_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        LVWord—ards.SelectedItem = null;
+    }
 }

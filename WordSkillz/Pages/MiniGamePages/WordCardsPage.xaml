@@ -39,6 +39,7 @@
         <ListView x:Name="LVWordСards"
                   Margin="40"
                   Grid.Row="1"
+                  ItemSelected="LVWordСards_ItemSelected"
                   VerticalOptions="Center"
                   HasUnevenRows="True"
                   ItemsSource="{Binding Words}"

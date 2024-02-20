@@ -47,7 +47,7 @@ namespace WordSkillz.Pages
             if (LVCategories.SelectedItem is Category category)
             {
                 LVCategories.SelectedItem = null;
-                await Navigation.PushAsync(new AllWordsInCategoryPage(category));
+                await Navigation.PushAsync(new AllWordsInCategoryPage(category, this));
             }
         }
 
