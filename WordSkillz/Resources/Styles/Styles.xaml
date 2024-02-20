@@ -207,16 +207,16 @@
         <Setter Property="HasShadow"
                 Value="True" />
         <Setter Property="BorderColor"
-                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
+                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
         <Setter Property="CornerRadius"
                 Value="8" />
         <Setter Property="Background"
                 Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" />
         <Setter Property="Shadow">
             <Setter.Value>
-                <Shadow Opacity="0.4"
+                <Shadow Opacity="0.8"
                         Offset="3,3"
-                        Radius="4"
+                        Radius="40"
                         Brush="{DynamicResource MyGradientShadow}" />
             </Setter.Value>
         </Setter>
@@ -283,10 +283,12 @@
     </Style>
 
     <Style TargetType="ListView">
-        <Setter Property="SeparatorColor"
-                Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <!--<Setter Property="SeparatorColor"
+                Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />-->
         <Setter Property="RefreshControlColor"
                 Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray200}}" />
+        <Setter Property="SeparatorVisibility"
+                Value="None" />
 
     </Style>
     

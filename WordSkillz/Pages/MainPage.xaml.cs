@@ -15,11 +15,10 @@ namespace WordSkillz.Pages
             InitializeComponent();
             Categories = DataManager.AllCategories;
             BindingContext = this;
-            // Подписываемся на сообщение о закрытии страницы
             Refresh();
         }
 
-        public void Refresh()
+        private void Refresh()
         {
             LVCategories.ItemsSource = null;
             LVCategories.ItemsSource = DataManager.AllCategories;

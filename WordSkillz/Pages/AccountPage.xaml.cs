@@ -6,4 +6,8 @@ public partial class AccountPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    protected async override void OnAppearing()
+    {
+
+    }
 }

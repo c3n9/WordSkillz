@@ -55,6 +55,7 @@
 		<None Remove="Resources\Images\crossmark.svg" />
 		<None Remove="Resources\Images\home.svg" />
 		<None Remove="Resources\Images\settings.svg" />
+		<None Remove="Resources\Images\soon.gif" />
 		<None Remove="Resources\Images\trash.svg" />
 		<None Remove="Resources\Images\user.svg" />
 		<None Remove="Resources\Images\wattpad.svg" />

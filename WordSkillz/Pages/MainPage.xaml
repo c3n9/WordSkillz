@@ -49,11 +49,6 @@
                                 <Frame CornerRadius="20"
                                        Margin="20">
                                     <Grid>
-                                        
-                                        <!--<Image Source="wattpad.png" 
-                                              HorizontalOptions="StartAndExpand"
-                                               VerticalOptions="Center"
-                                               WidthRequest="70"/>-->
                                         <VerticalStackLayout HorizontalOptions="StartAndExpand"
                                                              VerticalOptions="Center">
                                             <Label Text="{Binding Name}"
@@ -67,15 +62,43 @@
                                                    VerticalOptions="CenterAndExpand" />
                                         </VerticalStackLayout>
                                         <Button Text="▶"
-                                                x:Name="BLearn"
-                                                TextColor="White"
-                                                CornerRadius="30"
+                                                TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
                                                 WidthRequest="60"
                                                 HeightRequest="60"
-                                                FontSize="20"
+                                                FontSize="40"
                                                 Clicked="BLearn_Clicked"
                                                 HorizontalOptions="EndAndExpand"
-                                                VerticalOptions="CenterAndExpand" />
+                                                VerticalOptions="CenterAndExpand"
+                                                BorderColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
+                                                BorderWidth="2"
+                                                BackgroundColor="Transparent"
+                                                CornerRadius="30">
+                                            <Button.Triggers>
+                                                <Trigger TargetType="Button"
+                                                         Property="IsEnabled"
+                                                         Value="False">
+                                                    <Setter Property="TextColor"
+                                                            Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                                                    <Setter Property="BorderColor"
+                                                            Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                                                </Trigger>
+                                                <Trigger TargetType="Button"
+                                                         Property="IsPressed"
+                                                         Value="True">
+                                                    <Setter Property="TextColor"
+                                                            Value="{AppThemeBinding Light=White, Dark=White}" />
+                                                    <!--<Setter Property="BackgroundColor"
+                                                            Value="{AppThemeBinding Light=Primary, Dark=PrimaryNight}" />-->
+                                                    <Setter Property="BackgroundColor">
+                                                        <Setter.Value>
+                                                            <OnPlatform x:TypeArguments="Color">
+                                                                <On Platform="Android, iOS">#0875BA</On>
+                                                            </OnPlatform>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                            </Button.Triggers>
+                                        </Button>
                                     </Grid>
                                 </Frame>
                             </SwipeView>
