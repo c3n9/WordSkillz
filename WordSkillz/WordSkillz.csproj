@@ -87,6 +87,9 @@
 		<MauiXaml Update="Pages\MiniGamePages\BluredWordsCardsPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Pages\MiniGamePages\MatchWordsCard.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Pages\OptionPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

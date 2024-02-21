@@ -21,8 +21,8 @@ public partial class BluredWordsCardsPage : ContentPage
     private CancellationTokenSource cancellationTokenSource;
     private Word currentWord;
     public BluredWordsCardsPage(Category category)
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         contextCategory = category;
         Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == category.Id));
         allCountWords = Words.Count;
@@ -211,11 +211,14 @@ public partial class BluredWordsCardsPage : ContentPage
             // Применяем фильтр к тексту
             paint.ImageFilter = blurFilter;
 
-            // Рисуем текст
-            //canvas.DrawText(Words[currentIndex].TranslatedWord, 170, 270, paint);
-            canvas.DrawText(Words[currentIndex].OriginalWord, 170, 270, paint);
+            // Определяем координаты, чтобы текст располагался в центре холста
+            float textWidth = paint.MeasureText(Words[currentIndex].TranslatedWord);
+            float x = (e.Info.Width - textWidth) / 2;
+            float y = (e.Info.Height + paint.TextSize) / 2;
+            canvas.DrawText(Words[currentIndex].TranslatedWord, x, y, paint);
         }
     }
+
 
     private void LVWordСards_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
