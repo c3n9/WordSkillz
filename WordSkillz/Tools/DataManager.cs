@@ -16,91 +16,40 @@ namespace WordSkillz.Tools
         public static readonly string CategoryImportPath = "category.json";
         public static string WordCachePath { get => Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"); }
         public static string CategoryCachePath { get => Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json"); }
-        private static ObservableCollection<Word> words;
-        private static ObservableCollection<Category> categories;
-        public static ObservableCollection<Word> AllWords
+        private static List<Word> words;
+        private static List<Category> categories;
+        public static List<Word> AllWords
         {
             get
             {
                 if (words == null)
-                    words = GetData<ObservableCollection<Word>>(WordCachePath);
+                    words = GetData<List<Word>>(WordCachePath);
                 return words;
             }
-            private set
+            set
             {
                 words = value;
                 SetData(WordCachePath, words);
             }
         }
-        public static ObservableCollection<Category> AllCategories
+        public static List<Category> AllCategories
         {
             get
             {
                 if (categories == null)
-                    categories = GetData<ObservableCollection<Category>>(CategoryCachePath);
+                    categories = GetData<List<Category>>(CategoryCachePath);
                 return categories;
             }
-            private set
+            set
             {
                 categories = value;
                 SetData(CategoryCachePath, categories);
             }
         }
-        public static ObservableCollection<Category> GetCategories()
-        {
-            var categories = GetData<ObservableCollection<Category>>(CategoryCachePath);
-            AllCategories = categories;
-            return categories;
-        }
-        public static ObservableCollection<Word> GetWords()
-        {
-            var words = GetData<ObservableCollection<Word>>(WordCachePath);
-            AllWords = words;
-            return words;
-        }
         private static T GetData<T>(string fileName)
         {
             var data = JsonConvert.DeserializeObject<T>(File.ReadAllText(fileName));
             return data;
-        }
-
-        public static void SetWord(ObservableCollection<Word> words)
-        {
-            AllWords = words;
-            SetData(WordCachePath, words);
-        }
-        public static void SetWord(Word word)
-        {
-            AllWords.Add(word);
-            SetData(WordCachePath, AllWords);
-        }
-        public static void RemoveWord(Word word)
-        {
-            AllWords.Remove(word);
-            SetData(WordCachePath, AllWords);
-        }
-        public static void RemoveWords(List<Word> words)
-        {
-            foreach(var word in words)
-            {
-                AllWords.Remove(word);
-            }
-            SetData(WordCachePath, AllWords);
-        }
-        public static void SetCategory(ObservableCollection<Category> categories)
-        {
-            AllCategories = categories;
-            SetData(CategoryCachePath, categories);
-        }
-        public static void SetCategory(Category category)
-        {
-            AllCategories.Add(category);
-            SetData(CategoryCachePath, AllCategories);
-        }
-        public static void RemoveCategory(Category category)
-        {
-            AllCategories.Remove(category);
-            SetData(CategoryCachePath, AllCategories);
         }
         private static void SetData<T>(string fileName, T data) where T : IEnumerable
         {

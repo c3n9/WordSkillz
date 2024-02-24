@@ -35,7 +35,6 @@ public partial class LoadingPage : ContentPage
                 await Task.Delay(200);
                 categories = JsonConvert.DeserializeObject<List<Category>>(File.ReadAllText(Path.Combine(FileSystem.Current.AppDataDirectory, "categoryCache.json")));
             }
-            DataManager.GetCategories();
             while (words == null)
             {
                 if (File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json")))

@@ -17,26 +17,48 @@ public partial class AddWordsPage : ContentPage
         words = new List<Tuple<string, string>>();
     }
 
-    private void NewWord()
+    private async void NewWord()
     {
         var frame = new Frame
         {
             CornerRadius = 20,
-            //BorderColor = Color.FromArgb("#512BD4"),
-            Margin = new Thickness(30),
+            Opacity = 0,
+            Scale = 0.8,
+            Margin = new Thickness(20),
             Content = new VerticalStackLayout
             {
                 Children =
-                {
-                    new Entry { WidthRequest = 200, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
-                    new Entry { WidthRequest = 200, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
-                }
+            {
+                new Entry { WidthRequest = 200, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
+                new Entry { WidthRequest = 200, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
+            }
             }
         };
+
+        // Применение стиля для Frame
+        frame.Style = (Style)this.Resources["MyFrameStyle"];
+
+        // Применение стиля для Entry
+        foreach (var child in ((VerticalStackLayout)frame.Content).Children)
+        {
+            if (child is Entry entry)
+            {
+                entry.Style = (Style)this.Resources["MyEntryStyle"];
+            }
+        }
+
         VSLWords.Children.Add(frame);
+
+        // Анимация появления
+        await frame.FadeTo(1, 250, Easing.Linear);
+        await frame.ScaleTo(1, 250, Easing.SpringOut);
+
         var originalEntry = ((VerticalStackLayout)frame.Content).Children.OfType<Entry>().FirstOrDefault();
         originalEntry?.Focus();
     }
+
+
+
 
     private void FocusTranslateEntry()
     {
@@ -114,7 +136,8 @@ public partial class AddWordsPage : ContentPage
                     TranslatedWord = wordPair.Item2,
                     CategoryId = contextCategory.Id
                 };
-                DataManager.SetWord(newWord);
+                DataManager.AllWords.Add(newWord);
+                DataManager.AllWords = DataManager.AllWords;
                 GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
             }
         }

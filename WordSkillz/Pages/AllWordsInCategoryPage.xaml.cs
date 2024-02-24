@@ -17,7 +17,7 @@ public partial class AllWordsInCategoryPage : ContentPage
         Refresh();
     }
 
-    private void Refresh()
+    private async void Refresh()
     {
         Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
         BindingContext = this;
@@ -35,7 +35,7 @@ public partial class AllWordsInCategoryPage : ContentPage
             // Пользователь смахнул до конца, удаляем элемент
             var item = (Word)((SwipeView)sender).BindingContext;
             (LVWords.ItemsSource as ObservableCollection<Word>).Remove(item);
-            DataManager.RemoveWord(item);
+            DataManager.AllWords.Remove(item);
         }
     }
     private void OnSwipeChanging(object sender, SwipeChangingEventArgs e)

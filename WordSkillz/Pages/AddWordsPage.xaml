@@ -3,6 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AddWordsPage"
              Title="WordSkillz">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame"
+                   x:Key="MyFrameStyle">
+                <Setter Property="HasShadow"
+                        Value="True" />
+                <Setter Property="BorderColor"
+                        Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+                <Setter Property="CornerRadius"
+                        Value="8" />
+                <Setter Property="Background"
+                        Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" />
+                <Setter Property="Shadow">
+                    <Setter.Value>
+                        <Shadow Opacity="0.8"
+                                Offset="3,3"
+                                Radius="40"
+                                Brush="{DynamicResource MyGradientShadow}" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="Entry"
+                   x:Key="MyEntryStyle">
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                <Setter Property="BackgroundColor"
+                        Value="Transparent" />
+                <Setter Property="FontFamily"
+                        Value="MontserratRegular" />
+                <Setter Property="FontSize"
+                        Value="14" />
+                <Setter Property="PlaceholderColor"
+                        Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                <Setter Property="MinimumHeightRequest"
+                        Value="44" />
+                <Setter Property="MinimumWidthRequest"
+                        Value="44" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor"
+                                            Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="✓"
                      Clicked="ToolbarItem_Clicked" />

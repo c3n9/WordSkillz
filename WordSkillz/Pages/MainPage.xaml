@@ -47,7 +47,7 @@
                                     </SwipeItems>
                                 </SwipeView.RightItems>
                                 <Frame CornerRadius="20"
-                                       Margin="20">
+                                       Margin="10">
                                     <Grid>
                                         <VerticalStackLayout HorizontalOptions="StartAndExpand"
                                                              VerticalOptions="Center">

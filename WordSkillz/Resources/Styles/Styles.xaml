@@ -202,7 +202,6 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
-
     <Style TargetType="Frame">
         <Setter Property="HasShadow"
                 Value="True" />
@@ -221,6 +220,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <LinearGradientBrush x:Key="MyGradientShadow"
                          StartPoint="0,0"
                          EndPoint="0,1">

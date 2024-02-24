@@ -21,7 +21,14 @@ public partial class DeleteCategoryPopup : ContentView
 
     private void BYes_Clicked(object sender, EventArgs e)
     {
-        DataManager.RemoveCategory(Category);
+        var words = DataManager.AllWords.Where(x => x.CategoryId == Category.Id).ToList();
+        foreach(var word in words)
+        {
+            DataManager.AllWords.Remove(word);
+            DataManager.AllWords = DataManager.AllWords;
+        }
+        DataManager.AllCategories.Remove(Category);
+        DataManager.AllCategories = DataManager.AllCategories;
         if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
         {
             parentPopup.Close();

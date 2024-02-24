@@ -23,8 +23,9 @@ public partial class AddNewCategoryPopup : ContentView
     {
         if (!string.IsNullOrWhiteSpace(nameCategory.Text))
         {
-            var category = new Category() { Id = DataManager.GetCategories().LastOrDefault().Id + 1, Name = nameCategory.Text };
-            DataManager.SetCategory(category);
+            var category = new Category() { Id = DataManager.AllCategories.LastOrDefault().Id + 1, Name = nameCategory.Text };
+            DataManager.AllCategories.Add(category);
+            DataManager.AllCategories = DataManager.AllCategories;
             if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
             {
                 parentPopup.Close();

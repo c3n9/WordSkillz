@@ -9,7 +9,7 @@ namespace WordSkillz.Pages
 {
     public partial class MainPage : ContentPage
     {
-        public ObservableCollection<Category> Categories { get; set; }
+        public List<Category> Categories { get; set; }
         public MainPage()
         {
             InitializeComponent();
@@ -125,10 +125,5 @@ namespace WordSkillz.Pages
             // Отобразить попап
             App.Current.MainPage.ShowPopup(popup);
         }
-
-        //private void ContentPage_Appearing(object sender, EventArgs e)
-        //{
-        //    Refresh();
-        //}
     }
 }
