@@ -3,7 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AccountPage"
              Title="AccountPage">
-    <Label Text="Soon ;)"
-           VerticalOptions="Center"
-           HorizontalOptions="Center"/>
+    <StackLayout Padding="20">
+        <Image Source="user.png"
+               HeightRequest="100"
+               WidthRequest="100"
+               HorizontalOptions="Center" />
+        <Label Text="John Doe"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <Label Text="john.doe@example.com"
+               FontSize="16"
+               HorizontalOptions="Center" />
+        <Button Text="Edit Profile"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,20,0,0" />
+    </StackLayout>
+
 </ContentPage>
