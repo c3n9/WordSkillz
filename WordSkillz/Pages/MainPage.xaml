@@ -15,7 +15,7 @@
             <RowDefinition />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <ScrollView>
+        <ScrollView Margin="0,40,0,0">
             <ListView x:Name="LVCategories"
                       Margin="20"
                       VerticalScrollBarVisibility="Never"
@@ -117,7 +117,8 @@
                 FontAttributes="Bold"
                 FontSize="20"
                 Padding="13"
-                VerticalOptions="End"/>
+                VerticalOptions="End"
+                IsVisible="false"/>
 
     </Grid>
 

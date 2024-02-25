@@ -1,19 +1,21 @@
 ﻿using Microsoft.Maui.Controls.Handlers.Compatibility;
 using Microsoft.Maui.Controls.Platform.Compatibility;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WordSkillz.Platforms.Android
+namespace WordSkillz;
+
+public class CustomShellHandler : ShellRenderer
 {
-    class CustomShellHandler : ShellRenderer
-    {
-        protected override IShellBottomNavViewAppearanceTracker CreateBottomNavViewAppearanceTracker(ShellItem shellItem)
-        {
-            return new CustomShellBottomNavViewAppearanceTracker(this, shellItem.CurrentItem);
-        }
+	protected override IShellBottomNavViewAppearanceTracker CreateBottomNavViewAppearanceTracker(ShellItem shellItem)
+	{
+		return new CustomShellBottomNavViewAppearanceTracker(this, shellItem.CurrentItem);
+	}
+	protected override IShellItemRenderer CreateShellItemRenderer(ShellItem shellItem)
+	{
+		return new CustomShellItemRenderer(this);
+	}
 
-    }
+	protected override IShellSectionRenderer CreateShellSectionRenderer(ShellSection shellSection)
+	{
+		return new CustomShellSectionRenderer(this);
+	}
 }

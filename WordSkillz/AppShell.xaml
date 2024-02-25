@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="WordSkillz.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:WordSkillz"
-    xmlns:pages="clr-namespace:WordSkillz.Pages"
-    FlyoutHeaderBehavior="CollapseOnScroll">
-
+<Shell x:Class="WordSkillz.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:WordSkillz"
+       xmlns:pages="clr-namespace:WordSkillz.Pages"
+       FlyoutHeaderBehavior="CollapseOnScroll">
 
     <ShellContent Title="Loading"
                   ContentTemplate="{DataTemplate pages:LoadingPage}"
                   Route="LoadingPage"
                   FlyoutItemIsVisible="False" />
-    <TabBar>
+    <local:CustomTabBar CenterViewText="фаыафыафыафафы"
+                        CenterViewVisible="True"
+                        CenterViewBackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}">
         <Tab Title="Option"
              Icon="settings.svg"
              Route="OptionPage">
@@ -28,9 +28,8 @@
              Route="AccountPage">
             <ShellContent ContentTemplate="{DataTemplate pages:AccountPage}" />
         </Tab>
-    </TabBar>
-    
-    
+    </local:CustomTabBar>
+
     <!--Бургер-->
     <!--<FlyoutItem Title="Main"
                 Route="MainPage">
@@ -40,5 +39,5 @@
                 Route="OptionPage">
         <ShellContent ContentTemplate="{DataTemplate pages:OptionPage}" />
     </FlyoutItem>-->
-    
+
 </Shell>
