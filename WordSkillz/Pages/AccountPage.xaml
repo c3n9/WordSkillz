@@ -8,11 +8,11 @@
                HeightRequest="100"
                WidthRequest="100"
                HorizontalOptions="Center" />
-        <Label Text="John Doe"
+        <Label Text="c3n9"
                FontSize="24"
                FontAttributes="Bold"
                HorizontalOptions="Center" />
-        <Label Text="john.doe@example.com"
+        <Label Text="c3n9@example.com"
                FontSize="16"
                HorizontalOptions="Center" />
         <Button Text="Edit Profile"
