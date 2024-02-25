@@ -36,6 +36,7 @@ public partial class AllWordsInCategoryPage : ContentPage
             var item = (Word)((SwipeView)sender).BindingContext;
             (LVWords.ItemsSource as ObservableCollection<Word>).Remove(item);
             DataManager.AllWords.Remove(item);
+            DataManager.AllWords = DataManager.AllWords;
         }
     }
     private void OnSwipeChanging(object sender, SwipeChangingEventArgs e)
