@@ -9,7 +9,7 @@ namespace WordSkillz.Pages;
 public partial class AllWordsInCategoryPage : ContentPage
 {
     Category contextCategory;
-    public ObservableCollection<Word> Words { get; set; }
+    public List<Word> Words { get; set; }
     public AllWordsInCategoryPage(Category category)
     {
         InitializeComponent();
@@ -19,7 +19,9 @@ public partial class AllWordsInCategoryPage : ContentPage
 
     private async void Refresh()
     {
-        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+        LVWords.ItemsSource = null;
+        Words = DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id).ToList();
+        LVWords.ItemsSource = Words;
         BindingContext = this;
         GlobalSettings.allWordsInCategoryPage = this;
     }
@@ -34,9 +36,9 @@ public partial class AllWordsInCategoryPage : ContentPage
         {
             // Пользователь смахнул до конца, удаляем элемент
             var item = (Word)((SwipeView)sender).BindingContext;
-            (LVWords.ItemsSource as ObservableCollection<Word>).Remove(item);
             DataManager.AllWords.Remove(item);
             DataManager.AllWords = DataManager.AllWords;
+            Refresh();
         }
     }
     private void OnSwipeChanging(object sender, SwipeChangingEventArgs e)
@@ -52,4 +54,8 @@ public partial class AllWordsInCategoryPage : ContentPage
         LVWords.SelectedItem = null;
     }
 
+    private void ContentPage_Appearing(object sender, EventArgs e)
+    {
+        Refresh();
+    }
 }

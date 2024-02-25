@@ -138,7 +138,6 @@ public partial class AddWordsPage : ContentPage
                 };
                 DataManager.AllWords.Add(newWord);
                 DataManager.AllWords = DataManager.AllWords;
-                GlobalSettings.allWordsInCategoryPage.Words.Add(newWord);
             }
         }
 

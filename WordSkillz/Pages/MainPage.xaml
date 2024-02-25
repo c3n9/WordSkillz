@@ -7,8 +7,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="?"
                      Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="+"
-                     Clicked="BPlusCategory_Clicked"/>
+        <!--<ToolbarItem Text="+"
+                     Clicked="BPlusCategory_Clicked"/>-->
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
@@ -18,6 +18,7 @@
         <ScrollView>
             <ListView x:Name="LVCategories"
                       Margin="20"
+                      VerticalScrollBarVisibility="Never"
                       ItemTapped="LVCategories_ItemTapped"
                       HasUnevenRows="True">
                 <ListView.ItemTemplate>
@@ -102,12 +103,21 @@
                                     </Grid>
                                 </Frame>
                             </SwipeView>
-                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollView>
+        <Button x:Name="BAddCategory"
+                Text="+ new category" 
+                HorizontalOptions="End"
+                Margin="15"
+                Clicked="BPlusCategory_Clicked"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontSize="20"
+                Padding="13"
+                VerticalOptions="End"/>
 
     </Grid>
 

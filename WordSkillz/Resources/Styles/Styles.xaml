@@ -8,7 +8,6 @@
         <Setter Property="Color"
                 Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
     </Style>
-
     <Style TargetType="IndicatorView">
         <Setter Property="IndicatorColor"
                 Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />

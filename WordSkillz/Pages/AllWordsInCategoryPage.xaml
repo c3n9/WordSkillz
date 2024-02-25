@@ -2,60 +2,73 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AllWordsInCategoryPage"
-             Title="WordSkillz">
+             Title="WordSkillz"
+             Appearing="ContentPage_Appearing">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New word"
-                     Clicked="BAddWords_Clicked"/>
+        <!--<ToolbarItem Text="New word"
+                     Clicked="BAddWords_Clicked"/>-->
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="LVWords"
-                  Margin="20"
-                  ItemSelected="LVWords_ItemSelected"
-                  HasUnevenRows="True"
-                  ItemsSource="{Binding Words}"
-                  BackgroundColor="Transparent"
-                  CachingStrategy="RecycleElementAndDataTemplate">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <SwipeView SwipeEnded="OnSwipeEnded"
-                                   SwipeChanging="OnSwipeChanging"
-                                   Background="Transparent">
-                            <SwipeView.RightItems>
-                                <SwipeItems>
-                                    <SwipeItemView>
-                                        <SwipeItemView.Content>
-                                            <Grid BackgroundColor="Transparent">
-                                                <Image Source="trash.png"
-                                                       VerticalOptions="Center"
-                                                       HorizontalOptions="End"
-                                                       Margin="10,0,10,0"
-                                                       HeightRequest="30"
-                                                       WidthRequest="30" />
-                                            </Grid>
-                                        </SwipeItemView.Content>
-                                    </SwipeItemView>
-                                </SwipeItems>
-                            </SwipeView.RightItems>
-                            <Frame CornerRadius="20"
-                                   Margin="20">
-                                <Grid>
-                                    <Label Text="{Binding OriginalWord}"
-                                           HorizontalOptions="Start"
-                                           VerticalOptions="Center" />
-                                    <Label Text="{Binding TranslatedWord}"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"/>
-                                </Grid>
-                            </Frame>
-                        </SwipeView>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <ScrollView>
+            <ListView x:Name="LVWords"
+                      Margin="20"
+                      ItemSelected="LVWords_ItemSelected"
+                      HasUnevenRows="True"
+                      BackgroundColor="Transparent"
+                      VerticalScrollBarVisibility="Never"
+                      CachingStrategy="RecycleElementAndDataTemplate">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView SwipeEnded="OnSwipeEnded"
+                                       SwipeChanging="OnSwipeChanging"
+                                       Background="Transparent">
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItemView>
+                                            <SwipeItemView.Content>
+                                                <Grid BackgroundColor="Transparent">
+                                                    <Image Source="trash.png"
+                                                           VerticalOptions="Center"
+                                                           HorizontalOptions="End"
+                                                           Margin="10,0,10,0"
+                                                           HeightRequest="30"
+                                                           WidthRequest="30" />
+                                                </Grid>
+                                            </SwipeItemView.Content>
+                                        </SwipeItemView>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <Frame CornerRadius="20"
+                                       Margin="20">
+                                    <Grid>
+                                        <Label Text="{Binding OriginalWord}"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Center" />
+                                        <Label Text="{Binding TranslatedWord}"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+        <Button x:Name="BAddWords"
+                    Text="+ new word"
+                    HorizontalOptions="End"
+                    Margin="15"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    Clicked="BAddWords_Clicked"
+                    Padding="13"
+                    VerticalOptions="End" />
     </Grid>
 </ContentPage>
