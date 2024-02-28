@@ -1,2 +1,2 @@
 
-![photo_2024-02-26_01-43-24](https://github.com/c3n9/WordSkillz/assets/108518693/a126a25d-cb19-4083-91a7-a65a6b593c6f)
+![photo_2024-02-26_01-43-24]([https://github.com/c3n9/WordSkillz/assets/108518693/a126a25d-cb19-4083-91a7-a65a6b593c6f](https://sun9-12.userapi.com/impg/TYpvwmQsneERYD2Ay0TWfiFH3rfqDFJAGRjqjQ/4MHkS_iKCac.jpg?size=576x1280&quality=96&sign=7c8bdb28879db7003adceaea642f2bf6&type=album)https://sun9-12.userapi.com/impg/TYpvwmQsneERYD2Ay0TWfiFH3rfqDFJAGRjqjQ/4MHkS_iKCac.jpg?size=576x1280&quality=96&sign=7c8bdb28879db7003adceaea642f2bf6&type=album)
