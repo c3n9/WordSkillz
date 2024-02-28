@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordSkillz.Pages.LoginPage"
+             Title="LoginPage">
+    <VerticalStackLayout HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         WidthRequest="300">
+        <Label Text="Login" 
+               HorizontalOptions="Center"/>
+        <Entry Placeholder="Email"
+               Keyboard="Email"
+               x:Name="EmailEntry"
+               Margin="0,0,0,10" />
+        <Entry Placeholder="Password"
+               IsPassword="True"
+               x:Name="PasswordEntry"
+               Margin="0,0,0,20" />
+        <Button Text="Login"
+                Clicked="Button_Clicked" />
+        <Frame Style="{DynamicResource FrameForHyperlink}">
+            <Label Text="Not registered? Register here."
+                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
+                   Margin="0,20,0,0"
+                   TextDecorations="Underline"
+                   HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

@@ -118,7 +118,7 @@
 
     <Style TargetType="DatePicker">
         <Setter Property="TextColor"
-                Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="BackgroundColor"
                 Value="Transparent" />
         <Setter Property="FontFamily"
@@ -220,7 +220,12 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+    <Style TargetType="Frame"
+           x:Key="FrameForHyperlink">
+        <Setter Property="Background"
+                Value="Transparent" />
+        
+    </Style>
     <LinearGradientBrush x:Key="MyGradientShadow"
                          StartPoint="0,0"
                          EndPoint="0,1">

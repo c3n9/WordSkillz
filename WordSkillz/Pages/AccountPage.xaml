@@ -15,6 +15,9 @@
         <Label Text="c3n9@example.com"
                FontSize="16"
                HorizontalOptions="Center" />
+        <Button Text="Login"
+                x:Name="BLogin"
+                Clicked="BLogin_Clicked" />
         <Button Text="Edit Profile"
                 HorizontalOptions="FillAndExpand"
                 Margin="0,20,0,0" />

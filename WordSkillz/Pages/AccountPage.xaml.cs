@@ -10,4 +10,9 @@ public partial class AccountPage : ContentPage
     {
 
     }
+
+    private async void BLogin_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new LoginPage());
+    }
 }
