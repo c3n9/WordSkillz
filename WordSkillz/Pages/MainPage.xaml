@@ -15,7 +15,7 @@
             <RowDefinition />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <ScrollView>
+        <ScrollView Padding="0,0,0,40">
             <ListView x:Name="LVCategories"
                       Margin="20"
                       VerticalScrollBarVisibility="Never"
@@ -55,6 +55,8 @@
                                             <Label Text="{Binding Name}"
                                                    FontSize="25"
                                                    FontAttributes="Bold"
+                                                   LineBreakMode="WordWrap"
+                                                   WidthRequest="200"
                                                    HorizontalOptions="StartAndExpand"
                                                    VerticalOptions="CenterAndExpand" />
                                             <Label Text="{Binding WordCount, StringFormat='{0} words'}"

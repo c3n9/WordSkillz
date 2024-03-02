@@ -93,7 +93,7 @@
                                                VerticalOptions="Center"
                                                FontSize="45"
                                                Margin="0,60" />
-                                        
+
                                     </Grid>
                                 </Frame>
                             </Grid>

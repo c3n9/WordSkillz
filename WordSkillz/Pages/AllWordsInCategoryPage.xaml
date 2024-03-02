@@ -13,7 +13,7 @@
             <RowDefinition />
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ScrollView>
+        <ScrollView Padding="0,0,0,40">
             <ListView x:Name="LVWords"
                       Margin="20"
                       ItemSelected="LVWords_ItemSelected"
@@ -48,10 +48,16 @@
                                     <Grid>
                                         <Label Text="{Binding OriginalWord}"
                                                HorizontalOptions="Start"
-                                               VerticalOptions="Center" />
+                                               VerticalOptions="Center"
+                                               LineBreakMode="WordWrap"
+                                               FontSize="20"
+                                               WidthRequest="100" />
                                         <Label Text="{Binding TranslatedWord}"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center" />
+                                               HorizontalOptions="End"
+                                               VerticalOptions="Center"
+                                               FontSize="20"
+                                               LineBreakMode="WordWrap"
+                                               WidthRequest="100" />
                                     </Grid>
                                 </Frame>
                             </SwipeView>

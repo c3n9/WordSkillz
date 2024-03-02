@@ -23,7 +23,6 @@ public partial class AddWordsPage : ContentPage
         {
             CornerRadius = 20,
             Opacity = 0,
-            Scale = 0.8,
             Margin = new Thickness(20),
             Content = new VerticalStackLayout
             {

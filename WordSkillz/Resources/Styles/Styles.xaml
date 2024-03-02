@@ -213,7 +213,7 @@
                 Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" />
         <Setter Property="Shadow">
             <Setter.Value>
-                <Shadow Opacity="0.8"
+                <Shadow Opacity="0.4"
                         Offset="3,3"
                         Radius="40"
                         Brush="{DynamicResource MyGradientShadow}" />
