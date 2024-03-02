@@ -28,7 +28,7 @@ namespace WordSkillz.Pages
             base.OnAppearing();
             Refresh();
         }
-        private void BPlusCategory_Clicked(object sender, EventArgs e)
+        private async void BPlusCategory_Clicked(object sender, EventArgs e)
         {
             var addNewCategoryPopup = new AddNewCategoryPopup();
             // Создать экземпляр CommunityToolkit.Maui.Views.Popup и установить его содержимое

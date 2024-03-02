@@ -4,6 +4,7 @@
              x:Class="WordSkillz.Popup.CongratulatePopup">
     <Frame CornerRadius="20"
            WidthRequest="350"
+           HasShadow="False"
            HeightRequest="160"
            BorderColor="#ebecf0">
         <VerticalStackLayout>

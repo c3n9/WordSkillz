@@ -10,6 +10,8 @@
                    x:Key="MyFrameStyle">
                 <Setter Property="HasShadow"
                         Value="True" />
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
                 <Setter Property="BorderColor"
                         Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
                 <Setter Property="CornerRadius"
@@ -34,7 +36,7 @@
                 <Setter Property="FontFamily"
                         Value="MontserratRegular" />
                 <Setter Property="FontSize"
-                        Value="14" />
+                        Value="22" />
                 <Setter Property="MinimumHeightRequest"
                         Value="44" />
                 <Setter Property="MinimumWidthRequest"

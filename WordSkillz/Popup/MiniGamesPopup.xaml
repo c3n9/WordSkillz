@@ -4,7 +4,8 @@
              x:Class="WordSkillz.Popup.MiniGamesPopup">
     <Frame CornerRadius="20"
            WidthRequest="350"
-           HeightRequest="400"
+           HasShadow="False"
+           HeightRequest="500"
            BorderColor="#ebecf0">
         <VerticalStackLayout>
             <Label Text="mini-games"
@@ -12,7 +13,7 @@
                    HorizontalOptions="Center"
                    FontSize="22" />
             <Frame CornerRadius="20"
-                   Margin="5,10">
+                   Margin="15,20">
                 <Grid>
                     <Label Text="view words"
                            HorizontalOptions="Start"
@@ -31,7 +32,7 @@
                 </Grid>
             </Frame>
             <Frame CornerRadius="20"
-                   Margin="5,10">
+                   Margin="15,20">
                 <Grid>
                     <Label Text="hidden words"
                            HorizontalOptions="Start"
@@ -50,7 +51,7 @@
                 </Grid>
             </Frame>
             <Frame CornerRadius="20"
-                   Margin="5,10">
+                   Margin="15,20">
                 <Grid>
                     <Label Text="match the words"
                            HorizontalOptions="Start"

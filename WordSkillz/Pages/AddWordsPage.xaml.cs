@@ -28,10 +28,10 @@ public partial class AddWordsPage : ContentPage
             Content = new VerticalStackLayout
             {
                 Children =
-            {
-                new Entry { WidthRequest = 300, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
-                new Entry { WidthRequest = 300, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
-            }
+                {
+                    new Entry { WidthRequest = 300, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
+                    new Entry { WidthRequest = 300, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
+                }
             }
         };
 

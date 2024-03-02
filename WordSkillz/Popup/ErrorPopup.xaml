@@ -4,7 +4,8 @@
              x:Class="WordSkillz.Popup.ErrorPopup">
     <Frame CornerRadius="20"
            WidthRequest="350"
-           HeightRequest="160"
+           HasShadow="False"
+           HeightRequest="180"
            BorderColor="#ebecf0">
         <VerticalStackLayout>
             <Label Text="error"

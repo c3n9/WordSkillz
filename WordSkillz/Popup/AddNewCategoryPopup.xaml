@@ -6,6 +6,7 @@
     <Frame CornerRadius="20"
            WidthRequest="350"
            HeightRequest="210"
+           HasShadow="False"
            BorderColor="#ebecf0">
         <VerticalStackLayout>
             <Label Text="new category"
