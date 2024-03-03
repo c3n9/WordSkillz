@@ -28,8 +28,8 @@ public partial class AddWordsPage : ContentPage
             {
                 Children =
                 {
-                    new Entry { WidthRequest = 300, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()) },
-                    new Entry { WidthRequest = 300, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()) }
+                    new Entry { WidthRequest = 300, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()), MaxLength=30 },
+                    new Entry { WidthRequest = 300, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()),MaxLength=30 }
                 }
             }
         };
@@ -46,11 +46,11 @@ public partial class AddWordsPage : ContentPage
             }
         }
 
-        VSLWords.Children.Add(frame);
+        VSLWords.Children.Insert(0, frame);
+        //VSLWords.Children.Add(frame);
 
         // Анимация появления
-        await frame.FadeTo(1, 250, Easing.Linear);
-        await frame.ScaleTo(1, 250, Easing.SpringOut);
+        await Task.WhenAll(frame.FadeTo(1, 250, Easing.Linear),frame.ScaleTo(1, 250, Easing.SpringOut));
 
         var originalEntry = ((VerticalStackLayout)frame.Content).Children.OfType<Entry>().FirstOrDefault();
         originalEntry?.Focus();
