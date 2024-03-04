@@ -6,10 +6,10 @@
     <Color x:Key="Primary">#0875BA</Color>
     <Color x:Key="Secondary">#E8E9EE</Color>
     <Color x:Key="Tertiary">#F5F5F5</Color>
-    <Color x:Key="PrimaryNight">#203E5F</Color>
+    <Color x:Key="PrimaryNight">#3d737f</Color>
     <Color x:Key="White">#ebecf0</Color>
     <Color x:Key="WhiteBackground">#ebecf0</Color>
-    <Color x:Key="Black">#b1b5c4</Color>
+    <Color x:Key="Black">#07161b</Color>
     <Color x:Key="Gray100">#5c9acc</Color>
     <Color x:Key="Gray200">#CCC0B0</Color>
     <Color x:Key="Gray300">#B3A894</Color>
@@ -17,6 +17,7 @@
     <Color x:Key="Gray500">#82725E</Color>
     <Color x:Key="Gray600">#6A5C4A</Color>
     <Color x:Key="Gray900">#1E1712</Color>
+    <Color x:Key="Gray9002">#cec7bf</Color>
     <Color x:Key="Gray950">#0D0A08</Color>
 
     <Color x:Key="Yellow100Accent">#FFD8A8</Color>
@@ -53,6 +54,8 @@
                      Color="{StaticResource Gray600}" />
     <SolidColorBrush x:Key="Gray900Brush"
                      Color="{StaticResource Gray900}" />
+    <SolidColorBrush x:Key="Gray900Brush2"
+                     Color="{StaticResource Gray9002}" />
     <SolidColorBrush x:Key="Gray950Brush"
                      Color="{StaticResource Gray950}" />
     <SolidColorBrush x:Key="Yellow100AccentBrush"

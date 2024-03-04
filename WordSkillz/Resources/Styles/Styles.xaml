@@ -176,7 +176,7 @@
 
     <Style TargetType="Entry">
         <Setter Property="TextColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource WhiteBackground}}" />
         <Setter Property="BackgroundColor"
                 Value="Transparent" />
         <Setter Property="FontFamily"
@@ -184,7 +184,7 @@
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="PlaceholderColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource WhiteBackground}}" />
         <Setter Property="MinimumHeightRequest"
                 Value="44" />
         <Setter Property="MinimumWidthRequest"
@@ -195,7 +195,7 @@
                     <VisualState x:Name="Disabled">
                         <VisualState.Setters>
                             <Setter Property="TextColor"
-                                    Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                                    Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource WhiteBackground}}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -206,11 +206,11 @@
         <Setter Property="HasShadow"
                 Value="True" />
         <Setter Property="BorderColor"
-                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="CornerRadius"
                 Value="8" />
         <Setter Property="Background"
-                Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource Secondary}}" />
+                Value="{AppThemeBinding Light={StaticResource Tertiary}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="Shadow">
             <Setter.Value>
                 <Shadow Opacity="0.4"
@@ -265,7 +265,7 @@
 
     <Style TargetType="Label">
         <Setter Property="TextColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}" />
         <Setter Property="BackgroundColor"
                 Value="Transparent" />
         <Setter Property="FontFamily"
@@ -572,14 +572,14 @@
         <Setter Property="Shell.NavBarHasShadow"
                 Value="True" />
         <Setter Property="Shell.TabBarBackgroundColor"
-                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+                Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PrimaryNight}}" />
         <Setter Property="Shell.TabBarForegroundColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}" />
         <Setter Property="Shell.TabBarTitleColor"
-                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}" />
         <!--Цвет нижней панели-->
         <Setter Property="Shell.TabBarUnselectedColor"
-                Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Gray900}}" />
+                Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource Black}}" />
     </Style>
 
     <Style TargetType="NavigationPage">

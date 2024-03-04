@@ -6,7 +6,8 @@
            WidthRequest="350"
            HasShadow="False"
            HeightRequest="500"
-           BorderColor="#ebecf0">
+           Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
+           BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
             <Label Text="mini-games"
                    FontAttributes="Bold"
@@ -21,9 +22,12 @@
                            VerticalOptions="Center" />
                     <Button Text="▶"
                             x:Name="BPlayViewWords"
-                            TextColor="White"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
+                            BorderColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
+                            BackgroundColor="Transparent"
                             CornerRadius="25"
                             WidthRequest="50"
+                            BorderWidth="2"
                             HeightRequest="50"
                             FontSize="20"
                             Clicked="BPlayViewWords_Clicked"
@@ -40,7 +44,10 @@
                            VerticalOptions="Center" />
                     <Button Text="▶"
                             x:Name="BPlayHiddenWords"
-                            TextColor="White"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
+                            BorderColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
+                            BackgroundColor="Transparent"
+                            BorderWidth="2"
                             CornerRadius="25"
                             WidthRequest="50"
                             HeightRequest="50"
@@ -59,8 +66,11 @@
                            VerticalOptions="Center" />
                     <Button Text="▶"
                             x:Name="BPlayMatchWords"
-                            TextColor="White"
+                            TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
+                            BorderColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
+                            BackgroundColor="Transparent"
                             CornerRadius="25"
+                            BorderWidth="2"
                             WidthRequest="50"
                             HeightRequest="50"
                             FontSize="20"

@@ -65,14 +65,14 @@
                                                    VerticalOptions="CenterAndExpand" />
                                         </VerticalStackLayout>
                                         <Button Text="▶"
-                                                TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
+                                                TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
                                                 WidthRequest="60"
                                                 HeightRequest="60"
                                                 FontSize="40"
                                                 Clicked="BLearn_Clicked"
                                                 HorizontalOptions="EndAndExpand"
                                                 VerticalOptions="CenterAndExpand"
-                                                BorderColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
+                                                BorderColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray9002}}"
                                                 BorderWidth="2"
                                                 BackgroundColor="Transparent"
                                                 CornerRadius="30">
@@ -85,21 +85,21 @@
                                                     <Setter Property="BorderColor"
                                                             Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
                                                 </Trigger>
-                                                <Trigger TargetType="Button"
+                                                <!--<Trigger TargetType="Button"
                                                          Property="IsPressed"
                                                          Value="True">
                                                     <Setter Property="TextColor"
                                                             Value="{AppThemeBinding Light=White, Dark=White}" />
-                                                    <!--<Setter Property="BackgroundColor"
+                                                    --><!--<Setter Property="BackgroundColor"
                                                             Value="{AppThemeBinding Light=Primary, Dark=PrimaryNight}" />-->
-                                                    <Setter Property="BackgroundColor">
+                                                    <!--<Setter Property="BackgroundColor">
                                                         <Setter.Value>
                                                             <OnPlatform x:TypeArguments="Color">
                                                                 <On Platform="Android, iOS">#0875BA</On>
                                                             </OnPlatform>
                                                         </Setter.Value>
-                                                    </Setter>
-                                                </Trigger>
+                                                    </Setter>--><!--
+                                                </Trigger>-->
                                             </Button.Triggers>
                                         </Button>
                                     </Grid>
@@ -118,6 +118,8 @@
                 CornerRadius="20"
                 FontAttributes="Bold"
                 FontSize="20"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray9002}}"
+                BorderColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray9002}}"
                 Padding="13"
                 VerticalOptions="End"/>
 

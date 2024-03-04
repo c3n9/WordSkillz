@@ -6,7 +6,8 @@
            WidthRequest="350"
            HasShadow="False"
            HeightRequest="160"
-           BorderColor="#ebecf0">
+           Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
+           BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
             <Label Text="warning"
                    FontAttributes="Bold"

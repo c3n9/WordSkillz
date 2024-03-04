@@ -11,7 +11,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <ScrollView Padding="0,0,0,40">
             <ListView x:Name="LVWords"
@@ -67,14 +67,16 @@
             </ListView>
         </ScrollView>
         <Button x:Name="BAddWords"
-                    Text="+ new word"
-                    HorizontalOptions="End"
-                    Margin="15"
-                    CornerRadius="20"
-                    FontAttributes="Bold"
-                    FontSize="20"
-                    Clicked="BAddWords_Clicked"
-                    Padding="13"
-                    VerticalOptions="End" />
+                Text="+ new word"
+                HorizontalOptions="End"
+                Margin="15"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray9002}}"
+                BorderColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray9002}}"
+                FontSize="20"
+                Clicked="BAddWords_Clicked"
+                Padding="13"
+                VerticalOptions="End" />
     </Grid>
 </ContentPage>

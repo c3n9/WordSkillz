@@ -192,7 +192,7 @@ public partial class BluredWordsCardsPage : ContentPage
             if (Application.Current.UserAppTheme == AppTheme.Light)
                 hexColor = "#0875BA";
             else
-                hexColor = "#203E5F";
+                hexColor = "#cec7bf";
 
             // Преобразование HEX строки в .NET Color
             System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml(hexColor);
@@ -202,7 +202,7 @@ public partial class BluredWordsCardsPage : ContentPage
 
             paint.Color = skColor;
             // Устанавливаем размер и стиль шрифта
-            paint.TextSize = 100;
+            paint.TextSize = 110;
             paint.IsAntialias = true;
 
             // Создаем фильтр размытия

@@ -7,7 +7,8 @@
            WidthRequest="350"
            HeightRequest="210"
            HasShadow="False"
-           BorderColor="#ebecf0">
+           Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
+           BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
             <Label Text="new category"
                    FontAttributes="Bold"
