@@ -13,11 +13,11 @@
                   Route="LoadingPage"
                   FlyoutItemIsVisible="False" />
     <TabBar>
-        <Tab Title="Option"
+        <!--<Tab Title="Option"
              Icon="settings.svg"
              Route="OptionPage">
             <ShellContent ContentTemplate="{DataTemplate pages:OptionPage}" />
-        </Tab>
+        </Tab>-->
         <Tab Title="Home"
              Icon="home.svg"
              Route="MainPage">

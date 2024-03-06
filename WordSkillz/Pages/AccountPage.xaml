@@ -2,21 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AccountPage"
-             Title="Account">
+             Title="WordSkillz">
     <StackLayout Padding="20">
-        <Image Source="user.png"
-               HeightRequest="100"
-               WidthRequest="100"
-               HorizontalOptions="Center" />
-        <Label Text="c3n9"
-               FontSize="24"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
-        <Label Text="c3n9@example.com"
-               FontSize="16"
-               HorizontalOptions="Center" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Frame CornerRadius="80"
+                   HasShadow="False"
+                   WidthRequest="150"
+                   HeightRequest="150">
+                <Image Source="user.png"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       HorizontalOptions="Center" />
+            </Frame>
+            <StackLayout Grid.Column="1"
+                         VerticalOptions="Center">
+                <Label Text="c3n9"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start" />
+                <Label Text="c3n9@example.com"
+                       FontSize="18"
+                       HorizontalOptions="Start" />
+            </StackLayout>
+        </Grid>
+        
+        
+        
         <Button Text="Login"
                 x:Name="BLogin"
+                Margin="0,120,0,0"
                 Clicked="BLogin_Clicked" />
         <Button Text="Edit Profile"
                 HorizontalOptions="FillAndExpand"
