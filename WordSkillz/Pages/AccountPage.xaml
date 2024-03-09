@@ -29,9 +29,6 @@
                        HorizontalOptions="Start" />
             </StackLayout>
         </Grid>
-        
-        
-        
         <Button Text="Login"
                 x:Name="BLogin"
                 Margin="0,120,0,0"

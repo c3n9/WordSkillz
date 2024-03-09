@@ -52,6 +52,11 @@
                                                LineBreakMode="WordWrap"
                                                FontSize="20"
                                                WidthRequest="100" />
+                                        <Label Text="⇄"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               LineBreakMode="WordWrap"
+                                               FontSize="40"/>
                                         <Label Text="{Binding TranslatedWord}"
                                                HorizontalOptions="End"
                                                VerticalOptions="Center"
