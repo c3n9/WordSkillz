@@ -54,6 +54,8 @@
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls.Compatibility" Version="2.88.6" />
+    <PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.7.3" />
+    <PackageReference Include="UraniumUI.Material" Version="2.7.3" />
     <PackageReference Include="Xam.Plugins.TextToSpeech" Version="4.0.0.7" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />

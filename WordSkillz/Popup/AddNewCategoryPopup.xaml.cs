@@ -1,6 +1,8 @@
 using WordSkillz.Models;
 using WordSkillz.Pages;
+using UraniumUI;
 using WordSkillz.Tools;
+using UraniumUI.Material.Controls;
 
 namespace WordSkillz.Popup;
 
@@ -9,7 +11,7 @@ public partial class AddNewCategoryPopup : ContentView
 	public AddNewCategoryPopup()
 	{
 		InitializeComponent();
-	}
+    }
 
     private void BCancel_Clicked(object sender, EventArgs e)
     {
@@ -19,7 +21,7 @@ public partial class AddNewCategoryPopup : ContentView
         }
     }
 
-    private async void BOk_Clicked(object sender, EventArgs e)
+    private void BOk_Clicked(object sender, EventArgs e)
     {
         if (!string.IsNullOrWhiteSpace(nameCategory.Text))
         {

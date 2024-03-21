@@ -77,6 +77,7 @@
                 Margin="15"
                 CornerRadius="20"
                 FontAttributes="Bold"
+                HeightRequest="50"
                 TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray9002}}"
                 BorderColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray9002}}"
                 FontSize="20"

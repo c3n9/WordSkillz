@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Pages.MiniGamePages;
+using CommunityToolkit.Maui.Views;
 using WordSkillz.Popup;
 using WordSkillz.Tools;
 
@@ -37,7 +38,7 @@ namespace WordSkillz.Pages
             //popup.Color = Color.FromArgb("#ebecf0");
             popup.Color = Color.FromRgba(0, 0, 0, 0);
             // Отобразить попап
-            popup.Closed += async (s, args) =>
+            popup.Closed += (s, args) =>
             {
                 // Выполняем обновление данных после закрытия Popup
                 Refresh();

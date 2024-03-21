@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              x:Class="WordSkillz.Pages.RegistrationPage"
              Title="RegistrationPage">
 
     <ScrollView>
         <VerticalStackLayout Padding="20">
-            <Frame CornerRadius="10"
-                   Margin="0,20,0,0">
+            <Frame CornerRadius="50"
+                   Margin="0,20,0,20"
+                   HeightRequest="260"
+                   HasShadow="False"
+                   WidthRequest="250">
                 <Image Aspect="AspectFill"
                        x:Name="SelectedPhoto"
-                       HeightRequest="200">
+                       HeightRequest="260"
+                       WidthRequest="250">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
                     </Image.GestureRecognizers>
                 </Image>
             </Frame>
-            <Entry Placeholder="Name"
-                   x:Name="NameEntry" />
-            <Entry Placeholder="Email"
-                   Keyboard="Email"
-                   x:Name="EmailEntry" />
-            <Entry Placeholder="Password"
-                   IsPassword="True"
-                   x:Name="PasswordEntry" />
-            <DatePicker x:Name="DateOfBirthPicker"
-                        Format="MM/dd/yyyy"
-                        Date="{Binding DateOfBirth}"
-                        Margin="0,10,0,0" />
-            <Entry Placeholder="Gender"
-                   x:Name="GenderEntry" />
-            <Entry Placeholder="Country"
-                   x:Name="CountryEntry" />
-            <Entry Placeholder="Address"
-                   x:Name="AddressEntry" />
-            <Entry Placeholder="Phone Number"
-                   Keyboard="Telephone"
-                   x:Name="PhoneNumberEntry" />
+            <material:TextField Title="name"
+                                Keyboard="Text"
+                                AllowClear="True"
+                                x:Name="NameEntry"/>
+            <material:TextField Title="email"
+                                Keyboard="Email"
+                                AllowClear="True"
+                                x:Name="EmailEntry" />
+            <material:TextField Title="password"
+                                AllowClear="True"
+                                IsTextPredictionEnabled="True"
+                                IsPassword="True"
+                                x:Name="PasswordEntry"
+                                Keyboard="Text" />
+            <material:TextField Title="address"
+                                AllowClear="True"
+                                x:Name="AddressEntry"
+                                Keyboard="Text" />
+            <material:TextField Title="phone"
+                                AllowClear="True"
+                                x:Name="PhoneNumberEntry"
+                                Keyboard="Telephone"/>
             <Button Text="Register"
                     Clicked="Register_Clicked"
                     Margin="0,20,0,0" />
