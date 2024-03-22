@@ -21,7 +21,7 @@ public partial class WordCardsPage : ContentPage
     public ObservableCollection<Word> Words { get; set; }
     private CancellationTokenSource cancellationTokenSource;
 
-
+    [Obsolete]
     public WordCardsPage(Category category)
     {
         InitializeComponent();
@@ -36,6 +36,8 @@ public partial class WordCardsPage : ContentPage
         // Обновление прогресса
         UpdateProgress();
     }
+
+    [Obsolete]
     private async void Refresh()
     {
         if (cancellationTokenSource != null)
@@ -96,7 +98,7 @@ public partial class WordCardsPage : ContentPage
         }
         catch (Exception ex)
         {
-
+            Console.WriteLine(ex.Message);
         }
     }
     private async void UpdateProgress()
@@ -113,8 +115,6 @@ public partial class WordCardsPage : ContentPage
         double endProgress = progress;
 
         await ProgressBar.ProgressTo(endProgress, animationLength, Easing.Linear);
-
-        // Здесь можно добавить дополнительные действия после завершения анимации, если необходимо
     }
 
     [Obsolete]

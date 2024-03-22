@@ -36,8 +36,11 @@
         </StackLayout>
         <StackLayout Grid.Row="1"
                      Margin="20"
+                     WidthRequest="350"
+                     MinimumWidthRequest="300"
                      VerticalOptions="Center">
-            <Frame Margin="20">
+            <Frame Margin="20"
+                   x:Name="CardFrame">
                 <Label x:Name="TBWord"
                        Text="Word"
                        FontSize="30"
@@ -47,29 +50,31 @@
             </Frame>
             <Button x:Name="BWord1"
                     Text="Content1"
+                    Opacity="0"
                     Clicked="BWord1_Clicked"
                     Margin="10"
                     FontSize="22"
                     Padding="15"
-                    HeightRequest="70"
-                    MinimumWidthRequest="200"/>
+                    HeightRequest="70"/>
             <Button x:Name="BWord2"
                     Text="Content2"
+                    Opacity="0"
                     Clicked="BWord2_Clicked"
                     FontSize="22"
                     Margin="10"
                     HeightRequest="70"/>
             <Button x:Name="BWord3"
+                    Opacity="0"
                     Text="Content3"
                     FontSize="22"
                     HeightRequest="70"
                     Clicked="BWord3_Clicked"
                     Margin="10" />
             <Button x:Name="BWord4"
+                    Opacity="0"
                     Text="Content4"
                     FontSize="22"
                     HeightRequest="70"
-                    MinimumWidthRequest="300"
                     Clicked="BWord4_Clicked"
                     Margin="10" />
         </StackLayout>
