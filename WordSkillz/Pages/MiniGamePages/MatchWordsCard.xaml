@@ -6,6 +6,72 @@
     <Grid VerticalOptions="Center"
           HorizontalOptions="Center"
           Background="Transparent">
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackLayout VerticalOptions="Start">
+            <StackLayout>
+                <ProgressBar x:Name="ProgressBar"
+                             VerticalOptions="Start"
+                             Progress="0"
+                             Margin="20,10,20,10" />
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Center">
+                    <Label Text="Learned: "
+                           FontSize="20"
+                           VerticalOptions="Center" />
+                    <Label x:Name="WordsLeftLabel"
+                           FontSize="20"
+                           VerticalOptions="Center" />
+                    <Label Text=" / "
+                           FontSize="20"
+                           VerticalOptions="Center" />
+                    <Label x:Name="TotalWordsLabel"
+                           FontSize="20"
+                           VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Grid.Row="1"
+                     Margin="20"
+                     VerticalOptions="Center">
+            <Frame Margin="20">
+                <Label x:Name="TBWord"
+                       Text="Word"
+                       FontSize="30"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" 
+                       Margin="60"/>
+            </Frame>
+            <Button x:Name="BWord1"
+                    Text="Content1"
+                    Clicked="BWord1_Clicked"
+                    Margin="10"
+                    FontSize="22"
+                    Padding="15"
+                    HeightRequest="70"
+                    MinimumWidthRequest="200"/>
+            <Button x:Name="BWord2"
+                    Text="Content2"
+                    Clicked="BWord2_Clicked"
+                    FontSize="22"
+                    Margin="10"
+                    HeightRequest="70"/>
+            <Button x:Name="BWord3"
+                    Text="Content3"
+                    FontSize="22"
+                    HeightRequest="70"
+                    Clicked="BWord3_Clicked"
+                    Margin="10" />
+            <Button x:Name="BWord4"
+                    Text="Content4"
+                    FontSize="22"
+                    HeightRequest="70"
+                    MinimumWidthRequest="300"
+                    Clicked="BWord4_Clicked"
+                    Margin="10" />
+        </StackLayout>
     </Grid>
 </ContentPage>
