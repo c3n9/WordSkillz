@@ -12,6 +12,7 @@ public partial class MatchWordsCard : ContentPage
     private int allCountWords;
     private int currentWordCount;
     private Word currentWord;
+    private int correctAnswerIndex;
     private Category contextCategory;
     public ObservableCollection<Word> Words { get; set; }
     public ObservableCollection<Word> WordsToShuffle { get; set; }
@@ -63,11 +64,11 @@ public partial class MatchWordsCard : ContentPage
         var word3 = string.Empty;
         var word4 = string.Empty;
         int correctTranslationIndex = new Random().Next(4);
+        correctAnswerIndex = correctTranslationIndex;
 
         // ѕровер€ем, достаточно ли слов дл€ заполнени€ всех кнопок
         if (WordsToShuffle.Count >= 4)
         {
-            // јнимаци€ по€влени€ правильного перевода
             switch (correctTranslationIndex)
             {
                 case 0:
@@ -189,7 +190,7 @@ public partial class MatchWordsCard : ContentPage
                 if (currentIndex == -1)
                 {
                     button.BackgroundColor = Color.FromHex("#228b22");
-                    
+
                     var congratulatePopup = new CongratulatePopup();
                     var popup = new CommunityToolkit.Maui.Views.Popup();
                     popup.Content = congratulatePopup;
@@ -229,12 +230,35 @@ public partial class MatchWordsCard : ContentPage
             button.BackgroundColor = Color.FromRgb(255, 0, 0);
             await Task.Delay(1000);
             button.BackgroundColor = Color.FromHex("#0875BA");
+            switch (correctAnswerIndex)
+            {
+                case 0:
+                    BWord1.BackgroundColor = Color.FromHex("#228b22");
+                    await Task.Delay(1000);
+                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    break;
+                case 1:
+                    BWord2.BackgroundColor = Color.FromHex("#228b22");
+                    await Task.Delay(1000);
+                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    break;
+                case 2:
+                    BWord3.BackgroundColor = Color.FromHex("#228b22");
+                    await Task.Delay(1000);
+                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    break;
+                case 3:
+                    BWord4.BackgroundColor = Color.FromHex("#228b22");
+                    await Task.Delay(1000);
+                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    break;
+            }
         }
 
         currentWord = Words[currentIndex];
         await FadeInNewWord();
         await ShuffleAndSetButtonTexts();
-       
+
         UpdateProgress();
     }
 
