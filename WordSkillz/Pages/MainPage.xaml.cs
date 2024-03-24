@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using WordSkillz.Models;
 using WordSkillz.Pages.MiniGamePages;
-using CommunityToolkit.Maui.Views;
 using WordSkillz.Popup;
 using WordSkillz.Tools;
 
@@ -29,7 +28,7 @@ namespace WordSkillz.Pages
             base.OnAppearing();
             Refresh();
         }
-        private async void BPlusCategory_Clicked(object sender, EventArgs e)
+        private void BPlusCategory_Clicked(object sender, EventArgs e)
         {
             var addNewCategoryPopup = new AddNewCategoryPopup();
             // Создать экземпляр CommunityToolkit.Maui.Views.Popup и установить его содержимое
@@ -55,8 +54,7 @@ namespace WordSkillz.Pages
                 await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
         }
-
-        private async void BLearn_Clicked(object sender, EventArgs e)
+        private void BLearn_Clicked(object sender, EventArgs e)
         {
             if (sender is Button button)
             {
@@ -85,7 +83,7 @@ namespace WordSkillz.Pages
             }
         }
 
-        private async void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
+        private void SwipeView_SwipeEnded(object sender, SwipeEndedEventArgs e)
         {
             if (e.IsOpen)
             {

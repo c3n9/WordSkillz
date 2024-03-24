@@ -158,6 +158,8 @@ public partial class MatchWordsCard : ContentPage
 
         // Разблокируем кнопки после завершения анимации
         BWord1.IsEnabled = BWord2.IsEnabled = BWord3.IsEnabled = BWord4.IsEnabled = true;
+        BWord1.BackgroundColor = BWord2.BackgroundColor = BWord2.BackgroundColor = BWord3.BackgroundColor = BWord4.BackgroundColor = Color.FromHex("#0875BA");
+
     }
 
 
@@ -229,33 +231,30 @@ public partial class MatchWordsCard : ContentPage
             }
             button.BackgroundColor = Color.FromRgb(255, 0, 0);
             await Task.Delay(1000);
-            button.BackgroundColor = Color.FromHex("#0875BA");
             switch (correctAnswerIndex)
             {
                 case 0:
                     BWord1.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    BWord1.BackgroundColor = Color.FromHex("#0875BA");
                     break;
                 case 1:
                     BWord2.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    BWord2.BackgroundColor = Color.FromHex("#0875BA");
                     break;
                 case 2:
                     BWord3.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    BWord3.BackgroundColor = Color.FromHex("#0875BA");
                     break;
                 case 3:
                     BWord4.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    BWord4.BackgroundColor = Color.FromHex("#0875BA");
                     break;
             }
         }
 
         currentWord = Words[currentIndex];
+        BWord1.BackgroundColor = BWord2.BackgroundColor = BWord2.BackgroundColor = BWord3.BackgroundColor = BWord4.BackgroundColor = Color.FromHex("#CCC0B0");
+
         await FadeInNewWord();
         await ShuffleAndSetButtonTexts();
 
@@ -270,24 +269,28 @@ public partial class MatchWordsCard : ContentPage
     [Obsolete]
     private void BWord1_Clicked(object sender, EventArgs e)
     {
+        BWord1.IsEnabled = BWord2.IsEnabled = BWord3.IsEnabled = BWord4.IsEnabled = false;
         CheckAnswer((Button)sender);
     }
 
     [Obsolete]
     private void BWord2_Clicked(object sender, EventArgs e)
     {
+        BWord1.IsEnabled = BWord2.IsEnabled = BWord3.IsEnabled = BWord4.IsEnabled = false;
         CheckAnswer((Button)sender);
     }
 
     [Obsolete]
     private void BWord3_Clicked(object sender, EventArgs e)
     {
+        BWord1.IsEnabled = BWord2.IsEnabled = BWord3.IsEnabled = BWord4.IsEnabled = false;
         CheckAnswer((Button)sender);
     }
 
     [Obsolete]
     private void BWord4_Clicked(object sender, EventArgs e)
     {
+        BWord1.IsEnabled = BWord2.IsEnabled = BWord3.IsEnabled = BWord4.IsEnabled = false;
         CheckAnswer((Button)sender);
     }
 }
