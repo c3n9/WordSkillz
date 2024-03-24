@@ -235,22 +235,22 @@ public partial class MatchWordsCard : ContentPage
                 case 0:
                     BWord1.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    BWord1.BackgroundColor = Color.FromHex("#0875BA");
                     break;
                 case 1:
                     BWord2.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    BWord2.BackgroundColor = Color.FromHex("#0875BA");
                     break;
                 case 2:
                     BWord3.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    BWord3.BackgroundColor = Color.FromHex("#0875BA");
                     break;
                 case 3:
                     BWord4.BackgroundColor = Color.FromHex("#228b22");
                     await Task.Delay(1000);
-                    button.BackgroundColor = Color.FromHex("#0875BA");
+                    BWord4.BackgroundColor = Color.FromHex("#0875BA");
                     break;
             }
         }
