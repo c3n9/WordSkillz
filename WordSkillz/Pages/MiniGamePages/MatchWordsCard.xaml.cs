@@ -256,7 +256,7 @@ public partial class MatchWordsCard : ContentPage
         }
 
         currentWord = Words[currentIndex];
-        BWord1.BackgroundColor = BWord2.BackgroundColor = BWord2.BackgroundColor = BWord3.BackgroundColor = BWord4.BackgroundColor = Color.FromHex("#CCC0B0");
+        BWord1.BackgroundColor = BWord2.BackgroundColor = BWord2.BackgroundColor = BWord3.BackgroundColor = BWord4.BackgroundColor = Color.FromHex("#0875ba");
 
         await FadeInNewWord();
         await ShuffleAndSetButtonTexts();
