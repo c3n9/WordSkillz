@@ -9,43 +9,59 @@ namespace WordSkillz.Pages;
 public partial class AllWordsInCategoryPage : ContentPage
 {
     Category contextCategory;
+    SQLiteDbContext db;
     public List<Word> Words { get; set; }
+
     public AllWordsInCategoryPage(Category category)
     {
         InitializeComponent();
         contextCategory = category;
+        db = new SQLiteDbContext();
+        // Начать асинхронную операцию задержки
+        DelayedRefresh();
+    }
+
+    // Асинхронный метод для задержки
+    private async Task DelayedRefresh()
+    {
+        // Подождать 2 секунды перед вызовом Refresh()
+        ActivityIndicator.IsRunning = true;
+        ActivityIndicator.IsVisible = true;
+        await Task.Delay(500);
         Refresh();
     }
 
     private async void Refresh()
     {
         LVWords.ItemsSource = null;
-        Words = DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id).ToList();
+        var wordsInDB = await db.GetAllWord();
+        Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
         LVWords.ItemsSource = Words;
-        BindingContext = this;
-        GlobalSettings.allWordsInCategoryPage = this;
+
+        ActivityIndicator.IsRunning = false;
+        ActivityIndicator.IsVisible = false;
     }
 
     private async void BAddWords_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new AddWordsPage(contextCategory));
     }
-    private void OnSwipeEnded(object sender, SwipeEndedEventArgs e)
+
+    private async void OnSwipeEnded(object sender, SwipeEndedEventArgs e)
     {
         if (e.IsOpen)
         {
-            // Пользователь смахнул до конца, удаляем элемент
             var item = (Word)((SwipeView)sender).BindingContext;
-            DataManager.AllWords.Remove(item);
-            DataManager.AllWords = DataManager.AllWords;
+            await db.DeleteWordAsync(item);
             Refresh();
         }
     }
+
     private void OnSwipeChanging(object sender, SwipeChangingEventArgs e)
     {
-        if (e.Offset > 0) // Пользователь смахивает вправо
+        if (e.Offset > 0)
         {
-            e.Offset = 0; // Запретить открытие действий при смахивании вправо
+            e.Offset = 0;
         }
     }
 
@@ -56,6 +72,7 @@ public partial class AllWordsInCategoryPage : ContentPage
 
     private void ContentPage_Appearing(object sender, EventArgs e)
     {
-        Refresh();
+        // При появлении страницы необходимо вызвать DelayedRefresh, чтобы начать задержку перед обновлением
+        DelayedRefresh();
     }
 }

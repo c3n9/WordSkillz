@@ -9,19 +9,31 @@ namespace WordSkillz.Pages
 {
     public partial class MainPage : ContentPage
     {
+        SQLiteDbContext db;
         public List<Category> Categories { get; set; }
         public MainPage()
         {
             InitializeComponent();
-            Categories = DataManager.AllCategories;
-            BindingContext = this;
+            //Categories = DataManager.AllCategories;
             Refresh();
         }
 
-        private void Refresh()
+        private async void Refresh()
         {
-            LVCategories.ItemsSource = null;
-            LVCategories.ItemsSource = DataManager.AllCategories;
+            try
+            {
+                db = new SQLiteDbContext();
+                Categories = await db.GetAllCategory();
+                BindingContext = this;
+                LVCategories.ItemsSource = null;
+                LVCategories.ItemsSource = await db.GetAllCategory();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            
         }
         protected override void OnAppearing()
         {
@@ -54,7 +66,7 @@ namespace WordSkillz.Pages
                 await Navigation.PushAsync(new AllWordsInCategoryPage(category));
             }
         }
-        private void BLearn_Clicked(object sender, EventArgs e)
+        private async void BLearn_Clicked(object sender, EventArgs e)
         {
             if (sender is Button button)
             {
@@ -68,7 +80,8 @@ namespace WordSkillz.Pages
                 App.Current.MainPage.ShowPopup(popupGames);
                 popupGames.Closed += async (s, args) =>
                 {
-                    var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == selectedCategory.Id));
+                    var wordsInDB = await db.GetAllWord();
+                    var words = new ObservableCollection<Word>(wordsInDB.Where(x => x.CategoryId == selectedCategory.Id));
                     if (words.Count == 0)
                     {
                         var errorPopup = new ErrorPopup();

@@ -8,9 +8,11 @@ namespace WordSkillz.Popup;
 public partial class MiniGamesPopup : ContentView
 {
     public Category Category { get; set; }
+    SQLiteDbContext db;
     public MiniGamesPopup()
     {
         InitializeComponent();
+        db = new SQLiteDbContext();
     }
 
     private async void BPlayViewWords_Clicked(object sender, EventArgs e)
@@ -19,9 +21,10 @@ public partial class MiniGamesPopup : ContentView
         {
             parentPopup.Close();
         }
-        var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == Category.Id));
+        var wordsInDB = await db.GetAllWord();
+        var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
         if (words.Count != 0)
-            await App.Current.MainPage.Navigation.PushAsync(new WordCardsPage(Category));
+            await App.Current.MainPage.Navigation.PushAsync(new WordCardsPage(Category, words));
     }
 
     private async void BPlayMatchWords_Clicked(object sender, EventArgs e)
@@ -30,9 +33,10 @@ public partial class MiniGamesPopup : ContentView
         {
             parentPopup.Close();
         }
-        var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == Category.Id));
+        var wordsInDB = await db.GetAllWord();
+        var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
         if (words.Count != 0)
-            await App.Current.MainPage.Navigation.PushAsync(new MatchWordsCard(Category));
+            await App.Current.MainPage.Navigation.PushAsync(new MatchWordsCard(Category,words));
     }
 
     private async void BPlayHiddenWords_Clicked(object sender, EventArgs e)
@@ -41,8 +45,9 @@ public partial class MiniGamesPopup : ContentView
         {
             parentPopup.Close();
         }
-        var words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == Category.Id));
+        var wordsInDB = await db.GetAllWord();
+        var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
         if (words.Count != 0)
-            await App.Current.MainPage.Navigation.PushAsync(new BluredWordsCardsPage(Category));
+            await App.Current.MainPage.Navigation.PushAsync(new BluredWordsCardsPage(Category,words));
     }
 }

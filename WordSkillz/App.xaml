@@ -2,7 +2,6 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WordSkillz"
-             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              x:Class="WordSkillz.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,8 +10,6 @@
                                     Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary x:Name="appStyles"
                                     Source="Resources/Styles/Styles.xaml" />
-                <material:StyleResource ColorsOverride="{x:Reference appColors}"
-                                        BasedOn="{x:Reference appStyles}" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         

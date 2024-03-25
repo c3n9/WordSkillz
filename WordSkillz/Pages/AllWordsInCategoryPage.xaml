@@ -9,6 +9,12 @@
                      Clicked="BAddWords_Clicked"/>-->
     </ContentPage.ToolbarItems>
     <Grid>
+        <ActivityIndicator x:Name="ActivityIndicator"
+                           IsRunning="False"
+                           IsVisible="False"
+                           Color="Gray"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" />
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="auto" />
@@ -56,7 +62,7 @@
                                                HorizontalOptions="Center"
                                                VerticalOptions="Center"
                                                LineBreakMode="WordWrap"
-                                               FontSize="40"/>
+                                               FontSize="40" />
                                         <Label Text="{Binding TranslatedWord}"
                                                HorizontalOptions="End"
                                                VerticalOptions="Center"

@@ -9,25 +9,28 @@ namespace WordSkillz.Pages.MiniGamePages;
 public partial class MatchWordsCard : ContentPage
 {
     private int currentIndex = 0;
+    SQLiteDbContext db;
     private int allCountWords;
     private int currentWordCount;
     private Word currentWord;
     private int correctAnswerIndex;
     private Category contextCategory;
-    public ObservableCollection<Word> Words { get; set; }
-    public ObservableCollection<Word> WordsToShuffle { get; set; }
+    public List<Word> Words { get; set; }
+    public List<Word> WordsToShuffle { get; set; }
 
-    public MatchWordsCard(Category category)
+    public MatchWordsCard(Category category, List<Word> words)
     {
         InitializeComponent();
+        db = new SQLiteDbContext();
         contextCategory = category;
-        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == category.Id));
-        WordsToShuffle = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == category.Id));
+        Words = words;
+        WordsToShuffle = words;
         allCountWords = Words.Count;
         currentWordCount = 0;
         Refresh();
         UpdateProgress();
     }
+
     private async void Refresh()
     {
         currentWordCount = allCountWords - Words.Count;
@@ -204,8 +207,8 @@ public partial class MatchWordsCard : ContentPage
                     };
                     App.Current.MainPage.ShowPopup(popup);
                     await popupClosedTask.Task;
-
-                    Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+                    var wordsInDB = await db.GetAllWord();
+                    Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
                     allCountWords = Words.Count;
                     currentIndex = 0;
                     currentWordCount = 0;

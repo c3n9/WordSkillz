@@ -13,9 +13,9 @@ namespace WordSkillz
             //File.Delete(Path.Combine(FileSystem.Current.AppDataDirectory, "wordCache.json"));
             Application.Current.UserAppTheme = AppTheme.Light;
 
-            DataManager.InitDataFile(DataManager.CategoryCachePath, DataManager.CategoryImportPath);
+            //DataManager.InitDataFile(DataManager.CategoryCachePath, DataManager.CategoryImportPath);
 
-            DataManager.InitDataFile(DataManager.WordCachePath, DataManager.WordsImportPath);
+            //DataManager.InitDataFile(DataManager.WordCachePath, DataManager.WordsImportPath);
 
             MainPage = new AppShell();
 

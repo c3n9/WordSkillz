@@ -18,21 +18,23 @@ public partial class WordCardsPage : ContentPage
     private int currentWordCount;
     private bool isTimerRunning = false;
     private Category contextCategory;
-    public ObservableCollection<Word> Words { get; set; }
+    SQLiteDbContext db;
+    public List<Word> Words { get; set; }
     private CancellationTokenSource cancellationTokenSource;
 
     [Obsolete]
-    public WordCardsPage(Category category)
+    public WordCardsPage(Category category, List<Word> words)
     {
         InitializeComponent();
+        db = new SQLiteDbContext();
         contextCategory = category;
-        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == category.Id));
+        Words = words;
         allCountWords = Words.Count;
         currentWordCount = 0;
         BindingContext = this;
-        // Устанавливаем начальный источник данных, включая только один элемент
         LVWordСards.ItemsSource = Words.Take(1);
         Refresh();
+        // Устанавливаем начальный источник данных, включая только один элемент
         // Обновление прогресса
         UpdateProgress();
     }
@@ -83,7 +85,8 @@ public partial class WordCardsPage : ContentPage
                         await popupClosedTask.Task;
 
                         // Сброс коллекции Words к исходному набору
-                        Words = new ObservableCollection<Word>(DataManager.AllWords.Where(x => x.CategoryId == contextCategory.Id));
+                        var wordsInDB = await db.GetAllWord();
+                        Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
                         // Обновите LVWordСards.ItemsSource
                         LVWordСards.ItemsSource = Words;
                         currentIndex = 0;

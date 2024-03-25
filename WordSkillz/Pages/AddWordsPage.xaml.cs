@@ -6,12 +6,14 @@ namespace WordSkillz.Pages;
 
 public partial class AddWordsPage : ContentPage
 {
+    SQLiteDbContext db;
     Category contextCategory;
     List<Tuple<string, string>> words;
 
     public AddWordsPage(Category category)
     {
         InitializeComponent();
+        db = new SQLiteDbContext();
         NewWord();
         contextCategory = category;
         words = new List<Tuple<string, string>>();
@@ -91,7 +93,7 @@ public partial class AddWordsPage : ContentPage
         NewWord();
     }
 
-    private void ToolbarItem_Clicked(object sender, EventArgs e)
+    private async void ToolbarItem_Clicked(object sender, EventArgs e)
     {
         words.Clear();
         Entry previousEntry = null;
@@ -130,13 +132,11 @@ public partial class AddWordsPage : ContentPage
             {
                 var newWord = new Word()
                 {
-                    Id = DataManager.AllWords.Any() ? DataManager.AllWords.Max(w => w.Id) + 1 : 1,
                     OriginalWord = wordPair.Item1,
                     TranslatedWord = wordPair.Item2,
                     CategoryId = contextCategory.Id
                 };
-                DataManager.AllWords.Add(newWord);
-                DataManager.AllWords = DataManager.AllWords;
+                await db.AddWordAsync(newWord);
             }
         }
 

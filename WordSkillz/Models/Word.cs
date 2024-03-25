@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace WordSkillz.Models
 {
     public partial class Word
     {
+        [PrimaryKey, AutoIncrement]
         public Int32 Id { get; set; }
         public String OriginalWord { get; set; }
         public String TranslatedWord { get; set; }

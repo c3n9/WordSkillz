@@ -21,7 +21,7 @@
                     </Image.GestureRecognizers>
                 </Image>
             </Frame>
-            <material:TextField Title="name"
+            <!--<material:TextField Title="name"
                                 Keyboard="Text"
                                 AllowClear="True"
                                 x:Name="NameEntry"/>
@@ -42,7 +42,7 @@
             <material:TextField Title="phone"
                                 AllowClear="True"
                                 x:Name="PhoneNumberEntry"
-                                Keyboard="Telephone"/>
+                                Keyboard="Telephone"/>-->
             <Button Text="Register"
                     Clicked="Register_Clicked"
                     Margin="0,20,0,0" />

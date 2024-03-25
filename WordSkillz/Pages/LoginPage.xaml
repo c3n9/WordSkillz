@@ -9,7 +9,7 @@
                          WidthRequest="300">
         <Label Text="Login"
                HorizontalOptions="Center" />
-        <material:TextField Title="Email"
+        <!--<material:TextField Title="Email"
                             Keyboard="Email"
                             x:Name="EmailEntry"
                             Margin="0,0,0,10" />
@@ -17,7 +17,7 @@
                             IsPassword="True"
                             Keyboard="Text"
                             x:Name="PasswordEntry"
-                            Margin="0,0,0,20" />
+                            Margin="0,0,0,20" />-->
         <Button Text="Login"
                 Clicked="Button_Clicked" />
         <Frame Style="{DynamicResource FrameForHyperlink}">
