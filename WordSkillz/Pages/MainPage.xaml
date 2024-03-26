@@ -4,7 +4,8 @@
              xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
              x:Class="WordSkillz.Pages.MainPage"
              Title="WordSkillz"
-             Appearing="ContentPage_Appearing">
+             Appearing="ContentPage_Appearing"
+             FlyoutItem.IsVisible="False">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="?"

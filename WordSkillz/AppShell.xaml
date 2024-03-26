@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="WordSkillz.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:WordSkillz"
-    xmlns:pages="clr-namespace:WordSkillz.Pages"
-    FlyoutHeaderBehavior="CollapseOnScroll">
+<Shell x:Class="WordSkillz.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:WordSkillz"
+       xmlns:pages="clr-namespace:WordSkillz.Pages"
+       FlyoutItem.IsVisible="False"
+       FlyoutHeaderBehavior="Default">
 
     <TabBar>
         <!--<Tab Title="Option"
@@ -24,8 +24,8 @@
             <ShellContent ContentTemplate="{DataTemplate pages:AccountPage}" />
         </Tab>
     </TabBar>
-    
-    
+
+
     <!--Бургер-->
     <!--<FlyoutItem Title="Main"
                 Route="MainPage">
@@ -35,5 +35,5 @@
                 Route="OptionPage">
         <ShellContent ContentTemplate="{DataTemplate pages:OptionPage}" />
     </FlyoutItem>-->
-    
+
 </Shell>

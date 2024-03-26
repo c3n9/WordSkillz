@@ -64,6 +64,9 @@ public partial class WordCardsPage : ContentPage
                     currentIndex = Words.Count > 0 ? 0 : -1;
                     if (currentIndex == -1)
                     {
+                        uint animationLength = 1000;
+                        WordsLeftLabel.Text = allCountWords.ToString();
+                        await ProgressBar.ProgressTo(allCountWords, animationLength, Easing.Linear);
                         // Все слова были свайпнуты вправо, отображаем сообщение
                         //await DisplayAlert("Congratulate", "You've looked at all the words!", "OK");
                         var congratulatePopup = new CongratulatePopup();
@@ -80,8 +83,8 @@ public partial class WordCardsPage : ContentPage
                         };
 
                         App.Current.MainPage.ShowPopup(popup);
-
                         // Ожидание завершения всплывающего окна
+                       
                         await popupClosedTask.Task;
 
                         // Сброс коллекции Words к исходному набору

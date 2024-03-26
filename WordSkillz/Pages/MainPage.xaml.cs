@@ -30,7 +30,6 @@ namespace WordSkillz.Pages
             db = new SQLiteDbContext();
             Categories = await db.GetAllCategory();
             BindingContext = this;
-            LVCategories.ItemsSource = null;
             LVCategories.ItemsSource = await db.GetAllCategory();
             ActivityIndicator.IsRunning = false;
             ActivityIndicator.IsVisible = false;

@@ -194,8 +194,11 @@ public partial class MatchWordsCard : ContentPage
                 currentIndex = Words.Count > 0 ? 0 : -1;
                 if (currentIndex == -1)
                 {
-                    button.BackgroundColor = Color.FromHex("#228b22");
 
+                    button.BackgroundColor = Color.FromHex("#228b22");
+                    uint animationLength = 1000;
+                    WordsLeftLabel.Text = allCountWords.ToString();
+                    await ProgressBar.ProgressTo(allCountWords, animationLength, Easing.Linear);
                     var congratulatePopup = new CongratulatePopup();
                     var popup = new CommunityToolkit.Maui.Views.Popup();
                     popup.Content = congratulatePopup;

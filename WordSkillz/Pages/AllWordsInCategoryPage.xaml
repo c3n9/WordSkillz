@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.AllWordsInCategoryPage"
              Title="WordSkillz"
+             FlyoutItem.IsVisible="False"
              Appearing="ContentPage_Appearing">
     <ContentPage.ToolbarItems>
         <!--<ToolbarItem Text="New word"
