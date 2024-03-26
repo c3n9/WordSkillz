@@ -15,16 +15,16 @@ public partial class MatchWordsCard : ContentPage
     private Word currentWord;
     private int correctAnswerIndex;
     private Category contextCategory;
-    public List<Word> Words { get; set; }
-    public List<Word> WordsToShuffle { get; set; }
+    public ObservableCollection<Word> Words { get; set; }
+    public ObservableCollection<Word> WordsToShuffle { get; set; }
 
     public MatchWordsCard(Category category, List<Word> words)
     {
         InitializeComponent();
         db = new SQLiteDbContext();
         contextCategory = category;
-        Words = words;
-        WordsToShuffle = words;
+        Words = new ObservableCollection<Word>(words);
+        WordsToShuffle = new ObservableCollection<Word>(words);
         allCountWords = Words.Count;
         currentWordCount = 0;
         Refresh();
@@ -207,8 +207,8 @@ public partial class MatchWordsCard : ContentPage
                     };
                     App.Current.MainPage.ShowPopup(popup);
                     await popupClosedTask.Task;
-                    var wordsInDB = await db.GetAllWord();
-                    Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
+
+                    Words = new ObservableCollection<Word>((await db.GetAllWord()).Where(x => x.CategoryId == contextCategory.Id).ToList());
                     allCountWords = Words.Count;
                     currentIndex = 0;
                     currentWordCount = 0;

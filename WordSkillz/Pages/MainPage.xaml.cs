@@ -15,30 +15,26 @@ namespace WordSkillz.Pages
         {
             InitializeComponent();
             //Categories = DataManager.AllCategories;
+            DelayedRefresh();
+        }
+        private async Task DelayedRefresh()
+        {
+            // Подождать 2 секунды перед вызовом Refresh()
+            ActivityIndicator.IsRunning = true;
+            ActivityIndicator.IsVisible = true;
+            await Task.Delay(500);
             Refresh();
         }
-
         private async void Refresh()
         {
-            try
-            {
-                db = new SQLiteDbContext();
-                Categories = await db.GetAllCategory();
-                BindingContext = this;
-                LVCategories.ItemsSource = null;
-                LVCategories.ItemsSource = await db.GetAllCategory();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
-            
-        }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            Refresh();
+            db = new SQLiteDbContext();
+            Categories = await db.GetAllCategory();
+            BindingContext = this;
+            LVCategories.ItemsSource = null;
+            LVCategories.ItemsSource = await db.GetAllCategory();
+            ActivityIndicator.IsRunning = false;
+            ActivityIndicator.IsVisible = false;
+
         }
         private void BPlusCategory_Clicked(object sender, EventArgs e)
         {
@@ -136,6 +132,11 @@ namespace WordSkillz.Pages
 
             // Отобразить попап
             App.Current.MainPage.ShowPopup(popup);
+        }
+
+        private void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            DelayedRefresh();
         }
     }
 }

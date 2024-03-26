@@ -7,11 +7,6 @@
     xmlns:pages="clr-namespace:WordSkillz.Pages"
     FlyoutHeaderBehavior="CollapseOnScroll">
 
-
-    <ShellContent Title="Loading"
-                  ContentTemplate="{DataTemplate pages:LoadingPage}"
-                  Route="LoadingPage"
-                  FlyoutItemIsVisible="False" />
     <TabBar>
         <!--<Tab Title="Option"
              Icon="settings.svg"
