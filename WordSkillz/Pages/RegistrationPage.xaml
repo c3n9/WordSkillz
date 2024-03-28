@@ -7,9 +7,9 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20">
-            <Frame CornerRadius="50"
+            <Frame CornerRadius="250"
                    Margin="0,20,0,20"
-                   HeightRequest="260"
+                   HeightRequest="250"
                    HasShadow="False"
                    WidthRequest="250">
                 <Image Aspect="AspectFill"
@@ -21,36 +21,43 @@
                     </Image.GestureRecognizers>
                 </Image>
             </Frame>
-            <!--<material:TextField Title="name"
+            <material:TextField Title="name"
                                 Keyboard="Text"
                                 AllowClear="True"
-                                x:Name="NameEntry"/>
+                                x:Name="NameEntry"
+                                FontSize="24"/>
             <material:TextField Title="email"
                                 Keyboard="Email"
                                 AllowClear="True"
-                                x:Name="EmailEntry" />
+                                x:Name="EmailEntry"
+                                FontSize="24"/>
             <material:TextField Title="password"
                                 AllowClear="True"
                                 IsTextPredictionEnabled="True"
                                 IsPassword="True"
                                 x:Name="PasswordEntry"
+                                FontSize="24"
                                 Keyboard="Text" />
             <material:TextField Title="address"
                                 AllowClear="True"
                                 x:Name="AddressEntry"
-                                Keyboard="Text" />
+                                Keyboard="Text"
+                                FontSize="24" />
             <material:TextField Title="phone"
                                 AllowClear="True"
                                 x:Name="PhoneNumberEntry"
-                                Keyboard="Telephone"/>-->
+                                Keyboard="Telephone"
+                                FontSize="24"/>
             <Button Text="Register"
                     Clicked="Register_Clicked"
-                    Margin="0,20,0,0" />
+                    Margin="0,20,0,0"
+                    FontSize="24" />
             <Label Text="Registered? Log in."
                    TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
                    Margin="0,20,0,0"
                    TextDecorations="Underline"
-                   HorizontalOptions="Center">
+                   HorizontalOptions="Center"
+                   FontSize="20">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Label.GestureRecognizers>
