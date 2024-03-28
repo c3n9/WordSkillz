@@ -12,9 +12,10 @@
                    HeightRequest="250"
                    HasShadow="False"
                    WidthRequest="250">
-                <Image Aspect="AspectFill"
+                <Image Aspect="Fill"
                        x:Name="SelectedPhoto"
-                       HeightRequest="260"
+                       Source="user.png"
+                       HeightRequest="250"
                        WidthRequest="250">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />

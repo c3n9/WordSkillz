@@ -29,7 +29,7 @@
                             WidthRequest="50"
                             BorderWidth="2"
                             HeightRequest="50"
-                            FontSize="20"
+                            FontSize="30"
                             Clicked="BPlayViewWords_Clicked"
                             HorizontalOptions="EndAndExpand"
                             VerticalOptions="CenterAndExpand" />
@@ -51,7 +51,7 @@
                             CornerRadius="25"
                             WidthRequest="50"
                             HeightRequest="50"
-                            FontSize="20"
+                            FontSize="30"
                             Clicked="BPlayHiddenWords_Clicked"
                             HorizontalOptions="EndAndExpand"
                             VerticalOptions="CenterAndExpand" />
@@ -73,7 +73,7 @@
                             BorderWidth="2"
                             WidthRequest="50"
                             HeightRequest="50"
-                            FontSize="20"
+                            FontSize="30"
                             Clicked="BPlayMatchWords_Clicked"
                             HorizontalOptions="EndAndExpand"
                             VerticalOptions="CenterAndExpand" />

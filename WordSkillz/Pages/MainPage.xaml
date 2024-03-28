@@ -2,14 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
              x:Class="WordSkillz.Pages.MainPage"
              Title="WordSkillz"
              Appearing="ContentPage_Appearing"
              FlyoutItem.IsVisible="False">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="?"
-                     Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Clicked="ToolbarItem_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="FASolid"
+                                 Glyph="{x:Static fa:Solid.CircleQuestion}"
+                                 Color="White" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
         <!--<ToolbarItem Text="+"
                      Clicked="BPlusCategory_Clicked"/>-->
     </ContentPage.ToolbarItems>
@@ -45,12 +51,18 @@
                                                         <ColumnDefinition Width="Auto" />
                                                     </Grid.ColumnDefinitions>
                                                     <Grid BackgroundColor="Transparent" />
-                                                    <Image Source="trash.png"
-                                                           VerticalOptions="Center"
-                                                           HorizontalOptions="End"
-                                                           Margin="10,0,10,0"
+                                                    <Image Margin="10,0,10,0"
                                                            HeightRequest="30"
-                                                           WidthRequest="30" />
+                                                           WidthRequest="30"
+                                                           VerticalOptions="Center"
+                                                           HorizontalOptions="End">
+                                                        <Image.Source>
+                                                            <FontImageSource FontFamily="FASolid"
+                                                                             Glyph="{x:Static fa:Solid.Trash}"
+                                                                             Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
+                                                        </Image.Source>
+                                                    </Image>
+
                                                 </Grid>
                                             </SwipeItemView.Content>
                                         </SwipeItemView>
@@ -85,6 +97,7 @@
                                                 BorderWidth="2"
                                                 BackgroundColor="Transparent"
                                                 CornerRadius="30">
+                                            
                                             <Button.Triggers>
                                                 <Trigger TargetType="Button"
                                                          Property="IsEnabled"
@@ -99,17 +112,21 @@
                                                          Value="True">
                                                     <Setter Property="TextColor"
                                                             Value="{AppThemeBinding Light=White, Dark=White}" />
-                                                    --><!--<Setter Property="BackgroundColor"
+                                                    -->
+                                                <!--<Setter Property="BackgroundColor"
                                                             Value="{AppThemeBinding Light=Primary, Dark=PrimaryNight}" />-->
-                                                    <!--<Setter Property="BackgroundColor">
+                                                <!--<Setter Property="BackgroundColor">
                                                         <Setter.Value>
                                                             <OnPlatform x:TypeArguments="Color">
                                                                 <On Platform="Android, iOS">#0875BA</On>
                                                             </OnPlatform>
                                                         </Setter.Value>
-                                                    </Setter>--><!--
+                                                    </Setter>-->
+                                                <!--
                                                 </Trigger>-->
+                                                
                                             </Button.Triggers>
+                                            
                                         </Button>
                                     </Grid>
                                 </Frame>

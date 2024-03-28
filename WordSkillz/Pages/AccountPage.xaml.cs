@@ -15,4 +15,9 @@ public partial class AccountPage : ContentPage
     {
         await Navigation.PushModalAsync(new LoginPage());
     }
+
+    private async void ToolbarItem_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new RegistrationPage());
+    }
 }

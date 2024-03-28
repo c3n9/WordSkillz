@@ -19,6 +19,7 @@ namespace WordSkillz
                 {
                     fonts.AddFont("Montserrat-Regular.ttf", "MontserratRegular");
                     fonts.AddFont("Montserrat-SemiBold.ttf", "MontserratSemiBold");
+                    fonts.AddFontAwesomeIconFonts();
                 });
             builder.ConfigureMauiHandlers(handlers =>
             {

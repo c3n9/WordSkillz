@@ -33,9 +33,8 @@ public partial class AllWordsInCategoryPage : ContentPage
 
     private async void Refresh()
     {
-        LVWords.ItemsSource = null;
-        var wordsInDB = await db.GetAllWord();
-        Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
+        Words = (await db.GetAllWord()).Where(x => x.CategoryId == contextCategory.Id).ToList();
+        BindingContext = this;
         LVWords.ItemsSource = Words;
 
         ActivityIndicator.IsRunning = false;
