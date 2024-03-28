@@ -38,11 +38,6 @@
                                 x:Name="PasswordEntry"
                                 FontSize="24"
                                 Keyboard="Text" />
-            <material:TextField Title="address"
-                                AllowClear="True"
-                                x:Name="AddressEntry"
-                                Keyboard="Text"
-                                FontSize="24" />
             <material:TextField Title="phone"
                                 AllowClear="True"
                                 x:Name="PhoneNumberEntry"
