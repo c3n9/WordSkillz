@@ -195,7 +195,7 @@ public partial class BluredWordsCardsPage : ContentPage
             // Cтрока цвета в формате HEX
             string hexColor = string.Empty;
             if (Application.Current.UserAppTheme == AppTheme.Light)
-                hexColor = "#0875BA";
+                hexColor = "#000000";
             else
                 hexColor = "#cec7bf";
 

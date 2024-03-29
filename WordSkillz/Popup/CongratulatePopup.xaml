@@ -19,11 +19,11 @@
                                    VerticalOptions="End">
                 <Button x:Name="BOk"
                         Clicked="BOk_Clicked"
-                        Text="ok"
+                        Text="restart"
                         FontAttributes="Bold"
                         TextColor="{StaticResource Secondary}"
                         CornerRadius="20"
-                        WidthRequest="80"
+                        WidthRequest="100"
                         HeightRequest="45"
                         FontSize="22" />
             </HorizontalStackLayout>
