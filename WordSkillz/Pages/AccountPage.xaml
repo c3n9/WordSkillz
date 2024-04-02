@@ -25,27 +25,27 @@
             </Frame>
             <StackLayout Grid.Column="1"
                          VerticalOptions="Center">
-                <Label Text="c3n9"
+                <Label Text="{Binding Name}"
                        FontSize="28"
                        FontAttributes="Bold"
                        HorizontalOptions="Start" />
-                <Label Text="c3n9@example.com"
+                <Label Text="{Binding Email}"
+                       FontSize="18"
+                       HorizontalOptions="Start" />
+                <Label Text="Stats"
+                       FontSize="18"
+                       HorizontalOptions="Start" />
+                <Label Text="{Binding LearnedWordsCount, StringFormat='Learned: {0}'}"
+                       FontSize="18"
+                       HorizontalOptions="Start" />
+                <Label Text="{Binding CorrectAnswersCount, StringFormat='Correct answers: {0}'}"
+                       FontSize="18"
+                       HorizontalOptions="Start" />
+                <Label Text="{Binding IncorrectAnswersCount, StringFormat='Incorrect answers: {0}'}"
                        FontSize="18"
                        HorizontalOptions="Start" />
             </StackLayout>
         </Grid>
-        <Label Text="My friends"
-               FontSize="24"
-               HorizontalOptions="Start"
-               Margin="20,10,0,0" />
-        <Label Text="My stats"
-               FontSize="24"
-               HorizontalOptions="Start"
-               Margin="20,10,0,0" />
-        <Label Text="Exit"
-               FontSize="24"
-               HorizontalOptions="Start"
-               Margin="20,10,0,0" />
         <Button Text="Login"
                 x:Name="BLogin"
                 Margin="0,120,0,0"

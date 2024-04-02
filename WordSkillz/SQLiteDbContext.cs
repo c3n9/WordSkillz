@@ -30,6 +30,7 @@ namespace WordSkillz
             {
                 await Database.CreateTableAsync<Category>();
                 await Database.CreateTableAsync<Word>();
+                await Database.CreateTableAsync<Account>();
             }
         }
 
@@ -95,6 +96,42 @@ namespace WordSkillz
         {
             await InitializeDatabase();
             return await Database.DeleteAsync(word);
+        }
+        public async Task<int> AddAccountAsync(Account account)
+        {
+            await InitializeDatabase();
+            if (account.Id != 0)
+            {
+                return await Database.UpdateAsync(account);
+            }
+            else
+            {
+                return await Database.InsertAsync(account);
+            }
+        }
+
+        public async Task<Account> GetAccountAsync(int accountId)
+        {
+            await InitializeDatabase();
+            return await Database.Table<Account>().Where(x => x.Id == accountId).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Account>> GetAllAccountsAsync()
+        {
+            await InitializeDatabase();
+            return await Database.Table<Account>().ToListAsync();
+        }
+
+        public async Task<int> UpdateAccountAsync(Account account)
+        {
+            await InitializeDatabase();
+            return await Database.UpdateAsync(account);
+        }
+
+        public async Task<int> DeleteAccountAsync(Account account)
+        {
+            await InitializeDatabase();
+            return await Database.DeleteAsync(account);
         }
     }
     

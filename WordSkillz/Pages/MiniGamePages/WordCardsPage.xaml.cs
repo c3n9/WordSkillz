@@ -34,8 +34,6 @@ public partial class WordCardsPage : ContentPage
         BindingContext = this;
         LVWordСards.ItemsSource = Words.Take(1);
         Refresh();
-        // Устанавливаем начальный источник данных, включая только один элемент
-        // Обновление прогресса
         UpdateProgress();
     }
 
@@ -58,6 +56,12 @@ public partial class WordCardsPage : ContentPage
             if (e.SwipeDirection == SwipeDirection.Left)
             {
                 Words.RemoveAt(currentIndex);
+                if (App.Account != null)
+                {
+                    App.Account.LearnedWordsCount += 1;
+                    var account = App.Account;  
+                    db.UpdateAccountAsync(App.Account);
+                }
                 if (currentIndex >= Words.Count)
                 {
                     // Если текущий индекс выходит за пределы обновленной коллекции, уменьшите его
@@ -84,7 +88,7 @@ public partial class WordCardsPage : ContentPage
 
                         App.Current.MainPage.ShowPopup(popup);
                         // Ожидание завершения всплывающего окна
-                       
+
                         await popupClosedTask.Task;
 
                         // Сброс коллекции Words к исходному набору

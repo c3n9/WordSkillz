@@ -56,6 +56,12 @@ public partial class BluredWordsCardsPage : ContentPage
             if (e.SwipeDirection == SwipeDirection.Left)
             {
                 Words.RemoveAt(currentIndex);
+                if (App.Account != null)
+                {
+                    App.Account.LearnedWordsCount += 1;
+                    App.Account.CorrectAnswersCount += 1;
+                    db.UpdateAccountAsync(App.Account);
+                }
                 if (currentIndex >= Words.Count)
                 {
                     // ≈сли текущий индекс выходит за пределы обновленной коллекции, уменьшите его
@@ -97,6 +103,11 @@ public partial class BluredWordsCardsPage : ContentPage
             else if (e.SwipeDirection == SwipeDirection.Right)
             {
                 currentIndex++;
+                if (App.Account != null)
+                {
+                    App.Account.IncorrectAnswersCount += 1;
+                    db.UpdateAccountAsync(App.Account);
+                }
                 if (currentIndex >= Words.Count)
                 {
                     currentIndex = 0;

@@ -23,17 +23,20 @@
                 </Image>
             </Frame>
             <material:TextField Title="name"
+                                Text="{Binding Name}"
                                 Keyboard="Text"
                                 AllowClear="True"
                                 x:Name="NameEntry"
                                 FontSize="24"/>
             <material:TextField Title="email"
+                                Text="{Binding Email}"
                                 Keyboard="Email"
                                 AllowClear="True"
                                 x:Name="EmailEntry"
                                 FontSize="24"/>
             <material:TextField Title="password"
                                 AllowClear="True"
+                                Text="{Binding Password}"
                                 IsTextPredictionEnabled="True"
                                 IsPassword="True"
                                 x:Name="PasswordEntry"
@@ -41,6 +44,7 @@
                                 Keyboard="Text" />
             <material:TextField Title="phone"
                                 AllowClear="True"
+                                Text="{Binding Phone}"
                                 x:Name="PhoneNumberEntry"
                                 Keyboard="Telephone"
                                 FontSize="24"/>

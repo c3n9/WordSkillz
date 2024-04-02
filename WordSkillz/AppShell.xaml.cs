@@ -1,4 +1,6 @@
-﻿namespace WordSkillz
+﻿using WordSkillz.Pages;
+
+namespace WordSkillz
 {
     public partial class AppShell : Shell
     {
@@ -6,5 +8,6 @@
         {
             InitializeComponent();
         }
+
     }
 }

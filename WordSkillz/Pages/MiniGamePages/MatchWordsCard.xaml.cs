@@ -188,6 +188,12 @@ public partial class MatchWordsCard : ContentPage
         if (isCorrect)
         {
             currentWordCount++;
+            if (App.Account != null)
+            {
+                App.Account.LearnedWordsCount += 1;
+                App.Account.CorrectAnswersCount += 1;
+                db.UpdateAccountAsync(App.Account);
+            }
             Words.RemoveAt(currentIndex);
             if (currentIndex >= Words.Count)
             {
@@ -231,6 +237,11 @@ public partial class MatchWordsCard : ContentPage
         else
         {
             currentIndex++;
+            if (App.Account != null)
+            {
+                App.Account.IncorrectAnswersCount += 1;
+                db.UpdateAccountAsync(App.Account);
+            }
             if (currentIndex >= Words.Count)
             {
                 currentIndex = 0;
