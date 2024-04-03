@@ -100,14 +100,7 @@ namespace WordSkillz
         public async Task<int> AddAccountAsync(Account account)
         {
             await InitializeDatabase();
-            if (account.Id != 0)
-            {
-                return await Database.UpdateAsync(account);
-            }
-            else
-            {
-                return await Database.InsertAsync(account);
-            }
+            return await Database.InsertAsync(account);
         }
 
         public async Task<Account> GetAccountAsync(int accountId)
@@ -134,5 +127,5 @@ namespace WordSkillz
             return await Database.DeleteAsync(account);
         }
     }
-    
+
 }

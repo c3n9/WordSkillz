@@ -16,13 +16,19 @@ public partial class RegistrationPage : ContentPage
     }
     private async void Register_Clicked(object sender, EventArgs e)
     {
+        var accounts = await db.GetAllAccountsAsync();
+        if (accounts.Count != 0)
+            contextAccount.Id = (accounts).LastOrDefault().Id++;
+        else
+            contextAccount.Id = 1;
         await db.AddAccountAsync(contextAccount);
         App.Account = contextAccount;
+        Preferences.Set("LoggedInAccountId", contextAccount.Id); // Сохраняем Id аккаунта
         await Navigation.PopModalAsync();
     }
 
     private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-    { 
+    {
         await Navigation.PopModalAsync();
     }
 

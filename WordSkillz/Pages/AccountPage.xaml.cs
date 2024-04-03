@@ -7,19 +7,22 @@ public partial class AccountPage : ContentPage
 		InitializeComponent();
 
     }
-    public async void UpdateAccount()
-    {
-        var db = new SQLiteDbContext();
-        App.Account = await db.GetAccountAsync(1);
-    }
-    protected async override void OnAppearing()
-    {
-        base.OnAppearing();
-        if (App.Account != null)
-        {
-            BindingContext = App.Account;
-        }
-    }
+    //protected async override void OnAppearing()
+    //{
+    //    base.OnAppearing();
+    //    try
+    //    {
+    //        if (App.Account != null)
+    //        {
+    //            BindingContext = App.Account;
+    //        }
+    //    }
+    //    catch
+    //    {
+    //        return;
+    //    }
+        
+    //}
 
     private async void BLogin_Clicked(object sender, EventArgs e)
     {

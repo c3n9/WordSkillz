@@ -10,40 +10,44 @@
     </ContentPage.ToolbarItems>-->
     <StackLayout Padding="20">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Frame CornerRadius="80"
-                   HasShadow="False"
-                   WidthRequest="150"
-                   HeightRequest="150">
-                <Image Source="user.png"
-                       HeightRequest="100"
-                       WidthRequest="100"
-                       HorizontalOptions="Center" />
-            </Frame>
-            <StackLayout Grid.Column="1"
-                         VerticalOptions="Center">
-                <Label Text="{Binding Name}"
+            <StackLayout HorizontalOptions="Center">
+                <Frame CornerRadius="80"
+                       HasShadow="False"
+                       WidthRequest="150"
+                       HeightRequest="150">
+                    <Image Source="user.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           HorizontalOptions="Center" />
+                </Frame>
+                <!--<Label Text="{Binding Name}"
                        FontSize="28"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Start" />
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,20"
+                       FontAttributes="Bold" />
                 <Label Text="{Binding Email}"
-                       FontSize="18"
-                       HorizontalOptions="Start" />
+                       HorizontalOptions="Center"
+                       FontSize="22" />
+                <Label Text="{Binding PhoneNumber}"
+                       HorizontalOptions="Center"
+                       FontSize="22"
+                       Margin="0,0,0,20" />
+                <Image>
+                    <Image.Source>
+                        <FontImageSource FontFamily="{StaticResource FontAwesomeSolidFont}"
+                                         Glyph="{x:Static fa:Solid.Star}" />
+                    </Image.Source>
+                </Image>
                 <Label Text="Stats"
-                       FontSize="18"
-                       HorizontalOptions="Start" />
+                       HorizontalTextAlignment="Center"
+                       FontSize="25"
+                       VerticalTextAlignment="Center" />
                 <Label Text="{Binding LearnedWordsCount, StringFormat='Learned: {0}'}"
-                       FontSize="18"
-                       HorizontalOptions="Start" />
+                       FontSize="22" />
                 <Label Text="{Binding CorrectAnswersCount, StringFormat='Correct answers: {0}'}"
-                       FontSize="18"
-                       HorizontalOptions="Start" />
+                       FontSize="22" />
                 <Label Text="{Binding IncorrectAnswersCount, StringFormat='Incorrect answers: {0}'}"
-                       FontSize="18"
-                       HorizontalOptions="Start" />
+                       FontSize="22" />-->
             </StackLayout>
         </Grid>
         <Button Text="Login"

@@ -44,7 +44,7 @@
                                 Keyboard="Text" />
             <material:TextField Title="phone"
                                 AllowClear="True"
-                                Text="{Binding Phone}"
+                                Text="{Binding PhoneNumber}"
                                 x:Name="PhoneNumberEntry"
                                 Keyboard="Telephone"
                                 FontSize="24"/>
