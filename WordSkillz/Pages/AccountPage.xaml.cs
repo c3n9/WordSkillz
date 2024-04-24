@@ -1,36 +1,32 @@
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore;
+
 namespace WordSkillz.Pages;
 
 public partial class AccountPage : ContentPage
 {
-	public AccountPage()
-	{
-		InitializeComponent();
-
-    }
-    //protected async override void OnAppearing()
-    //{
-    //    base.OnAppearing();
-    //    try
-    //    {
-    //        if (App.Account != null)
-    //        {
-    //            BindingContext = App.Account;
-    //        }
-    //    }
-    //    catch
-    //    {
-    //        return;
-    //    }
-        
-    //}
-
-    private async void BLogin_Clicked(object sender, EventArgs e)
+    public ISeries[] Series { get; set; }
+    public AccountPage()
     {
-        await Navigation.PushModalAsync(new LoginPage());
+        InitializeComponent();
+        Series = new ISeries[]
+        {
+            new PieSeries<double> {Values = new double[] { App.LearnedWordsCount} },
+            new PieSeries<double> {Values = new double[] { App.CorrectAnswersCount} },
+            new PieSeries<double> {Values = new double[] { App.IncorrectAnswersCount} },
+        };
+        MyPieChart.Series = Series;
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        UpdateText();
     }
 
-    private async void ToolbarItem_Clicked(object sender, EventArgs e)
+    private void UpdateText()
     {
-        await Navigation.PushModalAsync(new RegistrationPage());
+        TBLearned.Text = $"Выучено слов: {App.LearnedWordsCount}";
+        TBCorrect.Text = $"Верных ответов: {App.CorrectAnswersCount}";
+        TBIncorrect.Text = $"Неверных ответов: {App.IncorrectAnswersCount}";
     }
 }

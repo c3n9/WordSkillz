@@ -1,59 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
              x:Class="WordSkillz.Pages.AccountPage"
-             xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
              Title="WordSkillz">
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="🖍️" 
-                     Clicked="ToolbarItem_Clicked"/>
-    </ContentPage.ToolbarItems>-->
     <StackLayout Padding="20">
         <Grid>
-            <StackLayout HorizontalOptions="Center">
-                <Frame CornerRadius="80"
-                       HasShadow="False"
-                       WidthRequest="150"
-                       HeightRequest="150">
-                    <Image Source="user.png"
-                           HeightRequest="100"
-                           WidthRequest="100"
-                           HorizontalOptions="Center" />
-                </Frame>
-                <!--<Label Text="{Binding Name}"
-                       FontSize="28"
-                       HorizontalTextAlignment="Center"
-                       Margin="0,0,0,20"
-                       FontAttributes="Bold" />
-                <Label Text="{Binding Email}"
-                       HorizontalOptions="Center"
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Text="Статистика по обучению"
+                   FontSize="25" 
+                   HorizontalOptions="Center"
+                   Margin="10"/>
+            <StackLayout HorizontalOptions="Center"
+                         Grid.Row="1">
+                <Label x:Name="TBLearned"
                        FontSize="22" />
-                <Label Text="{Binding PhoneNumber}"
-                       HorizontalOptions="Center"
-                       FontSize="22"
-                       Margin="0,0,0,20" />
-                <Image>
-                    <Image.Source>
-                        <FontImageSource FontFamily="{StaticResource FontAwesomeSolidFont}"
-                                         Glyph="{x:Static fa:Solid.Star}" />
-                    </Image.Source>
-                </Image>
-                <Label Text="Stats"
-                       HorizontalTextAlignment="Center"
-                       FontSize="25"
-                       VerticalTextAlignment="Center" />
-                <Label Text="{Binding LearnedWordsCount, StringFormat='Learned: {0}'}"
+                <Label x:Name="TBCorrect"
                        FontSize="22" />
-                <Label Text="{Binding CorrectAnswersCount, StringFormat='Correct answers: {0}'}"
+                <Label x:Name="TBIncorrect"
                        FontSize="22" />
-                <Label Text="{Binding IncorrectAnswersCount, StringFormat='Incorrect answers: {0}'}"
-                       FontSize="22" />-->
+                <lvc:PieChart x:Name="MyPieChart">
+                </lvc:PieChart>
             </StackLayout>
         </Grid>
-        <Button Text="Login"
-                x:Name="BLogin"
-                Margin="0,120,0,0"
-                Clicked="BLogin_Clicked" />
     </StackLayout>
 
 </ContentPage>

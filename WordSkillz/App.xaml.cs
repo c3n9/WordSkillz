@@ -5,23 +5,30 @@ namespace WordSkillz
 {
     public partial class App : Application
     {
-        public static Account Account;
+        public static int LearnedWordsCount { get; set; }
+        public static int CorrectAnswersCount { get; set; }
+        public static int IncorrectAnswersCount { get; set; }
         public App()
         {
             InitializeComponent();
-            //Authoriztation();
+            LoadCounts();
             Application.Current.UserAppTheme = AppTheme.Light;
             MainPage = new AppShell();
         }
-        //public async void Authoriztation()
-        //{
-        //    SQLiteDbContext db = new SQLiteDbContext();
-        //    var loggedInAccountId = Preferences.Get("LoggedInAccountId", -1);
-        //    if (loggedInAccountId != -1)
-        //    {
-        //        var account = await db.GetAllAccountsAsync();
-        //        Account = await db.GetAccountAsync(loggedInAccountId);
-        //    }
-        //}
+
+        private void LoadCounts()
+        {
+            LearnedWordsCount = Preferences.Get("LearnedWordsCount", 0);
+            CorrectAnswersCount = Preferences.Get("CorrectAnswersCount", 0);
+            IncorrectAnswersCount = Preferences.Get("IncorrectAnswersCount", 0);
+        }
+
+        protected override void OnSleep()
+        {
+            base.OnSleep();
+            Preferences.Set("LearnedWordsCount", LearnedWordsCount);
+            Preferences.Set("CorrectAnswersCount", CorrectAnswersCount);
+            Preferences.Set("IncorrectAnswersCount", IncorrectAnswersCount);
+        }
     }
 }

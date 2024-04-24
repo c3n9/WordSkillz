@@ -8,32 +8,15 @@
        FlyoutHeaderBehavior="Default">
 
     <TabBar>
-        <!--<Tab Title="Option"
-             Icon="settings.svg"
-             Route="OptionPage">
-            <ShellContent ContentTemplate="{DataTemplate pages:OptionPage}" />
-        </Tab>-->
-        <Tab Title="Home"
+        <Tab Title="Главная"
              Icon="home.svg"
              Route="MainPage">
             <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
         </Tab>
-        <Tab Title="Account"
+        <Tab Title="Профиль"
              Icon="user.svg"
              Route="AccountPage">
             <ShellContent ContentTemplate="{DataTemplate pages:AccountPage}" />
         </Tab>
     </TabBar>
-
-
-    <!--Бургер-->
-    <!--<FlyoutItem Title="Main"
-                Route="MainPage">
-        <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
-    </FlyoutItem>-->
-    <!--<FlyoutItem Title="Option"
-                Route="OptionPage">
-        <ShellContent ContentTemplate="{DataTemplate pages:OptionPage}" />
-    </FlyoutItem>-->
-
 </Shell>

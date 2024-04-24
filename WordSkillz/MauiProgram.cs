@@ -2,7 +2,10 @@
 using Microsoft.Extensions.Logging;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using UraniumUI;
+
+#if ANDROID
 using WordSkillz.Platforms.Android;
+#endif
 
 namespace WordSkillz
 {
@@ -12,6 +15,7 @@ namespace WordSkillz
         {
             var builder = MauiApp.CreateBuilder();
             builder
+                .UseSkiaSharp(true)
                 .UseMauiApp<App>()
                 .UseUraniumUI()
                 .UseUraniumUIMaterial()
@@ -21,18 +25,18 @@ namespace WordSkillz
                     fonts.AddFont("Montserrat-SemiBold.ttf", "MontserratSemiBold");
                     fonts.AddFontAwesomeIconFonts();
                 });
+#if ANDROID
             builder.ConfigureMauiHandlers(handlers =>
-            {
-                handlers.AddHandler<Shell, CustomShellHandler>();
-            });
+                {
+                    handlers.AddHandler<Shell, CustomShellHandler>();
+                });
+#endif
 
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<SQLiteDbContext>();
             builder.UseMauiCommunityToolkit();
-            builder.UseSkiaSharp();
-
             return builder.Build();
         }
     }

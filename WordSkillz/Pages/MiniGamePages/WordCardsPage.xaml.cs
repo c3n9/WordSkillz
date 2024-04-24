@@ -56,12 +56,7 @@ public partial class WordCardsPage : ContentPage
             if (e.SwipeDirection == SwipeDirection.Left)
             {
                 Words.RemoveAt(currentIndex);
-                if (App.Account != null)
-                {
-                    App.Account.LearnedWordsCount += 1;
-                    var account = App.Account;  
-                    db.UpdateAccountAsync(App.Account);
-                }
+                App.LearnedWordsCount += 1;
                 if (currentIndex >= Words.Count)
                 {
                     // ≈сли текущий индекс выходит за пределы обновленной коллекции, уменьшите его

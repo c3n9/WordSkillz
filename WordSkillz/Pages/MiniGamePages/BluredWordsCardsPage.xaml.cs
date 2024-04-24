@@ -56,44 +56,28 @@ public partial class BluredWordsCardsPage : ContentPage
             if (e.SwipeDirection == SwipeDirection.Left)
             {
                 Words.RemoveAt(currentIndex);
-                if (App.Account != null)
-                {
-                    App.Account.LearnedWordsCount += 1;
-                    App.Account.CorrectAnswersCount += 1;
-                    db.UpdateAccountAsync(App.Account);
-                }
+                App.LearnedWordsCount += 1;
+                App.CorrectAnswersCount += 1;
                 if (currentIndex >= Words.Count)
                 {
-                    // Если текущий индекс выходит за пределы обновленной коллекции, уменьшите его
                     currentIndex = Words.Count > 0 ? 0 : -1;
                     if (currentIndex == -1)
                     {
-                        // Все слова были свайпнуты вправо, отображаем сообщение
-
-                        //await DisplayAlert("Congratulate", "You've looked at all the words!", "OK");
 
                         var congratulatePopup = new CongratulatePopup();
                         var popup = new CommunityToolkit.Maui.Views.Popup();
                         popup.Content = congratulatePopup;
                         popup.Color = Color.FromRgba(0, 0, 0, 0);
-                        // Создание и ожидание TaskCompletionSource
                         var popupClosedTask = new TaskCompletionSource<object>();
-
-                        // Обработчик события Closed для завершения TaskCompletionSource
                         popup.Closed += (sender, args) =>
                         {
                             popupClosedTask.SetResult(null);
                         };
 
                         App.Current.MainPage.ShowPopup(popup);
-
-                        // Ожидание завершения всплывающего окна
                         await popupClosedTask.Task;
-
-                        // Сброс коллекции Words к исходному набору
                         var wordsInDB = await db.GetAllWord();
                         Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
-                        // Обновите LVWordСards.ItemsSource
                         LVWordСards.ItemsSource = Words;
                         currentIndex = 0;
                     }
@@ -103,11 +87,7 @@ public partial class BluredWordsCardsPage : ContentPage
             else if (e.SwipeDirection == SwipeDirection.Right)
             {
                 currentIndex++;
-                if (App.Account != null)
-                {
-                    App.Account.IncorrectAnswersCount += 1;
-                    db.UpdateAccountAsync(App.Account);
-                }
+                App.IncorrectAnswersCount += 1;
                 if (currentIndex >= Words.Count)
                 {
                     currentIndex = 0;
@@ -131,21 +111,16 @@ public partial class BluredWordsCardsPage : ContentPage
     }
     private async void UpdateProgress()
     {
-        // Обновление прогресса
         int wordsLeft = currentWordCount;
         WordsLeftLabel.Text = wordsLeft.ToString();
         TotalWordsLabel.Text = allCountWords.ToString();
         double progress = (double)currentWordCount / allCountWords;
-
-        // Создание анимации для заполнения прогресс-бара
         uint animationLength = 1000;
         uint steps = 100;
         double startProgress = ProgressBar.Progress;
         double endProgress = progress;
 
         await ProgressBar.ProgressTo(endProgress, animationLength, Easing.Linear);
-
-        // Здесь можно добавить дополнительные действия после завершения анимации, если необходимо
     }
 
     [Obsolete]
@@ -154,13 +129,9 @@ public partial class BluredWordsCardsPage : ContentPage
         currentWord = Words[currentIndex];
         try
         {
-            // Воспроизведение текста в виде речи
             if (Device.RuntimePlatform == Device.Android)
             {
                 var speakOriginal = CrossTextToSpeech.Current.Speak(currentWord.OriginalWord, null, null, 1.0f, null, cancellationToken);
-                //var speakTranslated = CrossTextToSpeech.Current.Speak(currentWord.TranslatedWord, null, null, 1.0f, null, cancellationToken);
-                // Возврат задачи озвучивания
-                //await Task.WhenAll(speakOriginal, speakTranslated);
                 await Task.WhenAll(speakOriginal);
             }
 
