@@ -85,7 +85,7 @@
             </ListView>
         </ScrollView>
         <Button x:Name="BAddWords"
-                Text="+ new word"
+                Text="+ новое слово"
                 HorizontalOptions="End"
                 Margin="15"
                 CornerRadius="20"

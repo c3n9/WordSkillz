@@ -9,14 +9,14 @@
            Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
            BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
-            <Label Text="mini-games"
+            <Label Text="мини-игры"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    FontSize="22" />
             <Frame CornerRadius="20"
                    Margin="15,20">
                 <Grid>
-                    <Label Text="view words"
+                    <Label Text="обзор слова"
                            HorizontalOptions="Start"
                            FontSize="16"
                            VerticalOptions="Center" />
@@ -38,7 +38,7 @@
             <Frame CornerRadius="20"
                    Margin="15,20">
                 <Grid>
-                    <Label Text="hidden words"
+                    <Label Text="вспомни"
                            HorizontalOptions="Start"
                            FontSize="16"
                            VerticalOptions="Center" />
@@ -60,7 +60,7 @@
             <Frame CornerRadius="20"
                    Margin="15,20">
                 <Grid>
-                    <Label Text="match the words"
+                    <Label Text="догадайся"
                            HorizontalOptions="Start"
                            FontSize="16"
                            VerticalOptions="Center" />

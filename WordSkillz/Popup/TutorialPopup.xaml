@@ -4,7 +4,7 @@
              x:Class="WordSkillz.Popup.TutorialPopup"
              BackgroundColor="Transparent">
     <ContentView.Content>
-        <Label Text="Hello, this application for learn words"
+        <Label Text="Привет, это приложения для изучения слов"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                TextColor="White"/>

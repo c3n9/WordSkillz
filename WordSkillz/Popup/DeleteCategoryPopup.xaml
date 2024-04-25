@@ -9,22 +9,22 @@
            Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
            BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
-            <Label Text="warning"
+            <Label Text="предупреждение"
                    FontAttributes="Bold"
                    FontSize="22" />
-            <Label Text="delete this category?"
+            <Label Text="удалить эту категорию?"
                    FontSize="18"
                    Margin="0,10,0,5" />
             <HorizontalStackLayout HorizontalOptions="End"
                                    VerticalOptions="End">
                 <Button x:Name="BNo"
                         Clicked="BNo_Clicked"
-                        Text="no"
+                        Text="нет"
                         Margin="15,0"
                         Style="{StaticResource HyperlinkButton}" />
                 <Button x:Name="BYes"
                         Clicked="BYes_Clicked"
-                        Text="yes"
+                        Text="да"
                         FontAttributes="Bold"
                         TextColor="{StaticResource Secondary}"
                         CornerRadius="20"

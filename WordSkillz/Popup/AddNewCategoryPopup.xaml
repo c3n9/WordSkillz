@@ -11,10 +11,10 @@
            Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
            BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
-            <Label Text="new category"
+            <Label Text="новая категория"
                    FontAttributes="Bold"
                    FontSize="22"/>
-            <Label Text="enter name of category"
+            <Label Text="введите имя категории"
                    FontSize="18" />
             <Entry Placeholder="name"
                    x:Name="nameCategory"
@@ -25,12 +25,12 @@
                                    VerticalOptions="End">
                 <Button x:Name="BCancel"
                         Clicked="BCancel_Clicked"
-                        Text="cancel"
+                        Text="отмена"
                         Margin="15,0"
                         Style="{StaticResource HyperlinkButton}"/>
                 <Button x:Name="BOk"
                         Clicked="BOk_Clicked"
-                        Text="ok"
+                        Text="ок"
                         FontAttributes="Bold"
                         TextColor="{StaticResource Secondary}"
                         CornerRadius="20"

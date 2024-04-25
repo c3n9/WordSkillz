@@ -9,17 +9,17 @@
            Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
            BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
-            <Label Text="congratulate"
+            <Label Text="поздравляем"
                    FontAttributes="Bold"
                    FontSize="22" />
-            <Label Text="you've looked all the words!"
+            <Label Text="вы просмотрели все слова!"
                    FontSize="18"
                    Margin="0,10,0,5" />
             <HorizontalStackLayout HorizontalOptions="End"
                                    VerticalOptions="End">
                 <Button x:Name="BOk"
                         Clicked="BOk_Clicked"
-                        Text="restart"
+                        Text="заново"
                         FontAttributes="Bold"
                         TextColor="{StaticResource Secondary}"
                         CornerRadius="20"

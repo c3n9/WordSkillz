@@ -9,17 +9,17 @@
            Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
            BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
         <VerticalStackLayout>
-            <Label Text="error"
+            <Label Text="ошибка"
                    FontAttributes="Bold"
                    FontSize="22" />
-            <Label Text="there are no words in this category"
+            <Label Text="в этой категории нет слов"
                    FontSize="18"
                    Margin="0,10,0,10" />
             <HorizontalStackLayout HorizontalOptions="End"
                                    VerticalOptions="End">
                 <Button x:Name="BOk"
                         Clicked="BOk_Clicked"
-                        Text="ok"
+                        Text="ок"
                         FontAttributes="Bold"
                         TextColor="{StaticResource Secondary}"
                         CornerRadius="20"

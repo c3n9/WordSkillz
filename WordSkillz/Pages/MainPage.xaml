@@ -137,7 +137,7 @@
             </ListView>
         </ScrollView>
         <Button x:Name="BAddCategory"
-                Text="+ new category" 
+                Text="+ новая категория" 
                 HorizontalOptions="End"
                 Margin="15"
                 HeightRequest="55"
