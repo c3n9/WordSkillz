@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              x:Class="WordSkillz.Pages.AccountPage"
              Title="WordSkillz">
     <StackLayout Padding="20">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
+                <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Label Text="Статистика по обучению"
@@ -22,9 +23,11 @@
                        FontSize="22" />
                 <Label x:Name="TBIncorrect"
                        FontSize="22" />
-                <lvc:PieChart x:Name="MyPieChart">
-                </lvc:PieChart>
             </StackLayout>
+            <micro:ChartView x:Name="ChartView" 
+                             HeightRequest="300"
+                             Margin="0,20"
+                             Grid.Row="2"/>
         </Grid>
     </StackLayout>
 

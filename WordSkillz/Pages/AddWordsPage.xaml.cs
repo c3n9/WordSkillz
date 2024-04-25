@@ -30,8 +30,8 @@ public partial class AddWordsPage : ContentPage
             {
                 Children =
                 {
-                    new Entry { WidthRequest = 300, Placeholder="Original", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()), MaxLength=30 },
-                    new Entry { WidthRequest = 300, Placeholder="Translate", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()),MaxLength=30 }
+                    new Entry { WidthRequest = 300, Placeholder="Оригинальное", ReturnType = ReturnType.Next, ReturnCommand = new Command(() => FocusTranslateEntry()), MaxLength=30 },
+                    new Entry { WidthRequest = 300, Placeholder="Перевод", ReturnType = ReturnType.Done, ReturnCommand = new Command(() => NewWord()),MaxLength=30 }
                 }
             }
         };

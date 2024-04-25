@@ -16,7 +16,7 @@
                    FontSize="22"/>
             <Label Text="введите имя категории"
                    FontSize="18" />
-            <Entry Placeholder="name"
+            <Entry Placeholder="имя"
                    x:Name="nameCategory"
                    FontSize="18"
                    MaxLength="25"

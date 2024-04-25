@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using Microcharts.Maui;
 using Microsoft.Extensions.Logging;
 using SkiaSharp.Views.Maui.Controls.Hosting;
 using UraniumUI;
@@ -15,8 +16,9 @@ namespace WordSkillz
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .UseSkiaSharp(true)
                 .UseMauiApp<App>()
+                .UseMicrocharts()
+                .UseSkiaSharp()
                 .UseUraniumUI()
                 .UseUraniumUIMaterial()
                 .ConfigureFonts(fonts =>
