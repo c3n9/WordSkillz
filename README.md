@@ -19,7 +19,7 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 
 ## Screenshots
 
-![photo_2024-04-26_22-15-43](https://github.com/c3n9/WordSkillz/assets/108518693/fa4d7171-f9fb-402f-a71c-c434cf5a3702)
+![photo_2024-04-26_22-31-49](https://github.com/c3n9/WordSkillz/assets/108518693/141c8f19-246c-4e20-84bd-50ce8e821811)
 
 ![photo_2024-04-26_22-15-43 (2)](https://github.com/c3n9/WordSkillz/assets/108518693/2c214183-030c-478f-9c99-906f175871e7)
 
