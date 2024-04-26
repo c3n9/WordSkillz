@@ -80,7 +80,7 @@
                                                    WidthRequest="200"
                                                    HorizontalOptions="StartAndExpand"
                                                    VerticalOptions="CenterAndExpand" />
-                                            <Label Text="{Binding WordCount, StringFormat='{0} words'}"
+                                            <Label Text="{Binding WordCount, StringFormat='{0} слова'}"
                                                    FontSize="18"
                                                    HorizontalOptions="StartAndExpand"
                                                    VerticalOptions="CenterAndExpand" />
