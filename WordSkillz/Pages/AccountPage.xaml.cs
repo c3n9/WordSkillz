@@ -29,17 +29,17 @@ public partial class AccountPage : ContentPage
                 new ChartEntry(App.LearnedWordsCount)
                 {
                     ValueLabel = App.LearnedWordsCount.ToString(),
-                    Color=SKColor.Parse("#92B5C1")
+                    Color=SKColor.Parse("#91b4bf")
                 },
                 new ChartEntry(App.IncorrectAnswersCount)
                 {
                     ValueLabel = App.IncorrectAnswersCount.ToString(),
-                    Color=SKColor.Parse("#6587A1")
+                    Color=SKColor.Parse("#65869e")
                 },
                 new ChartEntry(App.CorrectAnswersCount)
                 {
                     ValueLabel = App.CorrectAnswersCount.ToString(),
-                    Color=SKColor.Parse("#CBDCED")
+                    Color=SKColor.Parse("#cadbec")
                 },
             }
         };
