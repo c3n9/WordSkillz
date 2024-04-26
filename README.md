@@ -16,3 +16,19 @@ WordSkillz - your ultimate companion for learning new words and expanding your v
    The app automatically records your learning statistics, including progress. You can view your statistics in your profile to track your progress and improve your results.
 
 WordSkillz makes learning new words engaging and effective. Whether you're learning a foreign language or simply expanding your vocabulary in your native language, this app will help you reach your goals faster and with greater enjoyment.
+
+## Screenshots
+
+![photo_2024-04-26_22-15-43](https://github.com/c3n9/WordSkillz/assets/108518693/fa4d7171-f9fb-402f-a71c-c434cf5a3702)
+
+![photo_2024-04-26_22-15-43 (2)](https://github.com/c3n9/WordSkillz/assets/108518693/2c214183-030c-478f-9c99-906f175871e7)
+
+![photo_2024-04-26_22-15-44](https://github.com/c3n9/WordSkillz/assets/108518693/4cc085ae-7528-4cc0-a459-02835fee14a4)
+
+![photo_2024-04-26_22-15-45](https://github.com/c3n9/WordSkillz/assets/108518693/74fd16c5-5744-489d-b60b-1626dbb877cf)
+
+![photo_2024-04-26_22-15-46](https://github.com/c3n9/WordSkillz/assets/108518693/3e5e8671-00c5-4a35-9949-1c165a0b855b)
+
+![photo_2024-04-26_22-15-47](https://github.com/c3n9/WordSkillz/assets/108518693/83064fdb-e3d4-4b81-98b5-2f69fcae2c1a)
+
+
