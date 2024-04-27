@@ -1,6 +1,6 @@
 # WordSkillz
 
-WordSkillz - your ultimate companion for learning new words and expanding your vocabulary. This innovative mobile application is designed for efficient learning of new words anytime, anywhere.
+WordSkillz - your ultimate companion for learning new words and expanding your vocabulary. This mobile application is designed for efficient learning of new words anytime, anywhere.
 
 ## Key Features:
 
