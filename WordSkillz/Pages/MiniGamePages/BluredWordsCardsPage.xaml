@@ -47,7 +47,7 @@
             <StackLayout Orientation="Horizontal"
                          VerticalOptions="Start"
                          HorizontalOptions="Center">
-                <Label Text="Learned: "
+                <Label Text="Выучено: "
                        FontSize="20"
                        VerticalOptions="Center" />
                 <Label x:Name="WordsLeftLabel"
