@@ -49,7 +49,6 @@ public partial class AddWordsPage : ContentPage
         }
 
         VSLWords.Children.Insert(0, frame);
-        //VSLWords.Children.Add(frame);
 
         // Анимация появления
         await Task.WhenAll(frame.FadeTo(1, 250, Easing.Linear),frame.ScaleTo(1, 250, Easing.SpringOut));
@@ -112,8 +111,11 @@ public partial class AddWordsPage : ContentPage
                             {
                                 if (previousEntry != null)
                                 {
-                                    words.Add(new Tuple<string, string>(previousEntry.Text, entry.Text));
-                                    previousEntry = null;
+                                    if(!string.IsNullOrWhiteSpace(entry.Text) && !string.IsNullOrWhiteSpace(previousEntry.Text))
+                                    {
+                                        words.Add(new Tuple<string, string>(previousEntry.Text, entry.Text));
+                                        previousEntry = null;
+                                    }
                                 }
                                 else
                                 {
