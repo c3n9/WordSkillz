@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WordSkillz.Popup.NoConnectionPopup">
+    <Frame CornerRadius="20"
+           WidthRequest="350"
+           HasShadow="False"
+           HeightRequest="180"
+           Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
+           BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
+        <VerticalStackLayout>
+            <Label Text="ошибка"
+                   FontAttributes="Bold"
+                   FontSize="22" />
+            <Label Text="отсутствует подключение к интернету"
+                   FontSize="18"
+                   Margin="0,10,0,10" />
+            <HorizontalStackLayout HorizontalOptions="End"
+                                   VerticalOptions="End">
+                <Button x:Name="BOk"
+                        Clicked="BOk_Clicked"
+                        Text="ок"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Secondary}"
+                        CornerRadius="20"
+                        WidthRequest="80"
+                        HeightRequest="45"
+                        FontSize="22" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Frame>
+</ContentView>

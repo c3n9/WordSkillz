@@ -8,46 +8,69 @@ namespace WordSkillz.Popup;
 public partial class MiniGamesPopup : ContentView
 {
     public Category Category { get; set; }
-    SQLiteDbContext db;
     public MiniGamesPopup()
     {
         InitializeComponent();
-        db = new SQLiteDbContext();
     }
 
     private async void BPlayViewWords_Clicked(object sender, EventArgs e)
     {
-        if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+        try
         {
-            parentPopup.Close();
+            if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+            {
+                parentPopup.Close();
+            }
+            var wordsInDB = await NetManager.Get<List<Word>>("api/Words");
+            var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
+            if (words.Count != 0)
+                await App.Current.MainPage.Navigation.PushAsync(new WordCardsPage(Category, words));
+
         }
-        var wordsInDB = await db.GetAllWord();
-        var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
-        if (words.Count != 0)
-            await App.Current.MainPage.Navigation.PushAsync(new WordCardsPage(Category, words));
+        catch
+        {
+            return;
+
+        }
     }
 
     private async void BPlayMatchWords_Clicked(object sender, EventArgs e)
     {
-        if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+        try
         {
-            parentPopup.Close();
+            if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+            {
+                parentPopup.Close();
+            }
+            var wordsInDB = await NetManager.Get<List<Word>>("api/Words");
+            var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
+            if (words.Count != 0)
+                await App.Current.MainPage.Navigation.PushAsync(new MatchWordsCard(Category, words));
+
         }
-        var wordsInDB = await db.GetAllWord();
-        var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
-        if (words.Count != 0)
-            await App.Current.MainPage.Navigation.PushAsync(new MatchWordsCard(Category,words));
+        catch
+        {
+            return;
+        }
     }
 
     private async void BPlayHiddenWords_Clicked(object sender, EventArgs e)
     {
-        if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+        try
         {
-            parentPopup.Close();
+            if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+            {
+                parentPopup.Close();
+            }
+            var wordsInDB = await NetManager.Get<List<Word>>("api/Words");
+            var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
+            if (words.Count != 0)
+                await App.Current.MainPage.Navigation.PushAsync(new BluredWordsCardsPage(Category, words));
         }
-        var wordsInDB = await db.GetAllWord();
-        var words = wordsInDB.Where(x => x.CategoryId == Category.Id).ToList();
-        if (words.Count != 0)
-            await App.Current.MainPage.Navigation.PushAsync(new BluredWordsCardsPage(Category,words));
+        catch
+        {
+            return;
+
+        }
     }
 }

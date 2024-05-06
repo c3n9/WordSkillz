@@ -55,7 +55,6 @@
     <PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
     <PackageReference Include="Microcharts.Maui" Version="1.0.0" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls.Compatibility" Version="2.88.7" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="UraniumUI.Icons.FontAwesome" Version="2.8.1" />
     <PackageReference Include="UraniumUI.Material" Version="2.8.1" />
     <PackageReference Include="Xam.Plugins.TextToSpeech" Version="4.0.0.7" />
@@ -63,6 +62,11 @@
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Popup\NoConnectionPopup.xaml.cs">
+      <DependentUpon>NoConnectionPopup.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <MauiXaml Update="Pages\AccountPage.xaml">
@@ -93,6 +97,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Popup\DeleteCategoryPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Popup\NoConnectionPopup.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Popup\ErrorPopup.xaml">

@@ -1,19 +1,19 @@
+using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 using WordSkillz.Models;
+using WordSkillz.Popup;
 using WordSkillz.Tools;
 
 namespace WordSkillz.Pages;
 
 public partial class AddWordsPage : ContentPage
 {
-    SQLiteDbContext db;
     Category contextCategory;
     List<Tuple<string, string>> words;
 
     public AddWordsPage(Category category)
     {
         InitializeComponent();
-        db = new SQLiteDbContext();
         NewWord();
         contextCategory = category;
         words = new List<Tuple<string, string>>();
@@ -51,7 +51,7 @@ public partial class AddWordsPage : ContentPage
         VSLWords.Children.Insert(0, frame);
 
         // Анимация появления
-        await Task.WhenAll(frame.FadeTo(1, 250, Easing.Linear),frame.ScaleTo(1, 250, Easing.SpringOut));
+        await Task.WhenAll(frame.FadeTo(1, 250, Easing.Linear), frame.ScaleTo(1, 250, Easing.SpringOut));
 
         var originalEntry = ((VerticalStackLayout)frame.Content).Children.OfType<Entry>().FirstOrDefault();
         originalEntry?.Focus();
@@ -111,7 +111,7 @@ public partial class AddWordsPage : ContentPage
                             {
                                 if (previousEntry != null)
                                 {
-                                    if(!string.IsNullOrWhiteSpace(entry.Text) && !string.IsNullOrWhiteSpace(previousEntry.Text))
+                                    if (!string.IsNullOrWhiteSpace(entry.Text) && !string.IsNullOrWhiteSpace(previousEntry.Text))
                                     {
                                         words.Add(new Tuple<string, string>(previousEntry.Text, entry.Text));
                                         previousEntry = null;
@@ -130,15 +130,23 @@ public partial class AddWordsPage : ContentPage
 
         foreach (var wordPair in words)
         {
-            if (!string.IsNullOrWhiteSpace(wordPair.Item1) || !string.IsNullOrWhiteSpace(wordPair.Item2))
+            try
             {
-                var newWord = new Word()
+                if (!string.IsNullOrWhiteSpace(wordPair.Item1) || !string.IsNullOrWhiteSpace(wordPair.Item2))
                 {
-                    OriginalWord = wordPair.Item1,
-                    TranslatedWord = wordPair.Item2,
-                    CategoryId = contextCategory.Id
-                };
-                await db.AddWordAsync(newWord);
+                    var newWord = new Word()
+                    {
+                        OriginalWord = wordPair.Item1,
+                        TranslatedWord = wordPair.Item2,
+                        CategoryId = contextCategory.Id
+                    };
+                    await NetManager.Post("api/Words", newWord);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return;
             }
         }
 

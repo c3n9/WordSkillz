@@ -37,7 +37,6 @@ namespace WordSkillz
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
-            builder.Services.AddSingleton<SQLiteDbContext>();
             builder.UseMauiCommunityToolkit();
             return builder.Build();
         }

@@ -1,7 +1,9 @@
+using CommunityToolkit.Maui.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using WordSkillz.Models;
+using WordSkillz.Popup;
 using WordSkillz.Tools;
 
 namespace WordSkillz.Pages;
@@ -9,14 +11,12 @@ namespace WordSkillz.Pages;
 public partial class AllWordsInCategoryPage : ContentPage
 {
     Category contextCategory;
-    SQLiteDbContext db;
     public List<Word> Words { get; set; }
 
     public AllWordsInCategoryPage(Category category)
     {
         InitializeComponent();
         contextCategory = category;
-        db = new SQLiteDbContext();
         // Начать асинхронную операцию задержки
         DelayedRefresh();
     }
@@ -33,12 +33,20 @@ public partial class AllWordsInCategoryPage : ContentPage
 
     private async void Refresh()
     {
-        Words = (await db.GetAllWord()).Where(x => x.CategoryId == contextCategory.Id).ToList();
-        BindingContext = this;
-        LVWords.ItemsSource = Words;
+        try
+        {
+            Words = (await NetManager.Get<List<Word>>("api/Words")).Where(x => x.CategoryId == contextCategory.Id).ToList();
+            BindingContext = this;
+            LVWords.ItemsSource = Words;
 
-        ActivityIndicator.IsRunning = false;
-        ActivityIndicator.IsVisible = false;
+            ActivityIndicator.IsRunning = false;
+            ActivityIndicator.IsVisible = false;
+        }
+        catch (Exception ex)
+        {
+            
+        }
+
     }
 
     private async void BAddWords_Clicked(object sender, EventArgs e)
@@ -48,11 +56,27 @@ public partial class AllWordsInCategoryPage : ContentPage
 
     private async void OnSwipeEnded(object sender, SwipeEndedEventArgs e)
     {
-        if (e.IsOpen)
+        try
         {
-            var item = (Word)((SwipeView)sender).BindingContext;
-            await db.DeleteWordAsync(item);
-            Refresh();
+            if (e.IsOpen)
+            {
+                var item = (Word)((SwipeView)sender).BindingContext;
+                await NetManager.Delete<bool>($"api/Words/{item.Id}");
+                Refresh();
+            }
+
+        }
+        catch (Exception ex)
+        {
+            var noConnectionPopup = new NoConnectionPopup();
+            var popup = new CommunityToolkit.Maui.Views.Popup();
+            popup.Content = noConnectionPopup;
+            popup.Color = Color.FromRgba(0, 0, 0, 0);
+            popup.Closed += (s, args) =>
+            {
+
+            };
+            App.Current.MainPage.ShowPopup(popup);
         }
     }
 

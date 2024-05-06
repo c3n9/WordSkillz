@@ -18,7 +18,6 @@ public partial class WordCardsPage : ContentPage
     private int currentWordCount;
     private bool isTimerRunning = false;
     private Category contextCategory;
-    SQLiteDbContext db;
     public List<Word> Words { get; set; }
     private CancellationTokenSource cancellationTokenSource;
 
@@ -26,7 +25,6 @@ public partial class WordCardsPage : ContentPage
     public WordCardsPage(Category category, List<Word> words)
     {
         InitializeComponent();
-        db = new SQLiteDbContext();
         contextCategory = category;
         Words = words;
         allCountWords = Words.Count;
@@ -87,7 +85,7 @@ public partial class WordCardsPage : ContentPage
                         await popupClosedTask.Task;
 
                         // Сброс коллекции Words к исходному набору
-                        var wordsInDB = await db.GetAllWord();
+                        var wordsInDB = await NetManager.Get<List<Word>>("api/Words");
                         Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
                         // Обновите LVWordСards.ItemsSource
                         LVWordСards.ItemsSource = Words;
@@ -103,7 +101,7 @@ public partial class WordCardsPage : ContentPage
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            return;
         }
     }
     private async void UpdateProgress()

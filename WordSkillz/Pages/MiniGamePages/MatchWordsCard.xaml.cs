@@ -9,7 +9,6 @@ namespace WordSkillz.Pages.MiniGamePages;
 public partial class MatchWordsCard : ContentPage
 {
     private int currentIndex = 0;
-    SQLiteDbContext db;
     private int allCountWords;
     private int currentWordCount;
     private Word currentWord;
@@ -21,7 +20,6 @@ public partial class MatchWordsCard : ContentPage
     public MatchWordsCard(Category category, List<Word> words)
     {
         InitializeComponent();
-        db = new SQLiteDbContext();
         contextCategory = category;
         Words = new ObservableCollection<Word>(words);
         WordsToShuffle = new ObservableCollection<Word>(words);
@@ -180,94 +178,103 @@ public partial class MatchWordsCard : ContentPage
     [Obsolete]
     private async Task CheckAnswer(Button button)
     {
-        var isCorrect = false;
-        if (button.Text == currentWord.TranslatedWord)
-            isCorrect = true;
-        else
-            isCorrect = false;
-        if (isCorrect)
+        try
         {
-            currentWordCount++;
-            App.LearnedWordsCount += 1;
-            App.CorrectAnswersCount += 1;
-            Words.RemoveAt(currentIndex);
-            if (currentIndex >= Words.Count)
+
+            var isCorrect = false;
+            if (button.Text == currentWord.TranslatedWord)
+                isCorrect = true;
+            else
+                isCorrect = false;
+            if (isCorrect)
             {
-                currentIndex = Words.Count > 0 ? 0 : -1;
-                if (currentIndex == -1)
+                currentWordCount++;
+                App.LearnedWordsCount += 1;
+                App.CorrectAnswersCount += 1;
+                Words.RemoveAt(currentIndex);
+                if (currentIndex >= Words.Count)
                 {
-
-                    button.BackgroundColor = Color.FromHex("#228b22");
-                    uint animationLength = 1000;
-                    WordsLeftLabel.Text = allCountWords.ToString();
-                    await ProgressBar.ProgressTo(allCountWords, animationLength, Easing.Linear);
-                    var congratulatePopup = new CongratulatePopup();
-                    var popup = new CommunityToolkit.Maui.Views.Popup();
-                    popup.Content = congratulatePopup;
-                    popup.Color = Color.FromRgba(0, 0, 0, 0);
-                    var popupClosedTask = new TaskCompletionSource<object>();
-                    popup.Closed += (sender, args) =>
+                    currentIndex = Words.Count > 0 ? 0 : -1;
+                    if (currentIndex == -1)
                     {
-                        popupClosedTask.SetResult(null);
-                    };
-                    App.Current.MainPage.ShowPopup(popup);
-                    await popupClosedTask.Task;
 
-                    Words = new ObservableCollection<Word>((await db.GetAllWord()).Where(x => x.CategoryId == contextCategory.Id).ToList());
-                    allCountWords = Words.Count;
+                        button.BackgroundColor = Color.FromHex("#228b22");
+                        uint animationLength = 1000;
+                        WordsLeftLabel.Text = allCountWords.ToString();
+                        await ProgressBar.ProgressTo(allCountWords, animationLength, Easing.Linear);
+                        var congratulatePopup = new CongratulatePopup();
+                        var popup = new CommunityToolkit.Maui.Views.Popup();
+                        popup.Content = congratulatePopup;
+                        popup.Color = Color.FromRgba(0, 0, 0, 0);
+                        var popupClosedTask = new TaskCompletionSource<object>();
+                        popup.Closed += (sender, args) =>
+                        {
+                            popupClosedTask.SetResult(null);
+                        };
+                        App.Current.MainPage.ShowPopup(popup);
+                        await popupClosedTask.Task;
+
+                        Words = new ObservableCollection<Word>((await NetManager.Get<List<Word>>("api/Words")).Where(x => x.CategoryId == contextCategory.Id).ToList());
+                        allCountWords = Words.Count;
+                        currentIndex = 0;
+                        currentWordCount = 0;
+                        UpdateProgress();
+                        Refresh();
+                        await Task.Delay(100);
+                        button.BackgroundColor = Color.FromHex("#0875BA");
+
+                        return;
+                    }
+                }
+                button.BackgroundColor = Color.FromHex("#228b22");
+                await Task.Delay(1000);
+                button.BackgroundColor = Color.FromHex("#0875BA");
+                UpdateProgress();
+            }
+            else
+            {
+                currentIndex++;
+                App.IncorrectAnswersCount += 1;
+                if (currentIndex >= Words.Count)
+                {
                     currentIndex = 0;
-                    currentWordCount = 0;
-                    UpdateProgress();
-                    Refresh();
-                    await Task.Delay(100);
-                    button.BackgroundColor = Color.FromHex("#0875BA");
-
-                    return;
+                }
+                button.BackgroundColor = Color.FromRgb(255, 0, 0);
+                await Task.Delay(1000);
+                switch (correctAnswerIndex)
+                {
+                    case 0:
+                        BWord1.BackgroundColor = Color.FromHex("#228b22");
+                        await Task.Delay(1000);
+                        break;
+                    case 1:
+                        BWord2.BackgroundColor = Color.FromHex("#228b22");
+                        await Task.Delay(1000);
+                        break;
+                    case 2:
+                        BWord3.BackgroundColor = Color.FromHex("#228b22");
+                        await Task.Delay(1000);
+                        break;
+                    case 3:
+                        BWord4.BackgroundColor = Color.FromHex("#228b22");
+                        await Task.Delay(1000);
+                        break;
                 }
             }
-            button.BackgroundColor = Color.FromHex("#228b22");
-            await Task.Delay(1000);
-            button.BackgroundColor = Color.FromHex("#0875BA");
+
+            currentWord = Words[currentIndex];
+            BWord1.BackgroundColor = BWord2.BackgroundColor = BWord2.BackgroundColor = BWord3.BackgroundColor = BWord4.BackgroundColor = Color.FromHex("#0875ba");
+
+            await FadeInNewWord();
+            await ShuffleAndSetButtonTexts();
+
             UpdateProgress();
         }
-        else
+        catch (Exception ex)
         {
-            currentIndex++;
-            App.IncorrectAnswersCount += 1;
-            if (currentIndex >= Words.Count)
-            {
-                currentIndex = 0;
-            }
-            button.BackgroundColor = Color.FromRgb(255, 0, 0);
-            await Task.Delay(1000);
-            switch (correctAnswerIndex)
-            {
-                case 0:
-                    BWord1.BackgroundColor = Color.FromHex("#228b22");
-                    await Task.Delay(1000);
-                    break;
-                case 1:
-                    BWord2.BackgroundColor = Color.FromHex("#228b22");
-                    await Task.Delay(1000);
-                    break;
-                case 2:
-                    BWord3.BackgroundColor = Color.FromHex("#228b22");
-                    await Task.Delay(1000);
-                    break;
-                case 3:
-                    BWord4.BackgroundColor = Color.FromHex("#228b22");
-                    await Task.Delay(1000);
-                    break;
-            }
+            return;
+
         }
-
-        currentWord = Words[currentIndex];
-        BWord1.BackgroundColor = BWord2.BackgroundColor = BWord2.BackgroundColor = BWord3.BackgroundColor = BWord4.BackgroundColor = Color.FromHex("#0875ba");
-
-        await FadeInNewWord();
-        await ShuffleAndSetButtonTexts();
-
-        UpdateProgress();
     }
 
 

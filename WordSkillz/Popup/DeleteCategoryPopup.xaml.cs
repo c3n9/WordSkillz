@@ -5,13 +5,11 @@ namespace WordSkillz.Popup;
 
 public partial class DeleteCategoryPopup : ContentView
 {
-    SQLiteDbContext db;
     public Category Category { get; set; }
-	public DeleteCategoryPopup()
-	{
-		InitializeComponent();
-        db = new SQLiteDbContext();
-	}
+    public DeleteCategoryPopup()
+    {
+        InitializeComponent();
+    }
 
     private void BNo_Clicked(object sender, EventArgs e)
     {
@@ -23,16 +21,24 @@ public partial class DeleteCategoryPopup : ContentView
 
     private async void BYes_Clicked(object sender, EventArgs e)
     {
-        var wordsInDatabase = await db.GetAllWord();
-        var words = wordsInDatabase.Where(x => x.CategoryId == Category.Id).ToList();
-        foreach(var word in words)
+        try
         {
-            await db.DeleteWordAsync(word);
+            var wordsInDatabase = await NetManager.Get<List<Word>>("api/Words");
+            var words = wordsInDatabase.Where(x => x.CategoryId == Category.Id).ToList();
+            foreach (var word in words)
+            {
+                await NetManager.Delete<bool>($"api/Words/{word.Id}");
+            }
+            await NetManager.Delete<bool>($"api/Categories/{Category.Id}");
+
+            if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+            {
+                parentPopup.Close();
+            }
         }
-        await db.DeleteCategoryAsync(Category);
-        if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
+        catch
         {
-            parentPopup.Close();
+
         }
 
     }

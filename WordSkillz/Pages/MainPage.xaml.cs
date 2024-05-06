@@ -9,12 +9,9 @@ namespace WordSkillz.Pages
 {
     public partial class MainPage : ContentPage
     {
-        SQLiteDbContext db;
-        public List<Category> Categories { get; set; }
         public MainPage()
         {
             InitializeComponent();
-            //Categories = DataManager.AllCategories;
             DelayedRefresh();
         }
         private async Task DelayedRefresh()
@@ -27,13 +24,26 @@ namespace WordSkillz.Pages
         }
         private async void Refresh()
         {
-            db = new SQLiteDbContext();
-            Categories = await db.GetAllCategory();
-            BindingContext = this;
-            LVCategories.ItemsSource = await db.GetAllCategory();
-            ActivityIndicator.IsRunning = false;
-            ActivityIndicator.IsVisible = false;
-
+            try
+            {
+                BindingContext = this;
+                var categories = await NetManager.Get<List<Category>>("api/Categories");
+                foreach (var cateogory in categories)
+                {
+                    cateogory.WordCount = (await NetManager.Get<List<Word>>("api/Words")).Where(x => x.CategoryId == cateogory.Id).Count();
+                }
+                LVCategories.ItemsSource = categories;
+                ActivityIndicator.IsRunning = false;
+                ActivityIndicator.IsVisible = false;
+            }
+            catch (Exception ex)
+            {
+                var noConnectionPopup = new NoConnectionPopup();
+                var popup = new CommunityToolkit.Maui.Views.Popup();
+                popup.Content = noConnectionPopup;
+                popup.Color = Color.FromRgba(0, 0, 0, 0);
+                App.Current.MainPage.ShowPopup(popup);
+            }
         }
         private void BPlusCategory_Clicked(object sender, EventArgs e)
         {
@@ -63,31 +73,42 @@ namespace WordSkillz.Pages
         }
         private async void BLearn_Clicked(object sender, EventArgs e)
         {
-            if (sender is Button button)
+            try
             {
-                Category selectedCategory = button.BindingContext as Category;
-
-                var miniGamesPopup = new MiniGamesPopup();
-                var popupGames = new CommunityToolkit.Maui.Views.Popup();
-                popupGames.Content = miniGamesPopup;
-                popupGames.Color = Color.FromRgba(0, 0, 0, 0);
-                miniGamesPopup.Category = selectedCategory;
-                App.Current.MainPage.ShowPopup(popupGames);
-                popupGames.Closed += async (s, args) =>
+                if (sender is Button button)
                 {
-                    var wordsInDB = await db.GetAllWord();
-                    var words = new ObservableCollection<Word>(wordsInDB.Where(x => x.CategoryId == selectedCategory.Id));
-                    if (words.Count == 0)
+                    Category selectedCategory = button.BindingContext as Category;
+
+                    var miniGamesPopup = new MiniGamesPopup();
+                    var popupGames = new CommunityToolkit.Maui.Views.Popup();
+                    popupGames.Content = miniGamesPopup;
+                    popupGames.Color = Color.FromRgba(0, 0, 0, 0);
+                    miniGamesPopup.Category = selectedCategory;
+                    App.Current.MainPage.ShowPopup(popupGames);
+                    popupGames.Closed += async (s, args) =>
                     {
-                        var errorPopup = new ErrorPopup();
-                        var popup = new CommunityToolkit.Maui.Views.Popup();
-                        popup.Content = errorPopup;
-                        popup.Color = Color.FromRgba(0, 0, 0, 0);
-                        App.Current.MainPage.ShowPopup(popup);
-                        return;
-                    }
-                    LVCategories.SelectedItem = null;
-                };
+                        var wordsInDB = await NetManager.Get<List<Word>>("api/Words");
+                        var words = new ObservableCollection<Word>(wordsInDB.Where(x => x.CategoryId == selectedCategory.Id));
+                        if (words.Count == 0)
+                        {
+                            var errorPopup = new ErrorPopup();
+                            var popup = new CommunityToolkit.Maui.Views.Popup();
+                            popup.Content = errorPopup;
+                            popup.Color = Color.FromRgba(0, 0, 0, 0);
+                            App.Current.MainPage.ShowPopup(popup);
+                            return;
+                        }
+                        LVCategories.SelectedItem = null;
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                var noConnectionPopup = new NoConnectionPopup();
+                var popup = new CommunityToolkit.Maui.Views.Popup();
+                popup.Content = noConnectionPopup;
+                popup.Color = Color.FromRgba(0, 0, 0, 0);
+                App.Current.MainPage.ShowPopup(popup);
             }
         }
 

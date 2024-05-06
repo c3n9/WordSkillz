@@ -17,14 +17,12 @@ public partial class BluredWordsCardsPage : ContentPage
     private int currentWordCount;
     private bool isTimerRunning = false;
     private Category contextCategory;
-    SQLiteDbContext db;
     public List<Word> Words { get; set; }
     private CancellationTokenSource cancellationTokenSource;
     private Word currentWord;
     public BluredWordsCardsPage(Category category, List<Word> words)
     {
         InitializeComponent();
-        db = new SQLiteDbContext();
         contextCategory = category;
         Words = words;
         allCountWords = Words.Count;
@@ -76,7 +74,7 @@ public partial class BluredWordsCardsPage : ContentPage
 
                         App.Current.MainPage.ShowPopup(popup);
                         await popupClosedTask.Task;
-                        var wordsInDB = await db.GetAllWord();
+                        var wordsInDB = await NetManager.Get<List<Word>>("api/Words");
                         Words = wordsInDB.Where(x => x.CategoryId == contextCategory.Id).ToList();
                         LVWord—ards.ItemsSource = Words;
                         currentIndex = 0;
@@ -106,6 +104,7 @@ public partial class BluredWordsCardsPage : ContentPage
         }
         catch (Exception ex)
         {
+            return;
 
         }
     }
