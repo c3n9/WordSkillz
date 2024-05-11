@@ -27,7 +27,7 @@ namespace WordSkillz.Pages
             try
             {
                 BindingContext = this;
-                var categories = await NetManager.Get<List<Category>>("api/Categories");
+                var categories = (await NetManager.Get<List<Category>>("api/Categories")).Where(x => x.UserId == App.loggedUser.Id).ToList();
                 foreach (var cateogory in categories)
                 {
                     cateogory.WordCount = (await NetManager.Get<List<Word>>("api/Words")).Where(x => x.CategoryId == cateogory.Id).Count();

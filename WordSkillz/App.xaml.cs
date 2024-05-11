@@ -1,4 +1,5 @@
 ﻿using WordSkillz.Models;
+using WordSkillz.Pages;
 using WordSkillz.Tools;
 
 namespace WordSkillz
@@ -8,12 +9,22 @@ namespace WordSkillz
         public static int LearnedWordsCount { get; set; }
         public static int CorrectAnswersCount { get; set; }
         public static int IncorrectAnswersCount { get; set; }
+        public static User loggedUser;
         public App()
         {
             InitializeComponent();
             LoadCounts();
             Application.Current.UserAppTheme = AppTheme.Light;
-            MainPage = new AppShell();
+            if (!IsUserLoggedIn())
+                MainPage = new LoginPage();
+            else
+                MainPage = new AppShell();
+
+        }
+
+        private bool IsUserLoggedIn()
+        {
+            return false;
         }
 
         private void LoadCounts()

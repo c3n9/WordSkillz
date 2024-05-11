@@ -2,26 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.LoginPage"
-             Title="LoginPage">
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             Title="Login">
     <VerticalStackLayout HorizontalOptions="Center"
                          VerticalOptions="Center"
                          WidthRequest="300">
         <Label Text="Login"
                HorizontalOptions="Center"
                FontSize="30" />
-        <Entry Keyboard="Email"
-               x:Name="EmailEntry"
-               IsTextPredictionEnabled="True"
-               Margin="0,0,0,10"
-               FontSize="24" />
-        <Entry IsPassword="True"
-               Keyboard="Text"
-               x:Name="PasswordEntry"
-               Margin="0,0,0,20"
-               IsTextPredictionEnabled="True"
-               FontSize="24" />
+        <material:TextField Title="Email"
+                            Keyboard="Email"
+                            x:Name="EmailEntry"
+                            IsTextPredictionEnabled="True"
+                            AllowClear="True"
+                            Margin="0,0,0,10"
+                            FontSize="24" />
+        <material:TextField Title="Password"
+                            IsPassword="True"
+                            Keyboard="Text"
+                            x:Name="PasswordEntry"
+                            Margin="0,0,0,20"
+                            AllowClear="True"
+                            IsTextPredictionEnabled="True"
+                            FontSize="24" />
         <Button Text="Log in"
-                FontSize="24" />
+                FontSize="24" 
+                Clicked="Button_Clicked"/>
         <Frame Style="{DynamicResource FrameForHyperlink}"
                HasShadow="False"
                BackgroundColor="Transparent"
@@ -33,7 +39,7 @@
                    FontSize="20"
                    HorizontalOptions="Center">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer />
+                    <TapGestureRecognizer Tapped="TapGestureRecognizerRegister_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
         </Frame>

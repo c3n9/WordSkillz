@@ -25,7 +25,7 @@ public partial class AddNewCategoryPopup : ContentView
         {
             if (!string.IsNullOrWhiteSpace(nameCategory.Text))
             {
-                var category = new Category() { Name = nameCategory.Text };
+                var category = new Category() { Name = nameCategory.Text, UserId = App.loggedUser.Id, };
                 await NetManager.Post("api/Categories", category);
                 if (Parent is CommunityToolkit.Maui.Views.Popup parentPopup)
                 {

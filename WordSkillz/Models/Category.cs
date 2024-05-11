@@ -14,8 +14,8 @@ namespace WordSkillz.Models
     {
         public Int32 Id { get; set; }
         public String Name { get; set; }
-        private int _wordCount;
         public int WordCount { get; set; }
+        public int UserId { get; set; }
     }
 
 }
