@@ -54,8 +54,8 @@ public partial class BluredWordsCardsPage : ContentPage
             if (e.SwipeDirection == SwipeDirection.Left)
             {
                 Words.RemoveAt(currentIndex);
-                App.LearnedWordsCount += 1;
-                App.CorrectAnswersCount += 1;
+                App.loggedUser.LearnedWordsCount += 1;
+                App.loggedUser.CorrectAnswersCount += 1;
                 if (currentIndex >= Words.Count)
                 {
                     currentIndex = Words.Count > 0 ? 0 : -1;
@@ -85,7 +85,7 @@ public partial class BluredWordsCardsPage : ContentPage
             else if (e.SwipeDirection == SwipeDirection.Right)
             {
                 currentIndex++;
-                App.IncorrectAnswersCount += 1;
+                App.loggedUser.IncorrectAnswersCount += 1;
                 if (currentIndex >= Words.Count)
                 {
                     currentIndex = 0;

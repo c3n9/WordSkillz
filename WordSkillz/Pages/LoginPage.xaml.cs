@@ -1,3 +1,5 @@
+using WordSkillz.Models;
+
 namespace WordSkillz.Pages;
 
 public partial class LoginPage : ContentPage
@@ -9,6 +11,10 @@ public partial class LoginPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
+        var user = (await NetManager.Get<List<User>>("api/Users")).FirstOrDefault(x => x.Email == EmailEntry.Text && x.Password == PasswordEntry.Text);
+        if (user == null)
+            return;
+        App.loggedUser = user;
 		App.Current.MainPage = new AppShell();
     }
 

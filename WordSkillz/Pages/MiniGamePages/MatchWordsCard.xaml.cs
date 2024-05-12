@@ -189,8 +189,8 @@ public partial class MatchWordsCard : ContentPage
             if (isCorrect)
             {
                 currentWordCount++;
-                App.LearnedWordsCount += 1;
-                App.CorrectAnswersCount += 1;
+                App.loggedUser.LearnedWordsCount += 1;
+                App.loggedUser.CorrectAnswersCount += 1;
                 Words.RemoveAt(currentIndex);
                 if (currentIndex >= Words.Count)
                 {
@@ -234,7 +234,7 @@ public partial class MatchWordsCard : ContentPage
             else
             {
                 currentIndex++;
-                App.IncorrectAnswersCount += 1;
+                App.loggedUser.IncorrectAnswersCount += 1;
                 if (currentIndex >= Words.Count)
                 {
                     currentIndex = 0;

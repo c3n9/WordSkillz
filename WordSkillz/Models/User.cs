@@ -12,7 +12,7 @@ namespace WordSkillz.Models
         public string Name { get; set; }
         public string Email { get; set; }   
         public string Password { get; set; }    
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         public string PhoneNumber { get; set; }
         public int LearnedWordsCount { get; set; }  
         public int IncorrectAnswersCount { get; set; }  

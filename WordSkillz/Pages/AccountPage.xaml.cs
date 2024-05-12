@@ -26,19 +26,19 @@ public partial class AccountPage : ContentPage
             LabelTextSize = 50,
             Entries = new List<ChartEntry>()
             {
-                new ChartEntry(App.LearnedWordsCount)
+                new ChartEntry(App.loggedUser.LearnedWordsCount)
                 {
-                    ValueLabel = App.LearnedWordsCount.ToString(),
+                    ValueLabel = App.loggedUser.LearnedWordsCount.ToString(),
                     Color=SKColor.Parse("#91b4bf")
                 },
-                new ChartEntry(App.IncorrectAnswersCount)
+                new ChartEntry(App.loggedUser.IncorrectAnswersCount)
                 {
-                    ValueLabel = App.IncorrectAnswersCount.ToString(),
+                    ValueLabel = App.loggedUser.IncorrectAnswersCount.ToString(),
                     Color=SKColor.Parse("#65869e")
                 },
-                new ChartEntry(App.CorrectAnswersCount)
+                new ChartEntry(App.loggedUser.CorrectAnswersCount)
                 {
-                    ValueLabel = App.CorrectAnswersCount.ToString(),
+                    ValueLabel = App.loggedUser.CorrectAnswersCount.ToString(),
                     Color=SKColor.Parse("#cadbec")
                 },
             }
@@ -47,8 +47,8 @@ public partial class AccountPage : ContentPage
 
     private void UpdateText()
     {
-        TBLearned.Text = $"Выучено слов: {App.LearnedWordsCount}";
-        TBCorrect.Text = $"Верных ответов: {App.CorrectAnswersCount}";
-        TBIncorrect.Text = $"Неверных ответов: {App.IncorrectAnswersCount}";
+        TBLearned.Text = $"Выучено слов: {App.loggedUser.LearnedWordsCount}";
+        TBCorrect.Text = $"Верных ответов: {App.loggedUser.CorrectAnswersCount}";
+        TBIncorrect.Text = $"Неверных ответов: {App.loggedUser.IncorrectAnswersCount}";
     }
 }

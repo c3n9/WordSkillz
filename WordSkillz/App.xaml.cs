@@ -1,4 +1,7 @@
-﻿using WordSkillz.Models;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using WordSkillz.Models;
+using WordSkillz.Models.Metadata;
 using WordSkillz.Pages;
 using WordSkillz.Tools;
 
@@ -13,6 +16,7 @@ namespace WordSkillz
         public App()
         {
             InitializeComponent();
+            RegistrateDescriptors();
             LoadCounts();
             Application.Current.UserAppTheme = AppTheme.Light;
             if (!IsUserLoggedIn())
@@ -20,6 +24,17 @@ namespace WordSkillz
             else
                 MainPage = new AppShell();
 
+        }
+
+        private void RegistrateDescriptors()
+        {
+            AddDescriptor<User, UserMetadata>();
+        }
+
+        private void AddDescriptor<T1, T2>()
+        {
+            var provider = new AssociatedMetadataTypeTypeDescriptionProvider(typeof(T1), typeof(T2));
+            TypeDescriptor.AddProviderTransparent(provider, typeof(T1));
         }
 
         private bool IsUserLoggedIn()
@@ -34,12 +49,12 @@ namespace WordSkillz
             IncorrectAnswersCount = Preferences.Get("IncorrectAnswersCount", 0);
         }
 
-        protected override void OnSleep()
-        {
-            base.OnSleep();
-            Preferences.Set("LearnedWordsCount", LearnedWordsCount);
-            Preferences.Set("CorrectAnswersCount", CorrectAnswersCount);
-            Preferences.Set("IncorrectAnswersCount", IncorrectAnswersCount);
-        }
+        //protected override void OnSleep()
+        //{
+        //    base.OnSleep();
+        //    Preferences.Set("LearnedWordsCount", LearnedWordsCount);
+        //    Preferences.Set("CorrectAnswersCount", CorrectAnswersCount);
+        //    Preferences.Set("IncorrectAnswersCount", IncorrectAnswersCount);
+        //}
     }
 }
