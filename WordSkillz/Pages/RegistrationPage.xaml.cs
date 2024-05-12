@@ -50,7 +50,7 @@ public partial class RegistrationPage : ContentPage
             {
                 return;
             }
-            await NetManager.Post("api/Users", validationContext);
+            await NetManager.Post("api/Users", contextUser);
             App.Current.MainPage = new LoginPage();
 
         }
