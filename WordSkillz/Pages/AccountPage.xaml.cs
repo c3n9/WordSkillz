@@ -8,13 +8,12 @@ public partial class AccountPage : ContentPage
     public AccountPage()
     {
         InitializeComponent();
-        
     }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        UpdateText();
+        BindingContext = App.loggedUser;
         InitChart();
     }
 
@@ -43,12 +42,5 @@ public partial class AccountPage : ContentPage
                 },
             }
         };
-    }
-
-    private void UpdateText()
-    {
-        TBLearned.Text = $"Выучено слов: {App.loggedUser.LearnedWordsCount}";
-        TBCorrect.Text = $"Верных ответов: {App.loggedUser.CorrectAnswersCount}";
-        TBIncorrect.Text = $"Неверных ответов: {App.loggedUser.IncorrectAnswersCount}";
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace WordSkillz.Models
@@ -16,6 +17,15 @@ namespace WordSkillz.Models
         public string PhoneNumber { get; set; }
         public int LearnedWordsCount { get; set; }  
         public int IncorrectAnswersCount { get; set; }  
-        public int CorrectAnswersCount { get; set; }  
+        public int CorrectAnswersCount { get; set; }
+        [JsonIgnore]
+        public ImageSource ImageSource
+        {
+            get
+            {
+                return ImageSource.FromStream(() => new MemoryStream(Image));
+            }
+        }
+        
     }
 }
