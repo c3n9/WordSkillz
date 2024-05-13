@@ -17,6 +17,17 @@
                    Margin="10"/>
             <StackLayout HorizontalOptions="Center"
                          Grid.Row="1">
+                <Image Source="user.png"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       HorizontalOptions="Center" />
+                <Label Text="c3n9"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+                <Label Text="c3n9@example.com"
+                       FontSize="16"
+                       HorizontalOptions="Center" />
                 <Label x:Name="TBLearned"
                        FontSize="22" />
                 <Label x:Name="TBCorrect"
