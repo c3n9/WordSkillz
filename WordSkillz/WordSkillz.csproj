@@ -67,6 +67,9 @@
     <Compile Update="Popup\NoConnectionPopup.xaml.cs">
       <DependentUpon>NoConnectionPopup.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Popup\RegistrateValidationPopup.xaml.cs">
+      <DependentUpon>RegistrateValidationPopup.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <MauiXaml Update="Pages\AccountPage.xaml">
@@ -112,6 +115,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Popup\MiniGamesPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Popup\RegistrateValidationPopup.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Popup\TutorialPopup.xaml">

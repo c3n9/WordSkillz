@@ -43,11 +43,16 @@ public partial class RegistrationPage : ContentPage
             {
                 foreach (var result in results)
                 {
-                    error += $"{result.ErrorMessage}";
+                    error += $"{result.ErrorMessage}\n";
                 }
             }
             if (!string.IsNullOrWhiteSpace(error))
             {
+                var registrateValidationPopup = new RegistrateValidationPopup(error);
+                var popup = new CommunityToolkit.Maui.Views.Popup();
+                popup.Content = registrateValidationPopup;
+                popup.Color = Color.FromRgba(0, 0, 0, 0);
+                App.Current.MainPage.ShowPopup(popup);
                 return;
             }
             await NetManager.Post("api/Users", contextUser);
