@@ -3,20 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Popup.RegistrateValidationPopup">
     <Frame CornerRadius="20"
-           WidthRequest="350"
-           HeightRequest="180"
+           WidthRequest="-1"
+           HeightRequest="-1"
            HasShadow="False"
            Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
            BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">
-        <VerticalStackLayout>
-            <Label x:Name="ошибка"
+        <VerticalStackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="ошибка"
                    FontAttributes="Bold"
                    FontSize="22" />
             <Label x:Name="LMessage"
                    FontSize="18"
                    Margin="0,10,0,10" />
-            <HorizontalStackLayout HorizontalOptions="End"
-                                   VerticalOptions="End">
+            <HorizontalStackLayout HorizontalOptions="End">
                 <Button x:Name="BOk"
                         Clicked="BOk_Clicked"
                         Text="ок"
