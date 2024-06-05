@@ -52,7 +52,6 @@
     <None Remove="Resources\Images\user.svg" />
     <None Remove="Resources\Images\wattpad.svg" />
     <None Remove="Resources\Raw\question.json" />
-    <None Remove="Resources\Raw\w.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />

@@ -8,7 +8,6 @@ public partial class LoadingPage : ContentPage
 	{
 		InitializeComponent();
         Authorization();
-
     }
     private async void Authorization()
     {

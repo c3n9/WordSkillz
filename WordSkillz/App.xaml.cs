@@ -17,10 +17,7 @@ namespace WordSkillz
             RegistrateDescriptors();
             Application.Current.UserAppTheme = AppTheme.Light;
             MainPage = new LoadingPage();
-
         }
-
-       
 
         private void RegistrateDescriptors()
         {
@@ -32,20 +29,5 @@ namespace WordSkillz
             var provider = new AssociatedMetadataTypeTypeDescriptionProvider(typeof(T1), typeof(T2));
             TypeDescriptor.AddProviderTransparent(provider, typeof(T1));
         }
-
-        //private void LoadCounts()
-        //{
-        //    LearnedWordsCount = Preferences.Get("LearnedWordsCount", 0);
-        //    CorrectAnswersCount = Preferences.Get("CorrectAnswersCount", 0);
-        //    IncorrectAnswersCount = Preferences.Get("IncorrectAnswersCount", 0);
-        //}
-
-        //protected override void OnSleep()
-        //{
-        //    base.OnSleep();
-        //    Preferences.Set("LearnedWordsCount", LearnedWordsCount);
-        //    Preferences.Set("CorrectAnswersCount", CorrectAnswersCount);
-        //    Preferences.Set("IncorrectAnswersCount", IncorrectAnswersCount);
-        //}
     }
 }
