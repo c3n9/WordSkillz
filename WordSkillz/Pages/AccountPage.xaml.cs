@@ -13,6 +13,7 @@ public partial class AccountPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+        BindingContext = null;
         BindingContext = App.loggedUser;
         InitChart();
     }

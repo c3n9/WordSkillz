@@ -23,21 +23,4 @@ public partial class LoginPage : ContentPage
     {
         App.Current.MainPage = new RegistrationPage();
     }
-
-    private void ContentPage_Appearing(object sender, EventArgs e)
-    {
-        Authorize();
-
-    }
-
-    private async void Authorize()
-    {
-        var userId = Preferences.Get("userId", 0);
-        var user = (await NetManager.Get<List<User>>("api/Users")).FirstOrDefault(x => x.Id == userId);
-        if (user != null)
-        {
-            App.loggedUser = user;
-            App.Current.MainPage = new AppShell();
-        }
-    }
 }

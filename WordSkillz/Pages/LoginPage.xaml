@@ -3,47 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordSkillz.Pages.LoginPage"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
-             Title="Login"
-             Appearing="ContentPage_Appearing">
-    <VerticalStackLayout HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                         WidthRequest="300">
-        <Label Text="Авторизация"
-               HorizontalOptions="Center"
-               FontSize="30" 
-               Margin="0,10"/>
-        <material:TextField Title="Email"
-                            Keyboard="Email"
-                            x:Name="EmailEntry"
-                            IsTextPredictionEnabled="True"
-                            AllowClear="True"
-                            Margin="0,0,0,10"
-                            FontSize="24" />
-        <material:TextField Title="Пароль"
-                            IsPassword="True"
-                            Keyboard="Text"
-                            x:Name="PasswordEntry"
-                            Margin="0,0,0,20"
-                            AllowClear="True"
-                            IsTextPredictionEnabled="True"
-                            FontSize="24" />
-        <Button Text="Войти"
-                FontSize="24" 
-                Clicked="Button_Clicked"/>
-        <Frame Style="{DynamicResource FrameForHyperlink}"
-               HasShadow="False"
-               BackgroundColor="Transparent"
-               BorderColor="Transparent">
-            <Label Text="ещё не зарегестрированы? зарегестрироваться."
-                   TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
-                   Margin="0,0,0,0"
-                   TextDecorations="Underline"
-                   FontSize="16"
-                   HorizontalOptions="Center">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizerRegister_Tapped"/>
-                </Label.GestureRecognizers>
-            </Label>
-        </Frame>
-    </VerticalStackLayout>
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             Title="Login">
+    <Grid>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             WidthRequest="300">
+            <Label Text="Авторизация"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                   Margin="0,10" />
+            <material:TextField Title="Email"
+                                Keyboard="Email"
+                                x:Name="EmailEntry"
+                                IsTextPredictionEnabled="True"
+                                AllowClear="True"
+                                Margin="0,0,0,10"
+                                FontSize="24" />
+            <material:TextField Title="Пароль"
+                                IsPassword="True"
+                                Keyboard="Text"
+                                x:Name="PasswordEntry"
+                                Margin="0,0,0,20"
+                                AllowClear="True"
+                                IsTextPredictionEnabled="True"
+                                FontSize="24" />
+            <Button Text="Войти"
+                    FontSize="24"
+                    Clicked="Button_Clicked" />
+            <Frame Style="{DynamicResource FrameForHyperlink}"
+                   HasShadow="False"
+                   BackgroundColor="Transparent"
+                   BorderColor="Transparent">
+                <Label Text="ещё не зарегестрированы? зарегестрироваться."
+                       TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
+                       Margin="0,0,0,0"
+                       TextDecorations="Underline"
+                       FontSize="16"
+                       HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizerRegister_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+        </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>

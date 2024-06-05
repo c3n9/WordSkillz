@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             x:Class="WordSkillz.Pages.LoadingPage"
+             Title="LoadingPage">
+    <skia:SKLottieView Source="question.json"
+                       RepeatCount="3"
+                       WidthRequest="400"
+                       x:Name="skiaAnimation"
+                       HeightRequest="400" />
+</ContentPage>

@@ -4,7 +4,7 @@
              xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              x:Class="WordSkillz.Pages.AccountPage"
              Title="WordSkillz">
-    <StackLayout Padding="20">
+    <ScrollView Padding="20">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -37,6 +37,6 @@
                              Margin="0,20"
                              Grid.Row="1"/>
         </Grid>
-    </StackLayout>
+    </ScrollView>
 
 </ContentPage>

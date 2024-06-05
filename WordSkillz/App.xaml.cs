@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 using WordSkillz.Models;
 using WordSkillz.Models.Metadata;
 using WordSkillz.Pages;
@@ -15,12 +16,11 @@ namespace WordSkillz
             InitializeComponent();
             RegistrateDescriptors();
             Application.Current.UserAppTheme = AppTheme.Light;
-            if (!IsUserLoggedIn())
-                MainPage = new LoginPage();
-            else
-                MainPage = new AppShell();
+            MainPage = new LoadingPage();
 
         }
+
+       
 
         private void RegistrateDescriptors()
         {
@@ -31,11 +31,6 @@ namespace WordSkillz
         {
             var provider = new AssociatedMetadataTypeTypeDescriptionProvider(typeof(T1), typeof(T2));
             TypeDescriptor.AddProviderTransparent(provider, typeof(T1));
-        }
-
-        private bool IsUserLoggedIn()
-        {
-            return false;
         }
 
         //private void LoadCounts()

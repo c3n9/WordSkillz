@@ -47,13 +47,18 @@
     <None Remove="Resources\Images\home.svg" />
     <None Remove="Resources\Images\settings.svg" />
     <None Remove="Resources\Images\soon.gif" />
+    <None Remove="Resources\Images\spinner.gif" />
     <None Remove="Resources\Images\trash.svg" />
     <None Remove="Resources\Images\user.svg" />
     <None Remove="Resources\Images\wattpad.svg" />
+    <None Remove="Resources\Raw\question.json" />
+    <None Remove="Resources\Raw\w.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
     <PackageReference Include="Microcharts.Maui" Version="1.0.0" />
+    <PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
+    <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.8" />
     <PackageReference Include="SkiaSharp.Views.Maui.Controls.Compatibility" Version="2.88.7" />
     <PackageReference Include="UraniumUI.Icons.FontAwesome" Version="2.8.1" />
     <PackageReference Include="UraniumUI.Material" Version="2.8.1" />
@@ -79,6 +84,9 @@
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Pages\AllWordsInCategoryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Pages\LoadingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Pages\LoginPage.xaml">
