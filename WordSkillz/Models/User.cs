@@ -18,7 +18,6 @@ namespace WordSkillz.Models
         public int LearnedWordsCount { get; set; }  
         public int IncorrectAnswersCount { get; set; }  
         public int CorrectAnswersCount { get; set; }
-        [JsonIgnore]
         public ImageSource ImageSource
         {
             get
@@ -26,6 +25,6 @@ namespace WordSkillz.Models
                 return ImageSource.FromStream(() => new MemoryStream(Image));
             }
         }
-        
+
     }
 }

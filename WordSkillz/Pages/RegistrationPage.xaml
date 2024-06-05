@@ -21,7 +21,7 @@
                     </Image.GestureRecognizers>
                 </Image>
             </Frame>
-            <material:TextField Title="name"
+            <material:TextField Title="имя"
                                 Keyboard="Text"
                                 AllowClear="True"
                                 x:Name="NameEntry"
@@ -33,7 +33,7 @@
                                 Text="{Binding Email}"
                                 x:Name="EmailEntry"
                                 FontSize="24" />
-            <material:TextField Title="password"
+            <material:TextField Title="пароль"
                                 AllowClear="True"
                                 IsTextPredictionEnabled="True"
                                 IsPassword="True"
@@ -41,22 +41,22 @@
                                 x:Name="PasswordEntry"
                                 FontSize="24"
                                 Keyboard="Text" />
-            <material:TextField Title="phone"
+            <material:TextField Title="телефон"
                                 Text="{Binding PhoneNumber}"
                                 AllowClear="True"
                                 x:Name="PhoneNumberEntry"
                                 Keyboard="Telephone"
                                 FontSize="24" />
-            <Button Text="Register"
-                    Margin="0,20,0,0"
+            <Button Text="Зарегестрироваться"
+                    Margin="15,20,15,0"
                     FontSize="24"
                     Clicked="BRegister_Clicked"/>
-            <Label Text="Registered? Log in."
+            <Label Text="зарегестрированы? авторизоваться."
                    TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}"
                    Margin="0,20,0,0"
                    TextDecorations="Underline"
                    HorizontalOptions="Center"
-                   FontSize="20">
+                   FontSize="16">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer  Tapped="TapGestureRecognizerLogin_Tapped"/>
                 </Label.GestureRecognizers>
