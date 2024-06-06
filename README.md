@@ -19,16 +19,37 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 
 ## Screenshots
 
-![photo_2024-04-26_22-31-49](https://github.com/c3n9/WordSkillz/assets/108518693/141c8f19-246c-4e20-84bd-50ce8e821811)
+### Загрузочное окно
+![photo_2024-06-06_13-30-51](https://github.com/c3n9/WordSkillz/assets/108518693/9cc8258d-46dc-4b37-9a64-9790416c73a1)
 
-![photo_2024-04-26_22-15-43 (2)](https://github.com/c3n9/WordSkillz/assets/108518693/2c214183-030c-478f-9c99-906f175871e7)
+### Окно авторизации
+![photo_2024-06-06_13-30-50](https://github.com/c3n9/WordSkillz/assets/108518693/6b7b925a-d583-4b97-a3d7-6cfdf6d50294)
 
-![photo_2024-04-26_22-15-44](https://github.com/c3n9/WordSkillz/assets/108518693/4cc085ae-7528-4cc0-a459-02835fee14a4)
+### Окно регистрации
+![photo_2024-06-06_13-30-49](https://github.com/c3n9/WordSkillz/assets/108518693/2349e801-b5b9-4147-84bb-db3ceef62a2f)
 
-![photo_2024-04-26_22-15-45](https://github.com/c3n9/WordSkillz/assets/108518693/74fd16c5-5744-489d-b60b-1626dbb877cf)
+### Страница категорий
+![photo_2024-06-06_13-30-48](https://github.com/c3n9/WordSkillz/assets/108518693/69b97d95-ce1f-419c-81da-41dbb164641b)
 
-![photo_2024-04-26_22-15-46](https://github.com/c3n9/WordSkillz/assets/108518693/3e5e8671-00c5-4a35-9949-1c165a0b855b)
+### Страница слов в выбранной категории
+![photo_2024-06-06_13-30-47](https://github.com/c3n9/WordSkillz/assets/108518693/bf06c021-a864-4444-a61e-761c60c170e7)
 
-![photo_2024-04-26_22-15-47](https://github.com/c3n9/WordSkillz/assets/108518693/83064fdb-e3d4-4b81-98b5-2f69fcae2c1a)
+### Popup окно добавления новой категории
+![photo_2024-06-06_13-30-46](https://github.com/c3n9/WordSkillz/assets/108518693/e64d52ee-d098-4a7f-8d15-84f8291156d5)
+
+### Страница добавления новых слов
+![photo_2024-06-06_13-30-45](https://github.com/c3n9/WordSkillz/assets/108518693/25646f23-638b-49ad-b9d5-869784c2e7dc)
+
+### Popup окно выбора мини-игр
+![photo_2024-06-06_13-30-44](https://github.com/c3n9/WordSkillz/assets/108518693/bb08a5a9-105c-493a-a2f6-f3f462c24e54)
+
+### Мини-игра обзор слов
+![photo_2024-06-06_13-30-43](https://github.com/c3n9/WordSkillz/assets/108518693/af94f8db-7363-497d-a40d-41ed5e2c2678)
+
+### Мини-игра вспомни
+![photo_2024-06-06_13-30-41](https://github.com/c3n9/WordSkillz/assets/108518693/ba1f8496-019b-42d0-9874-0d29b0b5a1e6)
+
+### Мини-игра догадайся
+![photo_2024-06-06_13-30-39](https://github.com/c3n9/WordSkillz/assets/108518693/01d4d2ab-48df-4b85-9293-d324032ade47)
 
 
