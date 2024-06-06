@@ -31,6 +31,10 @@
                 <Label x:Name="TBIncorrect"
                        Text="{Binding IncorrectAnswersCount, StringFormat='Неверных ответов: {0}'}"
                        FontSize="22" />
+                <Button x:Name="BExit"
+                        Margin="10"
+                        Clicked="BExit_Clicked"
+                        Text="Выйти" />
             </StackLayout>
             <micro:ChartView x:Name="ChartView" 
                              HeightRequest="400"

@@ -16,8 +16,6 @@
                                  Color="White" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <!--<ToolbarItem Text="+"
-                     Clicked="BPlusCategory_Clicked"/>-->
     </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>

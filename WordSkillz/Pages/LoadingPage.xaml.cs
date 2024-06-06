@@ -11,7 +11,7 @@ public partial class LoadingPage : ContentPage
     }
     private async void Authorization()
     {
-        await Task.Delay(5000);
+        await Task.Delay(3000);
         try
         {
             var userId = Preferences.Get("userId", 0);
@@ -27,11 +27,11 @@ public partial class LoadingPage : ContentPage
             }
             else
                 App.Current.MainPage = new LoginPage();
-        }
+    }
         catch(Exception ex)
         {
-            await Console.Out.WriteLineAsync();
-        }
+            await Console.Out.WriteLineAsync(ex.Message);
+}
 
     }
 }

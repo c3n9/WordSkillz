@@ -96,6 +96,8 @@ public partial class WordCardsPage : ContentPage
             currentWordCount = allCountWords - Words.Count;
             LVWord—ards.ItemsSource = Words.Skip(currentIndex).Take(1);
             await LVWord—ards.FadeTo(1, 250);
+            NetManager.Put($"api/Users/{App.loggedUser.Id}", ToUserDTO(App.loggedUser));
+
             UpdateProgress();
             Refresh();
         }
@@ -103,6 +105,21 @@ public partial class WordCardsPage : ContentPage
         {
             return;
         }
+    }
+    private UserDTO ToUserDTO(User user)
+    {
+        return new UserDTO
+        {
+            Id = user.Id,
+            Name = user.Name,
+            Email = user.Email,
+            Password = user.Password,
+            Image = user.Image,
+            PhoneNumber = user.PhoneNumber,
+            LearnedWordsCount = user.LearnedWordsCount,
+            IncorrectAnswersCount = user.IncorrectAnswersCount,
+            CorrectAnswersCount = user.CorrectAnswersCount
+        };
     }
     private async void UpdateProgress()
     {

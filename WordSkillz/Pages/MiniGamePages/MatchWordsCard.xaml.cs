@@ -261,13 +261,13 @@ public partial class MatchWordsCard : ContentPage
                         break;
                 }
             }
+            NetManager.Put($"api/Users/{App.loggedUser.Id}", ToUserDTO(App.loggedUser));
 
             currentWord = Words[currentIndex];
             BWord1.BackgroundColor = BWord2.BackgroundColor = BWord2.BackgroundColor = BWord3.BackgroundColor = BWord4.BackgroundColor = Color.FromHex("#0875ba");
 
             await FadeInNewWord();
             await ShuffleAndSetButtonTexts();
-
             UpdateProgress();
         }
         catch (Exception ex)
@@ -277,7 +277,21 @@ public partial class MatchWordsCard : ContentPage
         }
     }
 
-
+    private UserDTO ToUserDTO(User user)
+    {
+        return new UserDTO
+        {
+            Id = user.Id,
+            Name = user.Name,
+            Email = user.Email,
+            Password = user.Password,
+            Image = user.Image,
+            PhoneNumber = user.PhoneNumber,
+            LearnedWordsCount = user.LearnedWordsCount,
+            IncorrectAnswersCount = user.IncorrectAnswersCount,
+            CorrectAnswersCount = user.CorrectAnswersCount
+        };
+    }
 
 
 

@@ -22,7 +22,7 @@ public partial class AllWordsInCategoryPage : ContentPage
     }
 
     // Асинхронный метод для задержки
-    private async Task DelayedRefresh()
+    private async void DelayedRefresh()
     {
         // Подождать 2 секунды перед вызовом Refresh()
         ActivityIndicator.IsRunning = true;

@@ -5,7 +5,7 @@
              x:Class="WordSkillz.Pages.LoadingPage"
              Title="LoadingPage">
     <skia:SKLottieView Source="question.json"
-                       RepeatCount="3"
+                       RepeatCount="-1"
                        WidthRequest="400"
                        x:Name="skiaAnimation"
                        HeightRequest="400" />

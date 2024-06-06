@@ -44,4 +44,11 @@ public partial class AccountPage : ContentPage
             }
         };
     }
+
+    private void BExit_Clicked(object sender, EventArgs e)
+    {
+        Preferences.Set("userId", 0);
+        App.loggedUser = null;
+        App.Current.MainPage = new LoginPage();
+    }
 }
