@@ -5,6 +5,7 @@
     <Frame CornerRadius="20"
            WidthRequest="-1"
            HeightRequest="-1"
+           Margin="10"
            HasShadow="False"
            Background="{AppThemeBinding Light=White, Dark={StaticResource Black}}"
            BorderColor="{AppThemeBinding Light=White, Dark={StaticResource Black}}">

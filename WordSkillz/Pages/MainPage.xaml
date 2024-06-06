@@ -105,24 +105,6 @@
                                                     <Setter Property="BorderColor"
                                                             Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryNight}}" />
                                                 </Trigger>
-                                                <!--<Trigger TargetType="Button"
-                                                         Property="IsPressed"
-                                                         Value="True">
-                                                    <Setter Property="TextColor"
-                                                            Value="{AppThemeBinding Light=White, Dark=White}" />
-                                                    -->
-                                                <!--<Setter Property="BackgroundColor"
-                                                            Value="{AppThemeBinding Light=Primary, Dark=PrimaryNight}" />-->
-                                                <!--<Setter Property="BackgroundColor">
-                                                        <Setter.Value>
-                                                            <OnPlatform x:TypeArguments="Color">
-                                                                <On Platform="Android, iOS">#0875BA</On>
-                                                            </OnPlatform>
-                                                        </Setter.Value>
-                                                    </Setter>-->
-                                                <!--
-                                                </Trigger>-->
-                                                
                                             </Button.Triggers>
                                             
                                         </Button>
