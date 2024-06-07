@@ -1,4 +1,4 @@
-# WordSkillz
+<h1 align="center">WordSkillz</h1> 
 
 WordSkillz - your ultimate companion for learning new words and expanding your vocabulary. This mobile application is designed for efficient learning of new words anytime, anywhere.
 
@@ -20,46 +20,58 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 ## Screenshots
 
 ### Загрузочное окно
-![photo_2024-06-06_13-30-39](https://github.com/c3n9/WordSkillz/assets/108518693/596b55b2-5181-4b43-be3d-58511f39c5f7)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/596b55b2-5181-4b43-be3d-58511f39c5f7" alt="Loading window" width="340" height="340">
+</p>
 
 ### Окно авторизации
-![photo_2024-06-06_13-30-41](https://github.com/c3n9/WordSkillz/assets/108518693/414c4878-8f85-4fe9-9997-037bff8308cc)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/414c4878-8f85-4fe9-9997-037bff8308cc" alt="Authorization window" width="340" height="340">
+</p>
 
 ### Окно регистрации
-![photo_2024-06-06_13-30-43](https://github.com/c3n9/WordSkillz/assets/108518693/dac20267-0ba7-4108-865c-778771fdc23e)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/dac20267-0ba7-4108-865c-778771fdc23e" alt="Registration window" width="340" height="340">
+</p>
 
 ### Страница категорий
-![photo_2024-06-06_13-30-44](https://github.com/c3n9/WordSkillz/assets/108518693/281c37df-9333-4091-bf95-f36cf9e50e70)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/281c37df-9333-4091-bf95-f36cf9e50e70" alt="Category page" width="340" height="340">
+</p>
 
 ### Страница слов в выбранной категории
-![photo_2024-06-06_13-30-45](https://github.com/c3n9/WordSkillz/assets/108518693/8f3c8e87-2c28-46cd-b42d-35fbe8880fe7)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/8f3c8e87-2c28-46cd-b42d-35fbe8880fe7" alt="Category page" width="340" height="340">
+</p>
 
 ### Popup окно добавления новой категории
-![photo_2024-06-06_13-30-46](https://github.com/c3n9/WordSkillz/assets/108518693/d1cb339d-9ea6-47cd-9ea5-f0774c86a78b)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/d1cb339d-9ea6-47cd-9ea5-f0774c86a78b" alt="AddNewCategoryPopup" width="340" height="340">
+</p>
 
 ### Страница добавления новых слов
-![photo_2024-06-06_13-30-47](https://github.com/c3n9/WordSkillz/assets/108518693/4d0e9983-4b94-4ef4-b176-aac555500716)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/4d0e9983-4b94-4ef4-b176-aac555500716" alt="AddNewWords" width="340" height="340">
+</p>
 
 ### Popup окно выбора мини-игр
-![photo_2024-06-06_13-30-48](https://github.com/c3n9/WordSkillz/assets/108518693/e2d36e4e-4803-4f6f-be25-418bca5798fd)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e2d36e4e-4803-4f6f-be25-418bca5798fd" alt="MiniGamesPopup" width="340" height="340">
+</p>
 
 ### Мини-игра обзор слов
-![photo_2024-06-06_13-30-49](https://github.com/c3n9/WordSkillz/assets/108518693/e746d8ca-6e00-4051-980b-8e9b441f8e53)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e746d8ca-6e00-4051-980b-8e9b441f8e53" alt="ShowWordsGame" width="340" height="340">
+</p>
 
 ### Мини-игра вспомни
-![photo_2024-06-06_13-30-50](https://github.com/c3n9/WordSkillz/assets/108518693/2112caa1-f456-405c-a03d-eb93a79a9e28)
-
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/2112caa1-f456-405c-a03d-eb93a79a9e28" alt="BluredWordsGame" width="340" height="340">
+</p>
 
 ### Мини-игра догадайся
-![photo_2024-06-06_13-30-51](https://github.com/c3n9/WordSkillz/assets/108518693/cc87a251-3a03-41bb-ad1d-f7bb4a1de53c)
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/cc87a251-3a03-41bb-ad1d-f7bb4a1de53c" alt="MatchWordsGame" width="340" height="340">
+</p>
 
 
