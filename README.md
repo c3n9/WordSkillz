@@ -19,57 +19,57 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 
 ## Screenshots
 
-### Загрузочное окно
+<h3 align="center">Загрузочное окно</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/596b55b2-5181-4b43-be3d-58511f39c5f7" alt="Loading window">
 </p>
 
-### Окно авторизации
+<h3 align="center">Окно авторизации</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/414c4878-8f85-4fe9-9997-037bff8308cc" alt="Authorization window">
 </p>
 
-### Окно регистрации
+<h3 align="center">Окно регистрации</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/dac20267-0ba7-4108-865c-778771fdc23e" alt="Registration window">
 </p>
 
-### Страница категорий
+<h3 align="center">Страница категорий</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/281c37df-9333-4091-bf95-f36cf9e50e70" alt="Category page">
 </p>
 
-### Страница слов в выбранной категории
+<h3 align="center">Страница слов в выбранной категории</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/8f3c8e87-2c28-46cd-b42d-35fbe8880fe7" alt="Category page">
 </p>
 
-### Popup окно добавления новой категории
+<h3 align="center">Popup окно добавления новой категории</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/d1cb339d-9ea6-47cd-9ea5-f0774c86a78b" alt="AddNewCategoryPopup">
 </p>
 
-### Страница добавления новых слов
+<h3 align="center">Страница добавления новых слов</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/4d0e9983-4b94-4ef4-b176-aac555500716" alt="AddNewWords">
 </p>
 
-### Popup окно выбора мини-игр
+<h3 align="center">Popup окно выбора мини-игр</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e2d36e4e-4803-4f6f-be25-418bca5798fd" alt="MiniGamesPopup">
 </p>
 
-### Мини-игра обзор слов
+<h3 align="center">Мини-игра обзор слов</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e746d8ca-6e00-4051-980b-8e9b441f8e53" alt="ShowWordsGame">
 </p>
 
-### Мини-игра вспомни
+<h3 align="center">Мини-игра вспомни</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/2112caa1-f456-405c-a03d-eb93a79a9e28" alt="BluredWordsGame">
 </p>
 
-### Мини-игра догадайся
+<h3 align="center">Мини-игра догадайся</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/cc87a251-3a03-41bb-ad1d-f7bb4a1de53c" alt="MatchWordsGame">
 </p>
