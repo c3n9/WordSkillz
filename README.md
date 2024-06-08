@@ -19,57 +19,57 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 
 ## Screenshots
 
-<h3 align="center">Загрузочное окно</h3> 
+<h3 align="center">Loading window</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/596b55b2-5181-4b43-be3d-58511f39c5f7" alt="Loading window">
 </p>
 
-<h3 align="center">Окно авторизации</h3> 
+<h3 align="center">Authorization window</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/414c4878-8f85-4fe9-9997-037bff8308cc" alt="Authorization window">
 </p>
 
-<h3 align="center">Окно регистрации</h3> 
+<h3 align="center">Registration window</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/dac20267-0ba7-4108-865c-778771fdc23e" alt="Registration window">
 </p>
 
-<h3 align="center">Страница категорий</h3> 
+<h3 align="center">Categories page</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/281c37df-9333-4091-bf95-f36cf9e50e70" alt="Category page">
 </p>
 
-<h3 align="center">Страница слов в выбранной категории</h3> 
+<h3 align="center">Page with words in the selected category</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/8f3c8e87-2c28-46cd-b42d-35fbe8880fe7" alt="Category page">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/8f3c8e87-2c28-46cd-b42d-35fbe8880fe7" alt="Words page">
 </p>
 
-<h3 align="center">Popup окно добавления новой категории</h3> 
+<h3 align="center">Popup window for adding a new category</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/d1cb339d-9ea6-47cd-9ea5-f0774c86a78b" alt="AddNewCategoryPopup">
 </p>
 
-<h3 align="center">Страница добавления новых слов</h3> 
+<h3 align="center">The page for adding new words</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/4d0e9983-4b94-4ef4-b176-aac555500716" alt="AddNewWords">
 </p>
 
-<h3 align="center">Popup окно выбора мини-игр</h3> 
+<h3 align="center">Popup window for selecting mini-games</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e2d36e4e-4803-4f6f-be25-418bca5798fd" alt="MiniGamesPopup">
 </p>
 
-<h3 align="center">Мини-игра обзор слов</h3> 
+<h3 align="center">Mini-game show words</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e746d8ca-6e00-4051-980b-8e9b441f8e53" alt="ShowWordsGame">
 </p>
 
-<h3 align="center">Мини-игра вспомни</h3> 
+<h3 align="center">Mini-game blured words</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/2112caa1-f456-405c-a03d-eb93a79a9e28" alt="BluredWordsGame">
 </p>
 
-<h3 align="center">Мини-игра догадайся</h3> 
+<h3 align="center">Mini-game match word</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/cc87a251-3a03-41bb-ad1d-f7bb4a1de53c" alt="MatchWordsGame">
 </p>
