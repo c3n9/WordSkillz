@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
              xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              x:Class="WordSkillz.Pages.AccountPage"
              Title="WordSkillz">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="TBIEdit"
+                     Clicked="TBIEdit_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="FASolid"
+                                 Glyph="{x:Static fa:Solid.Pencil}"
+                                 Color="White" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem x:Name="TBIExit"
+                     Clicked="TBIExit_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="FASolid"
+                                 Glyph="{x:Static fa:Solid.DoorOpen}"
+                                 Color="White" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ScrollView Padding="20">
         <Grid>
             <Grid.RowDefinitions>
@@ -11,36 +30,42 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <StackLayout HorizontalOptions="Center">
-                <Image Source="{Binding ImageSource}"
-                       HeightRequest="100"
-                       WidthRequest="100"
-                       HorizontalOptions="Center" />
-                <Label Text="{Binding Name, StringFormat='Имя: {0}'}"
-                       FontSize="28"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center" />
-                <Label Text="{Binding Email, StringFormat='Email: {0}'}"
-                       FontSize="22"
-                       HorizontalOptions="Center" />
-                <Label x:Name="TBLearned"
-                       Text="{Binding LearnedWordsCount, StringFormat='Выучено слов: {0}'}"
-                       FontSize="22" />
-                <Label x:Name="TBCorrect"
-                       Text="{Binding CorrectAnswersCount, StringFormat='Верных ответов: {0}'}"
-                       FontSize="22" />
-                <Label x:Name="TBIncorrect"
-                       Text="{Binding IncorrectAnswersCount, StringFormat='Неверных ответов: {0}'}"
-                       FontSize="22" />
-                <Button x:Name="BExit"
-                        Margin="10"
-                        Clicked="BExit_Clicked"
-                        Text="Выйти" />
+                <StackLayout Orientation="Horizontal">
+                    <Frame HeightRequest="120"
+                           WidthRequest="120"
+                           CornerRadius="70"
+                           Background="Transparent"
+                           HorizontalOptions="Center"
+                           Padding="0"
+                           HasShadow="False"
+                           Margin="0,0,10,0">
+                        <Image Source="{Binding ImageSource}"
+                               HeightRequest="120"
+                               WidthRequest="120"
+                               VerticalOptions="Center"
+                               Aspect="Fill"
+                               HorizontalOptions="Center" />
+                    </Frame>
+                    <StackLayout>
+                        <Label Text="{Binding Name, StringFormat='Привет {0}!'}"
+                               FontSize="28"
+                               FontAttributes="Bold" />
+                        <Label x:Name="TBLearned"
+                               Text="{Binding LearnedWordsCount, StringFormat='Выучено слов: {0}'}"
+                               FontSize="22" />
+                        <Label x:Name="TBCorrect"
+                               Text="{Binding CorrectAnswersCount, StringFormat='Верных ответов: {0}'}"
+                               FontSize="22" />
+                        <Label x:Name="TBIncorrect"
+                               Text="{Binding IncorrectAnswersCount, StringFormat='Неверных ответов: {0}'}"
+                               FontSize="22" />
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
-            <micro:ChartView x:Name="ChartView" 
+            <micro:ChartView x:Name="ChartView"
                              HeightRequest="400"
                              Margin="0,20"
-                             Grid.Row="1"/>
+                             Grid.Row="1" />
         </Grid>
     </ScrollView>
-
 </ContentPage>

@@ -1,5 +1,6 @@
 using Microcharts;
 using SkiaSharp;
+using WordSkillz.Models;
 
 namespace WordSkillz.Pages;
 
@@ -45,10 +46,15 @@ public partial class AccountPage : ContentPage
         };
     }
 
-    private void BExit_Clicked(object sender, EventArgs e)
+    private void TBIExit_Clicked(object sender, EventArgs e)
     {
         Preferences.Set("userId", 0);
         App.loggedUser = null;
         App.Current.MainPage = new LoginPage();
+    }
+
+    private void TBIEdit_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new RegistrationPage(App.loggedUser));
     }
 }

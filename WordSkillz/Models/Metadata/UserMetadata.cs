@@ -28,6 +28,7 @@ namespace WordSkillz.Models.Metadata
 
         [Required(ErrorMessage = "Поле 'Номер телефона' обязательно для заполнения.")]
         [Phone(ErrorMessage = "Поле 'Номер телефона' должно содержать корректный номер.")]
+        [RegularExpression(@"^8\d{10}$", ErrorMessage = "Поле 'Номер телефона' должно быть в формате 89999999999.")]
         public string PhoneNumber { get; set; }
 
         public int LearnedWordsCount { get; set; }

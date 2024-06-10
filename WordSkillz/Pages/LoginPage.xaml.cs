@@ -21,6 +21,6 @@ public partial class LoginPage : ContentPage
 
     private void TapGestureRecognizerRegister_Tapped(object sender, TappedEventArgs e)
     {
-        App.Current.MainPage = new RegistrationPage();
+        App.Current.MainPage = new RegistrationPage(new User() { CorrectAnswersCount = 0, IncorrectAnswersCount = 0, LearnedWordsCount = 0 });
     }
 }

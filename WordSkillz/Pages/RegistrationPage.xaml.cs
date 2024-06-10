@@ -9,10 +9,17 @@ namespace WordSkillz.Pages;
 public partial class RegistrationPage : ContentPage
 {
     User contextUser;
-    public RegistrationPage()
+    public RegistrationPage(User user)
     {
         InitializeComponent();
-        contextUser = new User() { CorrectAnswersCount = 0, IncorrectAnswersCount = 0, LearnedWordsCount = 0 };
+        if (user.Id != 0)
+        {
+            this.Title = "Редактирование профиля";
+            LLogin.IsVisible = false;
+            BRegister.Text = "Сохранить";
+            SelectedPhoto.Source = ImageSource.FromStream(() => new MemoryStream(user.Image));
+        }
+        contextUser = user;
         BindingContext = contextUser;
     }
 
@@ -57,8 +64,16 @@ public partial class RegistrationPage : ContentPage
                 return;
             }
             var userDTO = ToUserDTO(contextUser);
-            await NetManager.Post("api/Users", userDTO);
-            App.Current.MainPage = new LoginPage();
+            if (contextUser.Id == 0)
+            {
+                await NetManager.Post("api/Users", userDTO);
+                App.Current.MainPage = new LoginPage();
+            }
+            else
+            {
+                await NetManager.Post($"api/Users/{userDTO.Id}", userDTO);
+                await Navigation.PopAsync();
+            }
 
         }
         catch
