@@ -71,7 +71,7 @@ public partial class RegistrationPage : ContentPage
             }
             else
             {
-                await NetManager.Post($"api/Users/{userDTO.Id}", userDTO);
+                await NetManager.Put($"api/Users/{userDTO.Id}", userDTO);
                 await Navigation.PopAsync();
             }
 
