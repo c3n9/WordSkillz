@@ -1,3 +1,8 @@
+<p align="center">
+![appicon](https://github.com/c3n9/WordSkillz/assets/108518693/c08dee2f-faf9-432b-9c18-1ab57507ce2f)
+![Uploadi<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(0.4999999999999998,0,0,0.4999999999999998,128.00000000000006,128.00000000000006)"><rect width="512" height="512" fill="#0875ba" rx="150" opacity="1" data-original="#1770ff" class=""></rect><path fill="#ffffff" d="M346.14 138.56c0-2.88 8.79-4.32 26.37-4.32 39.63 0 59.12 1.28 58.48 3.84l-46.98 232.98c-.96 5.1-18.69 7.67-53.21 7.67s-52.25-2.56-53.21-7.67l-19.66-107.38-24.45 107.38c-.96 4.79-19.26 7.19-54.89 7.19s-53.93-2.88-54.89-8.63L81.04 136.16c-.96-1.92 12.78-2.87 41.22-2.87 28.12.32 42.18.96 42.18 1.92l22.05 162.03 39.78-160.12c.64-1.91 11.18-2.87 31.64-2.87s30.99.96 31.64 2.87l39.31 158.2 17.26-156.75z" opacity="1" data-original="#ffffff" class=""></path></g></svg>ng appicon.svg…]()
+</p>
+
 <h1 align="center">WordSkillz</h1> 
 
 WordSkillz - your ultimate companion for learning new words and expanding your vocabulary. This mobile application is designed for efficient learning of new words anytime, anywhere.
