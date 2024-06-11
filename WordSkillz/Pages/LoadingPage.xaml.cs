@@ -11,6 +11,7 @@ public partial class LoadingPage : ContentPage
     }
     private async void Authorization()
     {
+        await Task.Delay(3000);
         try
         {
             var userId = Preferences.Get("userId", 0);
@@ -20,11 +21,19 @@ public partial class LoadingPage : ContentPage
                 if (user != null)
                 {
                     App.loggedUser = user;
-                    App.Current.MainPage = new AppShell();
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        App.Current.MainPage = new AppShell();
+                    });
                 }
             }
             else
-                App.Current.MainPage = new LoginPage();
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    App.Current.MainPage = new LoginPage();
+                });
+            }
         }
         catch(Exception ex)
         {
