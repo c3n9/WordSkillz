@@ -66,7 +66,7 @@ public partial class RegistrationPage : ContentPage
             var validationContext = new ValidationContext(contextUser);
             var results = new List<ValidationResult>();
             var user = Users.FirstOrDefault(x => x.Email == contextUser.Email);
-            if (user != null)
+            if (user != null && contextUser.Id == 0)
                 error += "ѕользователь с таким email уже существует\n";
             if (!Validator.TryValidateObject(contextUser, validationContext, results, true))
             {
