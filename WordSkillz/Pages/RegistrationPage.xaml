@@ -45,6 +45,7 @@
             <material:TextField Title="телефон"
                                 Text="{Binding PhoneNumber}"
                                 AllowClear="True"
+                                MaxLength="11"
                                 x:Name="PhoneNumberEntry"
                                 Keyboard="Telephone"
                                 FontSize="24" />
