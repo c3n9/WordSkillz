@@ -43,6 +43,11 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/281c37df-9333-4091-bf95-f36cf9e50e70" alt="Category page">
 </p>
 
+<h3 align="center">Account page</h3> 
+<p align="center">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/aa12d778-ef5e-491e-8302-779f43e0a049" alt="MatchWordsGame">
+</p>
+
 <h3 align="center">Page with words in the selected category</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/8f3c8e87-2c28-46cd-b42d-35fbe8880fe7" alt="Words page">
