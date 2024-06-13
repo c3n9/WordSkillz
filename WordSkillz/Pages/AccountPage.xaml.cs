@@ -50,7 +50,7 @@ public partial class AccountPage : ContentPage
     {
         Preferences.Set("userId", 0);
         App.loggedUser = null;
-        App.Current.MainPage = new LoginPage();
+        App.Current.MainPage = new StartShell();
     }
 
     private void TBIEdit_Clicked(object sender, EventArgs e)

@@ -4,7 +4,7 @@
              x:Class="WordSkillz.Pages.LoginPage"
              xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
-             Title="Login">
+             Title="Авторизация">
     <Grid>
         <VerticalStackLayout HorizontalOptions="Center"
                              VerticalOptions="Center"

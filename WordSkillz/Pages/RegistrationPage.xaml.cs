@@ -42,7 +42,7 @@ public partial class RegistrationPage : ContentPage
 
     private void TapGestureRecognizerLogin_Tapped(object sender, TappedEventArgs e)
     {
-        App.Current.MainPage = new LoginPage();
+        Navigation.PushAsync(new LoginPage());
     }
 
     private async void TapGestureRecognizerImage_Tapped(object sender, TappedEventArgs e)

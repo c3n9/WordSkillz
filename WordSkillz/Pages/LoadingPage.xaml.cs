@@ -4,11 +4,13 @@ namespace WordSkillz.Pages;
 
 public partial class LoadingPage : ContentPage
 {
-	public LoadingPage()
-	{
-		InitializeComponent();
+    public LoadingPage()
+    {
+        InitializeComponent();
         Authorization();
     }
+
+    [Obsolete]
     private async void Authorization()
     {
         await Task.Delay(3000);
@@ -31,11 +33,11 @@ public partial class LoadingPage : ContentPage
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    App.Current.MainPage = new LoginPage();
+                    App.Current.MainPage = new StartShell();
                 });
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             await Console.Out.WriteLineAsync(ex.Message);
         }

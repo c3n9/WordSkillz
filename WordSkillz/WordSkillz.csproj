@@ -74,6 +74,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="StartShell.xaml.cs">
+      <DependentUpon>StartShell.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Popup\NoConnectionPopup.xaml.cs">
       <DependentUpon>NoConnectionPopup.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <MauiXaml Update="StartShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
     <MauiXaml Update="Pages\AccountPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
