@@ -40,6 +40,7 @@
     <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="mailtemplate.html" />
     <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
     <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
     <None Remove="Resources\Images\checkmark.svg" />
@@ -52,6 +53,11 @@
     <None Remove="Resources\Images\user.svg" />
     <None Remove="Resources\Images\wattpad.svg" />
     <None Remove="Resources\Raw\question.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiAsset Include="mailtemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </MauiAsset>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
@@ -130,10 +136,5 @@
     <MauiXaml Update="Popup\TutorialPopup.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="mailtemplate.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 </Project>
