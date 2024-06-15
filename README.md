@@ -86,6 +86,6 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 <h3 align="center">Email messages</h3> 
 <p align="center">
     <img src="https://github.com/c3n9/WordSkillz/assets/108518693/ac878606-1f98-4b1b-a971-b5e229342aaa" alt="MatchWordsGame">
-</p>=
+</p>
 
 
