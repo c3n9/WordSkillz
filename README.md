@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/c3n9/WordSkillz/assets/108518693/88e19b09-af78-483d-b8a5-e05ffb4c89b2" alt="CraftHub logo" width="340" height="340">
+   <img src="https://github.com/c3n9/WordSkillz/assets/108518693/88e19b09-af78-483d-b8a5-e05ffb4c89b2" alt="WordSkillz logo" width="340" height="340">
 </p>
 
 <h1 align="center">WordSkillz</h1> 
