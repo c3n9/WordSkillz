@@ -45,7 +45,7 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 
 <h3 align="center">Account page</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/aa12d778-ef5e-491e-8302-779f43e0a049" alt="MatchWordsGame">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/aa12d778-ef5e-491e-8302-779f43e0a049" alt="Match words game">
 </p>
 
 <h3 align="center">Page with words in the selected category</h3> 
@@ -55,37 +55,37 @@ WordSkillz makes learning new words engaging and effective. Whether you're learn
 
 <h3 align="center">Popup window for adding a new category</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/d1cb339d-9ea6-47cd-9ea5-f0774c86a78b" alt="AddNewCategoryPopup">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/d1cb339d-9ea6-47cd-9ea5-f0774c86a78b" alt="Add new category popup">
 </p>
 
 <h3 align="center">The page for adding new words</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/4d0e9983-4b94-4ef4-b176-aac555500716" alt="AddNewWords">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/4d0e9983-4b94-4ef4-b176-aac555500716" alt="Add new words">
 </p>
 
 <h3 align="center">Popup window for selecting mini-games</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e2d36e4e-4803-4f6f-be25-418bca5798fd" alt="MiniGamesPopup">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e2d36e4e-4803-4f6f-be25-418bca5798fd" alt="Mini games popup">
 </p>
 
 <h3 align="center">Mini-game show words</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e746d8ca-6e00-4051-980b-8e9b441f8e53" alt="ShowWordsGame">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/e746d8ca-6e00-4051-980b-8e9b441f8e53" alt="Show words game">
 </p>
 
 <h3 align="center">Mini-game blured words</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/2112caa1-f456-405c-a03d-eb93a79a9e28" alt="BluredWordsGame">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/2112caa1-f456-405c-a03d-eb93a79a9e28" alt="Blured words game">
 </p>
 
 <h3 align="center">Mini-game match word</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/cc87a251-3a03-41bb-ad1d-f7bb4a1de53c" alt="MatchWordsGame">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/cc87a251-3a03-41bb-ad1d-f7bb4a1de53c" alt="Match words game">
 </p>
 
 <h3 align="center">Email messages</h3> 
 <p align="center">
-    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/ac878606-1f98-4b1b-a971-b5e229342aaa" alt="MatchWordsGame">
+    <img src="https://github.com/c3n9/WordSkillz/assets/108518693/ac878606-1f98-4b1b-a971-b5e229342aaa" alt="Match words game">
 </p>
 
 
